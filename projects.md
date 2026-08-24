@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: main
 title: "R&D Projects & Hardware Hacks"
 permalink: /projects/
 ---
