@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: main
 title: "Rishbh Sharma | Systems & AI Engineer"
 permalink: /
 ---
