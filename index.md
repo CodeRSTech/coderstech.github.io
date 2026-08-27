@@ -7,7 +7,7 @@ permalink: /
 <!-- Hero Section: The Executive Summary -->
 <div class="py-5 border-bottom border-secondary">
   <h1 class="display-5 fw-bold text-light">Full-Stack Prototyper & Systems Integrator</h1>
-  <p class="lead text-muted mt-3">
+  <p class="lead  mt-3">
     Bridging the gap between low-level hardware, embedded systems, and high-level AI algorithms. Over 8 years of intensive, self-directed R&D experience designing cross-disciplinary architectures.
   </p>
   <div class="d-flex gap-3 mt-4">
@@ -26,7 +26,7 @@ permalink: /
   <div class="col-md-4">
     <div class="p-4 border border-secondary rounded bg-dark h-100">
       <h4 class="text-light mb-3"><i class="bi bi-braces me-2"></i>Software & AI</h4>
-      <ul class="text-muted list-unstyled">
+      <ul class=" list-unstyled">
         <li class="mb-2"><strong class="text-light">Languages:</strong> Python, C++, Lua</li>
         <li class="mb-2"><strong class="text-light">AI/ML:</strong> OpenCV, Custom Neural Nets</li>
         <li class="mb-2"><strong class="text-light">Core:</strong> Genetic Algorithms, Matrix Math</li>
@@ -38,7 +38,7 @@ permalink: /
   <div class="col-md-4">
     <div class="p-4 border border-secondary rounded bg-dark h-100">
       <h4 class="text-light mb-3"><i class="bi bi-motherboard me-2"></i>Hardware & IoT</h4>
-      <ul class="text-muted list-unstyled">
+      <ul class=" list-unstyled">
         <li class="mb-2"><strong class="text-light">Embedded:</strong> CAN bus, CHDK Firmware</li>
         <li class="mb-2"><strong class="text-light">Mechatronics:</strong> Power Conversion, PCB</li>
         <li class="mb-2"><strong class="text-light">Diagnostics:</strong> ECU Telemetry, OBD</li>
@@ -50,7 +50,7 @@ permalink: /
   <div class="col-md-4">
     <div class="p-4 border border-secondary rounded bg-dark h-100">
       <h4 class="text-light mb-3"><i class="bi bi-terminal-x me-2"></i>IT & Infra</h4>
-      <ul class="text-muted list-unstyled">
+      <ul class=" list-unstyled">
         <li class="mb-2"><strong class="text-light">OS:</strong> Linux (Ubuntu, Kali), Bare-metal</li>
         <li class="mb-2"><strong class="text-light">NetSec:</strong> 802.11 Auditing, SSH Tunnels</li>
         <li class="mb-2"><strong class="text-light">Ops:</strong> Virtualization, Disaster Recovery</li>
@@ -69,7 +69,7 @@ permalink: /
       <a href="/projects" class="text-decoration-none">
         <div class="p-4 border border-secondary rounded bg-dark text-light h-100 hover-overlay">
           <h4 class="mb-2">Systems Architecture <i class="bi bi-arrow-right ms-2"></i></h4>
-          <p class="text-muted mb-0">View deep-dives into real-time object detection and bare-metal AI development.</p>
+          <p class=" mb-0">View deep-dives into real-time object detection and bare-metal AI development.</p>
         </div>
       </a>
     </div>
@@ -77,7 +77,7 @@ permalink: /
       <a href="/experiments" class="text-decoration-none">
         <div class="p-4 border border-secondary rounded bg-dark text-light h-100 hover-overlay">
           <h4 class="mb-2">Hardware Experiments <i class="bi bi-arrow-right ms-2"></i></h4>
-          <p class="text-muted mb-0">View firmware modifications, physical teardowns, and IT infrastructure hacks.</p>
+          <p class=" mb-0">View firmware modifications, physical teardowns, and IT infrastructure hacks.</p>
         </div>
       </a>
     </div>
