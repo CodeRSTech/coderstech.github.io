@@ -24,39 +24,39 @@ permalink: /
     
   <!-- AI & Logic -->
   <div class="col-md-4">
-      <div class="p-4 border border-secondary rounded bg-dark h-100">
-        <h4 class="text-light mb-3"><i class="bi bi-braces me-2"></i>Software & AI</h4>
-        <ul class="text-muted list-unstyled">
-          <li class="mb-2"><strong class="text-light">Languages:</strong> Python, C++, Lua</li>
-          <li class="mb-2"><strong class="text-light">AI/ML:</strong> OpenCV, Custom Neural Nets</li>
-          <li class="mb-2"><strong class="text-light">Core:</strong> Genetic Algorithms, Matrix Math</li>
-        </ul>
-      </div>
+    <div class="p-4 border border-secondary rounded bg-dark h-100">
+      <h4 class="text-light mb-3"><i class="bi bi-braces me-2"></i>Software & AI</h4>
+      <ul class="text-muted list-unstyled">
+        <li class="mb-2"><strong class="text-light">Languages:</strong> Python, C++, Lua</li>
+        <li class="mb-2"><strong class="text-light">AI/ML:</strong> OpenCV, Custom Neural Nets</li>
+        <li class="mb-2"><strong class="text-light">Core:</strong> Genetic Algorithms, Matrix Math</li>
+      </ul>
     </div>
+  </div>
 
-    <!-- Hardware & IoT -->
-    <div class="col-md-4">
-      <div class="p-4 border border-secondary rounded bg-dark h-100">
-        <h4 class="text-light mb-3"><i class="bi bi-motherboard me-2"></i>Hardware & IoT</h4>
-        <ul class="text-muted list-unstyled">
-          <li class="mb-2"><strong class="text-light">Embedded:</strong> CAN bus, CHDK Firmware</li>
-          <li class="mb-2"><strong class="text-light">Mechatronics:</strong> Power Conversion, PCB</li>
-          <li class="mb-2"><strong class="text-light">Diagnostics:</strong> ECU Telemetry, OBD</li>
-        </ul>
-      </div>
+  <!-- Hardware & IoT -->
+  <div class="col-md-4">
+    <div class="p-4 border border-secondary rounded bg-dark h-100">
+      <h4 class="text-light mb-3"><i class="bi bi-motherboard me-2"></i>Hardware & IoT</h4>
+      <ul class="text-muted list-unstyled">
+        <li class="mb-2"><strong class="text-light">Embedded:</strong> CAN bus, CHDK Firmware</li>
+        <li class="mb-2"><strong class="text-light">Mechatronics:</strong> Power Conversion, PCB</li>
+        <li class="mb-2"><strong class="text-light">Diagnostics:</strong> ECU Telemetry, OBD</li>
+      </ul>
     </div>
+  </div>
 
-    <!-- Infrastructure -->
-    <div class="col-md-4">
-      <div class="p-4 border border-secondary rounded bg-dark h-100">
-        <h4 class="text-light mb-3"><i class="bi bi-terminal-x me-2"></i>IT & Infra</h4>
-        <ul class="text-muted list-unstyled">
-          <li class="mb-2"><strong class="text-light">OS:</strong> Linux (Ubuntu, Kali), Bare-metal</li>
-          <li class="mb-2"><strong class="text-light">NetSec:</strong> 802.11 Auditing, SSH Tunnels</li>
-          <li class="mb-2"><strong class="text-light">Ops:</strong> Virtualization, Disaster Recovery</li>
-        </ul>
-      </div>
+  <!-- Infrastructure -->
+  <div class="col-md-4">
+    <div class="p-4 border border-secondary rounded bg-dark h-100">
+      <h4 class="text-light mb-3"><i class="bi bi-terminal-x me-2"></i>IT & Infra</h4>
+      <ul class="text-muted list-unstyled">
+        <li class="mb-2"><strong class="text-light">OS:</strong> Linux (Ubuntu, Kali), Bare-metal</li>
+        <li class="mb-2"><strong class="text-light">NetSec:</strong> 802.11 Auditing, SSH Tunnels</li>
+        <li class="mb-2"><strong class="text-light">Ops:</strong> Virtualization, Disaster Recovery</li>
+      </ul>
     </div>
+  </div>
 
   </div>
 </div>
