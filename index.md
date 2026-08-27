@@ -22,8 +22,8 @@ permalink: /
   <h2 class="mb-4 text-light"><i class="bi bi-cpu-fill me-2 text-primary"></i>Technical Matrix</h2>
   <div class="row g-4">
     
-    <!-- AI & Logic -->
-    <div class="col-md-4">
+  <!-- AI & Logic -->
+  <div class="col-md-4">
       <div class="p-4 border border-secondary rounded bg-dark h-100">
         <h4 class="text-light mb-3"><i class="bi bi-braces me-2"></i>Software & AI</h4>
         <ul class="text-muted list-unstyled">
