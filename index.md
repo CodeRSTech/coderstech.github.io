@@ -39,9 +39,9 @@ permalink: /
     <div class="p-4 border border-secondary rounded bg-dark h-100">
       <h4 class="text-light mb-3"><i class="bi bi-motherboard me-2"></i>Hardware & IoT</h4>
       <ul class=" list-unstyled">
-        <li class="mb-2"><strong class="text-light">Embedded:</strong> CAN bus, CHDK Firmware</li>
-        <li class="mb-2"><strong class="text-light">Mechatronics:</strong> Soldering, PCB</li>
-        <li class="mb-2"><strong class="text-light">Diagnostics:</strong>Automobile (OBD)</li>
+        <li class="mb-2"><strong class="text-light">Embedded:</strong> OBD (Automotive), CHDK Firmware, Raspberry Pi</li>
+        <li class="mb-2"><strong class="text-light">Mechatronics:</strong> Soldering, PCB, Power tools, Wiring, Multimeter testing</li>
+        <li class="mb-2"><strong class="text-light">Basic Repairs:</strong>Electronic, Electrical, Automotive, Computers etc.</li>
       </ul>
     </div>
   </div>
