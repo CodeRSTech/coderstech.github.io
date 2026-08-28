@@ -40,8 +40,8 @@ permalink: /
       <h4 class="text-light mb-3"><i class="bi bi-motherboard me-2"></i>Hardware & IoT</h4>
       <ul class=" list-unstyled">
         <li class="mb-2"><strong class="text-light">Embedded:</strong> CAN bus, CHDK Firmware</li>
-        <li class="mb-2"><strong class="text-light">Mechatronics:</strong> Power Conversion, PCB</li>
-        <li class="mb-2"><strong class="text-light">Diagnostics:</strong> ECU Telemetry, OBD</li>
+        <li class="mb-2"><strong class="text-light">Mechatronics:</strong> Soldering, PCB</li>
+        <li class="mb-2"><strong class="text-light">Diagnostics:</strong>Automobile (OBD)</li>
       </ul>
     </div>
   </div>
