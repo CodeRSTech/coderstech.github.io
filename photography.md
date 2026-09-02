@@ -17,7 +17,7 @@ permalink: /photography/
 </a>
 
 <a href="/assets/images/purple_hills.jpg" data-lightbox="gallery" data-title="Somewhere in the hills - Night HDR">
-  <img src="/assets/images/purple_hills.jpg" alt="Purple Hills">
+  <img src="/assets/images/purple_hills.jpeg" alt="Purple Hills">
 </a>
 
 <a href="/assets/images/winter_night.jpg" data-lightbox="gallery" data-title="Winter Nights - Long Exposure HDR">
@@ -27,3 +27,27 @@ permalink: /photography/
 <a href="/assets/images/curious_chipmunk.jpg" data-lightbox="gallery" data-title="Curious Chipmunk">
   <img src="/assets/images/curious_chipmunk.jpg" alt="A chipmunk">
 </a>
+
+<a href="/assets/images/Urban.jpeg" data-lightbox="gallery" data-title="">
+  <img src="/assets/images/Urban.jpeg" alt="">
+</a>
+
+<a href="/assets/images/valley.jpg" data-lightbox="gallery" data-title="">
+  <img src="/assets/images/valley.jpg" alt="">
+</a>
+
+<a href="/assets/images/himalaya.jpg" data-lightbox="gallery" data-title="">
+  <img src="/assets/images/himalaya.jpg" alt="">
+</a>
+
+<!-- <a href="/assets/images/" data-lightbox="gallery" data-title="">
+  <img src="/assets/images/" alt="">
+</a>
+
+<a href="/assets/images/" data-lightbox="gallery" data-title="">
+  <img src="/assets/images/" alt="">
+</a>
+
+<a href="/assets/images/" data-lightbox="gallery" data-title="">
+  <img src="/assets/images/" alt="">
+</a> -->
