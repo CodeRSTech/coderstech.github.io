@@ -4,10 +4,6 @@ title: "Computational Photography & Optics"
 permalink: /photography/
 ---
 <!-- Local Asset Payload -->
-<a href="/assets/images/curious_chipmunk.jpg" data-lightbox="gallery" data-title="Curious Chipmunk">
-  <img src="/assets/images/curious_chipmunk.jpg" alt="A chipmunk">
-</a>
-
 <a href="/assets/images/milky_way.jpg" data-lightbox="gallery" data-title="Milky way - Long Exposure">
   <img src="/assets/images/milky_way.jpg" alt="Milky way - Long Exposure">
 </a>
@@ -26,4 +22,8 @@ permalink: /photography/
 
 <a href="/assets/images/winter_night.jpg" data-lightbox="gallery" data-title="Winter Nights - Long Exposure HDR">
   <img src="/assets/images/winter_night.jpg" alt="Winter">
+</a>
+
+<a href="/assets/images/curious_chipmunk.jpg" data-lightbox="gallery" data-title="Curious Chipmunk">
+  <img src="/assets/images/curious_chipmunk.jpg" alt="A chipmunk">
 </a>
