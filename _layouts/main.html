@@ -1,18 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }}</title>
-  <!-- Inject Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <!-- Inject Bootstrap CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js](https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js)"></script>
-</head>
-<body class="bg-dark text-light"> <!-- Dark mode for a clean technical aesthetic -->
-  {% include navbar.html %}
-  <div class="container mt-5">
-    {{ content }} <!-- Jekyll injects your markdown data here -->
+---
+layout: main
+---
+<!-- CSS to hide physical scrollbars on mobile swipe ribbons -->
+<style>
+  .swipe-ribbon { scrollbar-width: none; -ms-overflow-style: none; }
+  .swipe-ribbon::-webkit-scrollbar { display: none; }
+</style>
+
+<!-- Scrollspy Container -->
+<div class="container-fluid position-relative mt-3" data-bs-spy="scroll" data-bs-target="#toc-nav" data-bs-smooth-scroll="true" tabindex="0">
+  
+  <!-- MOBILE ONLY: Stacked Sticky Navbars (Hidden on Desktop) -->
+  <div class="d-lg-none sticky-top bg-dark border-bottom border-secondary" style="top: 56px; z-index: 1020;">
+    <!-- Ribbon 1: Other Posts -->
+    <div class="d-flex flex-nowrap overflow-x-auto py-2 px-3 border-bottom border-dark swipe-ribbon">
+      <span class="text-white-50 small fw-bold me-3 align-self-center">EXPERIMENTS:</span>
+      {% for post in site.posts %}
+        <a href="{{ post.url }}" class="badge bg-secondary text-light text-decoration-none me-2 text-nowrap">{{ post.title }}</a>
+      {% endfor %}
+    </div>
+    <!-- Ribbon 2: Mobile TOC Scrollspy -->
+    <nav id="toc-nav-mobile" class="nav nav-pills flex-nowrap overflow-x-auto py-2 px-3 swipe-ribbon"></nav>
   </div>
-</body>
-</html>
+
+  <div class="row">
+    <!-- DESKTOP LEFT: Other Posts (Hidden on Mobile) -->
+    <div class="col-lg-2 d-none d-lg-block border-end border-secondary">
+      <div class="sticky-top pt-4" style="top: 20px;">
+        <h6 class="text-uppercase fw-bold text-primary mb-3">R&D Logs</h6>
+        <nav class="nav flex-column">
+          {% for post in site.posts %}
+            <a class="nav-link text-white-50 px-0 py-1" href="{{ post.url }}">{{ post.title }}</a>
+          {% endfor %}
+        </nav>
+      </div>
+    </div>
+
+    <!-- CENTER: Main Content Payload -->
+    <div class="col-lg-8 col-12 px-lg-5 pb-5 pt-4">
+      <h1 class="text-light fw-bold mb-2">{{ page.title }}</h1>
+      <span class="badge bg-primary mb-4">{{ page.category | capitalize }}</span>
+      <div class="text-white-50 content-payload">
+        {{ content }}
+      </div>
+    </div>
+
+    <!-- DESKTOP RIGHT: TOC Scrollspy (Hidden on Mobile) -->
+    <div class="col-lg-2 d-none d-lg-block border-start border-secondary">
+      <div class="sticky-top pt-4" style="top: 20px;">
+        <h6 class="text-uppercase fw-bold text-primary mb-3">Contents</h6>
+        <nav id="toc-nav" class="nav nav-pills flex-column"></nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Dynamic TOC Generator -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const contentArea = document.querySelector('.content-payload');
+    const headings = contentArea.querySelectorAll('h3');
+    const desktopToc = document.getElementById('toc-nav');
+    const mobileToc = document.getElementById('toc-nav-mobile');
+
+    headings.forEach(heading => {
+      if (!heading.id) return; // Skips headings without IDs
+      
+      // Desktop Link Injection
+      const desktopLink = document.createElement('a');
+      desktopLink.className = 'nav-link text-white-50 px-2 py-1';
+      desktopLink.href = '#' + heading.id;
+      desktopLink.textContent = heading.textContent;
+      desktopToc.appendChild(desktopLink);
+
+      // Mobile Link Injection
+      const mobileLink = document.createElement('a');
+      mobileLink.className = 'nav-link text-white-50 text-nowrap py-1 px-2';
+      mobileLink.href = '#' + heading.id;
+      mobileLink.textContent = heading.textContent;
+      mobileToc.appendChild(mobileLink);
+    });
+  });
+</script>
