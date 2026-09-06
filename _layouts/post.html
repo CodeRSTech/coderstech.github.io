@@ -1,30 +1,26 @@
 ---
 layout: main
 ---
-<!-- CSS to hide physical scrollbars on mobile swipe ribbons -->
 <style>
   .swipe-ribbon { scrollbar-width: none; -ms-overflow-style: none; }
   .swipe-ribbon::-webkit-scrollbar { display: none; }
 </style>
 
-<!-- Scrollspy Container -->
-<div class="container-fluid position-relative mt-3" data-bs-spy="scroll" data-bs-target="#toc-nav" data-bs-smooth-scroll="true" tabindex="0">
+<div class="container-fluid position-relative mt-3">
   
-  <!-- MOBILE ONLY: Stacked Sticky Navbars (Hidden on Desktop) -->
+  <!-- MOBILE ONLY: Stacked Sticky Navbars -->
   <div class="d-lg-none sticky-top bg-black border-bottom border-secondary" style="top: 58px; z-index: 1020;">
-  <!-- Ribbon 1: Other Posts -->
     <div class="d-flex flex-nowrap overflow-x-auto py-2 px-3 border-bottom border-dark swipe-ribbon">
       <span class="text-white-50 small fw-bold me-3 align-self-center">EXPERIMENTS:</span>
       {% for post in site.posts %}
         <a href="{{ post.url }}" class="badge bg-secondary text-light text-decoration-none me-2 text-nowrap">{{ post.title }}</a>
       {% endfor %}
     </div>
-    <!-- Ribbon 2: Mobile TOC Scrollspy -->
     <nav id="toc-nav-mobile" class="nav nav-pills flex-nowrap overflow-x-auto py-2 px-3 swipe-ribbon"></nav>
   </div>
 
   <div class="row">
-    <!-- DESKTOP LEFT: Other Posts (Hidden on Mobile) -->
+    <!-- DESKTOP LEFT: Other Posts -->
     <div class="col-lg-2 d-none d-lg-block border-end border-secondary">
       <div class="sticky-top pt-4" style="top: 80px;">
         <h6 class="text-uppercase fw-bold text-primary mb-3">R&D Logs</h6>
@@ -45,17 +41,17 @@ layout: main
       </div>
     </div>
 
-    <!-- DESKTOP RIGHT: TOC Scrollspy (Hidden on Mobile) -->
+    <!-- DESKTOP RIGHT: TOC Scrollspy -->
     <div class="col-lg-2 d-none d-lg-block border-start border-secondary">
       <div class="sticky-top pt-4" style="top: 80px;">
         <h6 class="text-uppercase fw-bold text-primary mb-3">Contents</h6>
+        <!-- Native Bootstrap ID target -->
         <nav id="toc-nav" class="nav nav-pills flex-column"></nav>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Dynamic TOC Generator -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const contentArea = document.querySelector('.content-payload');
@@ -64,21 +60,24 @@ layout: main
     const mobileToc = document.getElementById('toc-nav-mobile');
 
     headings.forEach(heading => {
-      if (!heading.id) return; // Skips headings without IDs
+      if (!heading.id) return; 
       
-      // Desktop Link Injection
       const desktopLink = document.createElement('a');
       desktopLink.className = 'nav-link text-white-50 px-2 py-1';
       desktopLink.href = '#' + heading.id;
       desktopLink.textContent = heading.textContent;
       desktopToc.appendChild(desktopLink);
 
-      // Mobile Link Injection
       const mobileLink = document.createElement('a');
       mobileLink.className = 'nav-link text-white-50 text-nowrap py-1 px-2';
       mobileLink.href = '#' + heading.id;
       mobileLink.textContent = heading.textContent;
       mobileToc.appendChild(mobileLink);
     });
+
+    // Native Bootstrap Refresh: Tells the engine to re-scan the DOM for the newly injected links
+    if (window.bootstrap) {
+      bootstrap.ScrollSpy.getOrCreateInstance(document.body).refresh();
+    }
   });
 </script>
