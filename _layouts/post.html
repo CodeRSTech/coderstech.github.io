@@ -51,7 +51,16 @@ layout: main
     </div>
   </div>
 </div>
-
+<!--
+  REALITY CHECK: Jekyll Native TOC (Kramdown) vs. Vanilla JS TOC Architecture
+  
+  Decision: Client-Side Vanilla JS Dynamic TOC Engine
+  
+  Rationale:
+  - GitHub Pages runs Jekyll in "safe mode", which aggressively blocks most custom Ruby gems and server-side TOC generation plugins.
+  - Kramdown's native TOC generates a single rigid HTML block, making it difficult to cleanly split, duplicate, and map across dual separate responsive containers (the desktop sidebar and the mobile horizontal swipe ribbon) without writing brittle, unmaintainable Liquid string-parsing workarounds.
+  - Vanilla JS keeps your actual Markdown source files 100% clean and portable, while dynamically harvesting `<h3>` elements at runtime to build and inject fully-styled Bootstrap nav elements simultaneously across all viewports.
+-->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const contentArea = document.querySelector('.content-payload');
