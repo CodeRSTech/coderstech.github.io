@@ -61,32 +61,70 @@ layout: main
   - Kramdown's native TOC generates a single rigid HTML block, making it difficult to cleanly split, duplicate, and map across dual separate responsive containers (the desktop sidebar and the mobile horizontal swipe ribbon) without writing brittle, unmaintainable Liquid string-parsing workarounds.
   - Vanilla JS keeps your actual Markdown source files 100% clean and portable, while dynamically harvesting `<h3>` elements at runtime to build and inject fully-styled Bootstrap nav elements simultaneously across all viewports.
 -->
+<!-- Dynamic TOC & Scrollspy Engine -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const contentArea = document.querySelector('.content-payload');
     const headings = contentArea.querySelectorAll('h3');
     const desktopToc = document.getElementById('toc-nav');
     const mobileToc = document.getElementById('toc-nav-mobile');
+    const navLinks = []; 
 
     headings.forEach(heading => {
       if (!heading.id) return; 
       
-      const desktopLink = document.createElement('a');
-      desktopLink.className = 'nav-link text-white-50 px-2 py-1';
-      desktopLink.href = '#' + heading.id;
-      desktopLink.textContent = heading.textContent;
-      desktopToc.appendChild(desktopLink);
+      // Inject Desktop Link
+      const dLink = document.createElement('a');
+      dLink.className = 'nav-link text-white-50 px-2 py-1 transition-all';
+      dLink.href = '#' + heading.id;
+      dLink.textContent = heading.textContent;
+      desktopToc.appendChild(dLink);
+      navLinks.push({ link: dLink, target: heading, isMobile: false });
 
-      const mobileLink = document.createElement('a');
-      mobileLink.className = 'nav-link text-white-50 text-nowrap py-1 px-2';
-      mobileLink.href = '#' + heading.id;
-      mobileLink.textContent = heading.textContent;
-      mobileToc.appendChild(mobileLink);
+      // Inject Mobile Link
+      const mLink = document.createElement('a');
+      mLink.className = 'nav-link text-white-50 text-nowrap py-1 px-2 transition-all';
+      mLink.href = '#' + heading.id;
+      mLink.textContent = heading.textContent;
+      mobileToc.appendChild(mLink);
+      navLinks.push({ link: mLink, target: heading, isMobile: true });
     });
 
-    // Native Bootstrap Refresh: Tells the engine to re-scan the DOM for the newly injected links
-    if (window.bootstrap) {
-      bootstrap.ScrollSpy.getOrCreateInstance(document.body).refresh();
-    }
+    // IntersectionObserver to handle the active highlighting
+    const observerOptions = {
+      root: null,
+      rootMargin: '-100px 0px -70% 0px', // Triggers as the heading nears the top third of the screen
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // 1. Reset all links to muted text
+          navLinks.forEach(item => {
+            item.link.classList.remove('text-white', 'fw-bold', 'bg-secondary', 'bg-opacity-25');
+            item.link.classList.add('text-white-50');
+          });
+
+          // 2. Highlight the active links (both desktop and mobile)
+          const activeItems = navLinks.filter(item => item.target === entry.target);
+          activeItems.forEach(item => {
+            item.link.classList.remove('text-white-50');
+            item.link.classList.add('text-white', 'fw-bold', 'bg-secondary', 'bg-opacity-25', 'rounded');
+            
+            // 3. Auto-scroll the mobile ribbon to keep the active link in view
+            if (item.isMobile) {
+              mobileToc.scrollTo({
+                left: item.link.offsetLeft - 20,
+                behavior: 'smooth'
+              });
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    // Attach the observer to every heading
+    headings.forEach(heading => observer.observe(heading));
   });
 </script>
