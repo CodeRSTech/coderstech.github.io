@@ -15,8 +15,13 @@ The water ingress was extensive. A diagnostic teardown revealed water pooling ac
 
 <img src="/assets/images/posts/battery_housing_and_pcb.png" class="img-fluid rounded mb-4 mt-4" alt="PCB and Battery Housing">
 
-### The Cleanup & Centrifugal Purge
-To displace the moisture inside the motor and surrounding components, I applied a generous coating of WD-40. To mechanically extract the internal liquids, I fastened an external drill to the flooded motor's shaft and operated it at high speeds, utilizing centrifugal force to physically drive the water out. The motor was subsequently flushed with 99.9% Isopropyl Alcohol (IPA) and spun again. The remaining components were also treated with WD-40 and IPA to strip away oily residues and lingering mineral deposits from the detergent, resulting in a completely dry, clean surface.
+### The Motor Cleanup
+To displace the moisture inside the motor and surrounding components, I applied a generous coating of WD-40. To mechanically extract the internal liquids, I fastened an external drill to the flooded motor's shaft and operated it at high speeds, utilizing centrifugal force to physically drive the water out. The motor was subsequently flushed with 99.9% Isopropyl Alcohol (IPA) and spun again.
+
+<img src="/assets/images/posts/motor_housing.png" class="img-fluid rounded mb-4 mt-4" alt="Motor Housing">
+
+### Cleaning The Rest
+The remaining components were also treated with WD-40 and IPA to strip away oily residues and lingering mineral deposits from the detergent, resulting in a completely dry, clean surface.
 
 ### Mechanical Re-Lubrication
 While the WD-40 successfully mitigated the water damage, its solvent properties completely dissolved the factory grease within the planetary gear assembly. To resolve this, all gears were meticulously cleaned and re-lubricated using a plastic-safe lithium grease before reassembling the main motor housing.
