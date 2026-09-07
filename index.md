@@ -104,7 +104,9 @@ permalink: /
           <iframe
             src="https://www.hackerearth.com/@codetechrs/embed/"
             title="HackerEarth Profile Embed"
-            style="border: 0;"
+            width="1200"
+            height="630"
+            style="width: 100%; max-width: 1200px; border: 0; overflow: hidden;"
             loading="lazy"
           ></iframe>
         </div>
