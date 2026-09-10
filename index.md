@@ -171,4 +171,50 @@ permalink: /
   </div>
 
   </div>
+  <!-- Tier 2: Compact Routing Grid -->
+  <div class="row g-3 mt-2">
+    
+  <!-- Platform 1: HackerRank -->
+  <div class="col-md-4 col-sm-6">
+    <!-- Replace with your actual HackerRank URL -->
+    <a href="https://www.hackerrank.com/your_username" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+      <div class="card bg-black border-secondary h-100 hover-overlay p-3 d-flex flex-row align-items-center transition-all">
+        <i class="bi bi-braces fs-3 text-success me-3"></i>
+        <div>
+          <h6 class="text-light mb-0">HackerRank</h6>
+          <small class="text-white-50">660+ Pts & Verified Badges</small>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Platform 2: Stack Exchange (Global Network) -->
+  <div class="col-md-4 col-sm-6">
+    <!-- Replace with your Global StackExchange profile URL -->
+    <a href="https://stackexchange.com/users/your_network_id" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+      <div class="card bg-black border-secondary h-100 hover-overlay p-3 d-flex flex-row align-items-center transition-all">
+        <i class="bi bi-stack-overflow fs-3 text-warning me-3"></i>
+        <div>
+          <h6 class="text-light mb-0">Stack Exchange</h6>
+          <small class="text-white-50">750+ Rep (Multi-Node)</small>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Platform 3: LinkedIn -->
+  <div class="col-md-4 col-sm-6">
+    <!-- Replace with your LinkedIn URL -->
+    <a href="https://linkedin.com/in/your_profile" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+      <div class="card bg-black border-secondary h-100 hover-overlay p-3 d-flex flex-row align-items-center transition-all">
+        <i class="bi bi-linkedin fs-3 text-primary me-3"></i>
+        <div>
+          <h6 class="text-light mb-0">LinkedIn</h6>
+          <small class="text-white-50">Professional Network</small>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  </div>
 </div>
