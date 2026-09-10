@@ -27,7 +27,7 @@ permalink: /
     <div class="p-4 border border-secondary rounded bg-dark h-100">
       <h4 class="text-light mb-3"><i class="bi bi-braces me-2"></i>Software & AI</h4>
       <ul class=" list-unstyled">
-        <li class="mb-2"><strong class="text-light">Languages:</strong> Python, C++, Lua</li>
+        <li class="mb-2"><strong class="text-light">Languages:</strong> Python, C++, Lua [ Insert a left to right icons with expertise level for 8085, C, CPP, AutoIt, Lua, Python. Better use  tiered architecture ]</li>
         <li class="mb-2"><strong class="text-light">AI/ML:</strong> OpenCV, Custom Neural Nets</li>
         <li class="mb-2"><strong class="text-light">Core:</strong> Genetic Algorithms, Matrix Math</li>
       </ul>
@@ -40,7 +40,7 @@ permalink: /
       <h4 class="text-light mb-3"><i class="bi bi-motherboard me-2"></i>Hardware & IoT</h4>
       <ul class=" list-unstyled">
         <li class="mb-2"><strong class="text-light">Embedded:</strong> OBD (Automotive), CHDK Firmware, Raspberry Pi</li>
-        <li class="mb-2"><strong class="text-light">Mechatronics:</strong> Soldering, PCB, Power tools, Wiring, Multimeter testing</li>
+        <li class="mb-2"><strong class="text-light">Mechatronics:</strong> Soldering, PCB, Power tools, Wiring, Multimeter testing[ A small image]</li>
         <li class="mb-2"><strong class="text-light">Basic Repairs:</strong>Electronic, Electrical, Automotive, Computers etc.</li>
       </ul>
     </div>
@@ -51,7 +51,7 @@ permalink: /
     <div class="p-4 border border-secondary rounded bg-dark h-100">
       <h4 class="text-light mb-3"><i class="bi bi-terminal-x me-2"></i>IT & Infra</h4>
       <ul class=" list-unstyled">
-        <li class="mb-2"><strong class="text-light">OS:</strong> Linux (Ubuntu, Kali), Bare-metal</li>
+        <li class="mb-2"><strong class="text-light">OS:</strong> Linux (Ubuntu, Kali), Bare-metal [ OS icons here ]</li>
         <li class="mb-2"><strong class="text-light">NetSec:</strong> 802.11 Auditing, SSH Tunnels</li>
         <li class="mb-2"><strong class="text-light">Ops:</strong> Virtualization, Disaster Recovery</li>
       </ul>
