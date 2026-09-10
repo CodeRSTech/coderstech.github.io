@@ -108,15 +108,15 @@ permalink: /
         </div>
       </div>
       <div class="text-white-50 small d-flex flex-wrap gap-2 align-items-center mt-2">
-        <span>Freelance Developer</span> &bull; 
-        <span><i class="bi bi-mortarboard me-1"></i>Shiva Institute of Engineering</span> &bull; 
-        <span><i class="bi bi-geo-alt me-1"></i>Bilaspur, HP</span>
+        <span>Developer</span> &bull; 
+        <span><i class="bi bi-mortarboard me-1"></i>HPTU, Hamirpur</span> &bull; 
+        <span><i class="bi bi-geo-alt me-1"></i>India</span>
       </div>
     </div>
   </div>
 
-  <!-- Bio -->
-  <p class="text-white-50 small mb-4">I am a dedicated freelance developer with a strong foundation in competitive coding, consistently solving complex problems and submitting innovative solutions. With a proven track record of 200+ problems solved and 1000+ solutions submitted, I am committed to continuous growth and delivering impactful results in every project I undertake.</p>
+  <!-- Bio [Removed]
+  <p class="text-white-50 small mb-4">I am a dedicated freelance developer with a strong foundation in competitive coding, consistently solving complex problems and submitting innovative solutions. With a proven track record of 200+ problems solved and 1000+ solutions submitted, I am committed to continuous growth and delivering impactful results in every project I undertake.</p> --> 
 
   <!-- Stats Grid -->
   <div class="row g-2 mt-auto">
