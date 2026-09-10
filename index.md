@@ -152,23 +152,70 @@ permalink: /
 </div>
   </div>
 
-  <!-- GitHub Dynamic Stats Card -->
-  <div class="col-xl-6 col-lg-12">
-    <div class="card bg-dark border-secondary h-100">
-      <div class="card-header border-secondary text-white-50 small text-uppercase fw-bold">
-        <i class="bi bi-github me-2"></i>GitHub R&D Activity
-      </div>
-      <div class="card-body bg-black d-flex align-items-center justify-content-center p-3">
-        <a href="https://github.com/coderstech" target="_blank" rel="noopener noreferrer" class="w-100 text-center hover-overlay">
-          <img 
-            src="https://github-readme-stats.vercel.app/api?username=coderstech&show_icons=true&theme=transparent&hide_border=true&title_color=0d6efd&text_color=a3a3a3&icon_color=0d6efd&bg_color=00000000" 
-            alt="GitHub Stats" 
-            class="img-fluid"
-          />
-        </a>
+<!-- HackerRank Tier 1 Profile Card -->
+<div class="col-xl-6 col-lg-12">
+  <div class="card bg-dark border-secondary h-100">
+    <div class="card-header border-secondary text-white-50 small text-uppercase fw-bold d-flex justify-content-between align-items-center">
+      <span><i class="bi bi-braces me-2"></i>HackerRank Fluency</span>
+      <span class="badge bg-success text-dark">660+ Points</span>
+    </div>
+    <div class="card-body bg-black p-4 d-flex flex-column justify-content-center">
+      <div class="d-flex flex-column gap-3">
+        <!-- Problem Solving Badge (4 Stars) -->
+        <div class="d-flex justify-content-between align-items-center p-3 border border-secondary rounded bg-dark hover-overlay transition-all">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-puzzle-fill text-primary fs-3 me-3"></i>
+            <div>
+              <h6 class="mb-0 text-light fw-bold">Problem Solving</h6>
+              <small class="text-white-50">Data Structures & Algorithms</small>
+            </div>
+          </div>
+          <div class="text-warning fs-5">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star text-secondary"></i>
+          </div>
+        </div>
+        <!-- Python Badge (4 Stars) -->
+        <div class="d-flex justify-content-between align-items-center p-3 border border-secondary rounded bg-dark hover-overlay transition-all">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-filetype-py text-success fs-3 me-3"></i>
+            <div>
+              <h6 class="mb-0 text-light fw-bold">Python</h6>
+              <small class="text-white-50">Language Proficiency</small>
+            </div>
+          </div>
+          <div class="text-warning fs-5">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star text-secondary"></i>
+          </div>
+        </div>
+        <!-- Days of Code Badge (3 Stars) -->
+        <div class="d-flex justify-content-between align-items-center p-3 border border-secondary rounded bg-dark hover-overlay transition-all">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-calendar3 text-info fs-3 me-3"></i>
+            <div>
+              <h6 class="mb-0 text-light fw-bold">30 Days of Code</h6>
+              <small class="text-white-50">Consistent Execution</small>
+            </div>
+          </div>
+          <div class="text-warning fs-5">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star text-secondary"></i>
+            <i class="bi bi-star text-secondary"></i>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
 
   </div>
   <!-- Tier 2: Compact Routing Grid -->
