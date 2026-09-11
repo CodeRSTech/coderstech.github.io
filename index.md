@@ -88,180 +88,154 @@ permalink: /
 <div class="py-5 border-bottom border-secondary">
   <h2 class="mb-4 text-light"><i class="bi bi-patch-check me-2 text-primary"></i>Verified Profiles</h2>
   
-  <div class="row g-4">
-  
-  <!-- HackerEarth Profile (Bootstrap 5 Translation) -->
-  <div class="col-xl-6 col-lg-12">
-  <div class="card bg-dark border-secondary h-100 p-4">
-      
-  <!-- Header: Avatar + Info -->
-  <div class="d-flex align-items-sm-center flex-column flex-sm-row gap-3 mb-3">
-    <img src="https://uc.hackerearth.com/he-s3-ap-south-1/media/avatars/codetechrs/resized/200/e6aab18mobcovrwithoutlogo.jpg" class="rounded-circle border border-2 border-primary" style="width: 64px; height: 64px; object-fit: cover;" alt="Rishbh Sharma">
-    <div>
-      <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-2 mb-1">
-        <h4 class="text-light mb-0">
-          <a href="https://www.hackerearth.com/@codetechrs/" target="_blank" class="text-light text-decoration-none">Rishbh Sharma</a>
-        </h4>
-        <div class="d-flex gap-2 flex-wrap mt-1 mt-sm-0">
-          <span class="badge rounded-pill bg-primary bg-opacity-25 text-primary border border-primary"><i class="bi bi-trophy me-1"></i>Top 2% Algos</span>
-          <span class="badge rounded-pill bg-primary bg-opacity-25 text-primary border border-primary"><i class="bi bi-trophy me-1"></i>Top 2% Basic</span>
+  <!-- 1 Row, 3 Columns -->
+  <div class="row g-4 align-items-stretch">
+    <!-- COLUMN 1: HackerEarth Profile -->
+    <div class="col-xl-4 col-lg-12">
+      <div class="card bg-dark border-secondary h-100">
+        <!-- Taller Header (py-3) with Top 2% Badges -->
+        <div class="card-header border-secondary text-white-50 small text-uppercase fw-bold d-flex justify-content-between align-items-center py-3">
+          <span><i class="bi bi-code-slash me-2"></i>HackerEarth</span>
+          <div class="d-flex gap-2">
+            <span class="badge rounded-pill bg-primary bg-opacity-25 text-primary border border-primary"><i class="bi bi-trophy"></i> 2% Algos</span>
+            <span class="badge rounded-pill bg-primary bg-opacity-25 text-primary border border-primary"><i class="bi bi-trophy"></i> 2% Basic</span>
+          </div>
         </div>
-      </div>
-      <div class="text-white-50 small d-flex flex-wrap gap-2 align-items-center mt-2">
-        <span>Developer</span> &bull; 
-        <span><i class="bi bi-mortarboard me-1"></i>HPTU, Hamirpur</span> &bull; 
-        <span><i class="bi bi-geo-alt me-1"></i>India</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bio [Removed]
-  <p class="text-white-50 small mb-4">I am a dedicated freelance developer with a strong foundation in competitive coding, consistently solving complex problems and submitting innovative solutions. With a proven track record of 200+ problems solved and 1000+ solutions submitted, I am committed to continuous growth and delivering impactful results in every project I undertake.</p> --> 
-
-  <!-- Stats Grid -->
-  <div class="row g-2 mt-auto">
-    <div class="col-6 col-sm-3">
-      <div class="bg-black border border-secondary rounded p-3 position-relative h-100">
-        <div class="fs-5 fw-bold text-light">2,245</div>
-        <div class="text-white-50 mt-1" style="font-size: 0.70rem; text-transform: uppercase;">Points</div>
-        <i class="bi bi-award text-secondary position-absolute top-0 end-0 mt-2 me-2"></i>
-      </div>
-    </div>
-    <div class="col-6 col-sm-3">
-      <div class="bg-black border border-secondary rounded p-3 position-relative h-100">
-        <div class="fs-5 fw-bold text-light">1,108</div>
-        <div class="text-white-50 mt-1" style="font-size: 0.70rem; text-transform: uppercase;">Ratings</div>
-        <i class="bi bi-bar-chart text-secondary position-absolute top-0 end-0 mt-2 me-2"></i>
-      </div>
-    </div>
-    <div class="col-6 col-sm-3">
-      <div class="bg-black border border-secondary rounded p-3 position-relative h-100">
-        <div class="fs-5 fw-bold text-light">286</div>
-        <div class="text-white-50 mt-1" style="font-size: 0.70rem; text-transform: uppercase;">Solved</div>
-        <i class="bi bi-check-circle text-secondary position-absolute top-0 end-0 mt-2 me-2"></i>
-      </div>
-    </div>
-    <div class="col-6 col-sm-3">
-      <div class="bg-black border border-secondary rounded p-3 position-relative h-100">
-        <div class="fs-5 fw-bold text-light">1,645</div>
-        <div class="text-white-50 mt-1" style="font-size: 0.70rem; text-transform: uppercase;">Submitted</div>
-        <i class="bi bi-code-slash text-secondary position-absolute top-0 end-0 mt-2 me-2"></i>
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
-
-<!-- HackerRank Tier 1 Profile Card -->
-<div class="col-xl-6 col-lg-12">
-  <div class="card bg-dark border-secondary h-100">
-    <div class="card-header border-secondary text-white-50 small text-uppercase fw-bold d-flex justify-content-between align-items-center">
-      <span><i class="bi bi-braces me-2"></i>HackerRank Fluency</span>
-      <span class="badge bg-success text-dark">660+ Points</span>
-    </div>
-    <div class="card-body bg-black p-4 d-flex flex-column justify-content-center">
-      <div class="d-flex flex-column gap-3">
-        <!-- Problem Solving Badge (4 Stars) -->
-        <div class="d-flex justify-content-between align-items-center p-3 border border-secondary rounded bg-dark hover-overlay transition-all">
-          <div class="d-flex align-items-center">
-            <i class="bi bi-puzzle-fill text-primary fs-3 me-3"></i>
+        <!-- Body: bg-black to match HR -->
+        <div class="card-body bg-black p-4 d-flex flex-column">
+          <!-- Avatar + Info -->
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <img src="https://uc.hackerearth.com/he-s3-ap-south-1/media/avatars/codetechrs/resized/200/e6aab18mobcovrwithoutlogo.jpg" class="rounded-circle border border-2 border-primary" style="width: 55px; height: 55px; object-fit: cover;" alt="Rishbh Sharma">
             <div>
-              <h6 class="mb-0 text-light fw-bold">Problem Solving</h6>
-              <small class="text-white-50">Data Structures & Algorithms</small>
+              <h5 class="text-light mb-1">
+                <a href="https://www.hackerearth.com/@codetechrs/" target="_blank" class="text-light text-decoration-none">Rishbh Sharma</a>
+              </h5>
+              <div class="text-white-50" style="font-size: 0.8rem;">
+                Developer &bull; HPTU &bull; India
+              </div>
             </div>
           </div>
-          <div class="text-warning fs-5">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star text-secondary"></i>
-          </div>
-        </div>
-        <!-- Python Badge (4 Stars) -->
-        <div class="d-flex justify-content-between align-items-center p-3 border border-secondary rounded bg-dark hover-overlay transition-all">
-          <div class="d-flex align-items-center">
-            <i class="bi bi-filetype-py text-success fs-3 me-3"></i>
-            <div>
-              <h6 class="mb-0 text-light fw-bold">Python</h6>
-              <small class="text-white-50">Language Proficiency</small>
+          <!-- Stats 2x2 Grid: bg-dark on bg-black -->
+          <div class="row g-3 mt-auto">
+            <div class="col-6">
+              <div class="bg-dark border border-secondary rounded p-3 position-relative h-100 hover-overlay transition-all">
+                <div class="fs-5 fw-bold text-light">2,245</div>
+                <div class="text-white-50 mt-1" style="font-size: 0.70rem; text-transform: uppercase;">Points</div>
+                <i class="bi bi-award text-secondary position-absolute top-0 end-0 mt-2 me-2"></i>
+              </div>
             </div>
-          </div>
-          <div class="text-warning fs-5">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star text-secondary"></i>
-          </div>
-        </div>
-        <!-- Days of Code Badge (3 Stars) -->
-        <div class="d-flex justify-content-between align-items-center p-3 border border-secondary rounded bg-dark hover-overlay transition-all">
-          <div class="d-flex align-items-center">
-            <i class="bi bi-calendar3 text-info fs-3 me-3"></i>
-            <div>
-              <h6 class="mb-0 text-light fw-bold">30 Days of Code</h6>
-              <small class="text-white-50">Consistent Execution</small>
+            <div class="col-6">
+              <div class="bg-dark border border-secondary rounded p-3 position-relative h-100 hover-overlay transition-all">
+                <div class="fs-5 fw-bold text-light">1,108</div>
+                <div class="text-white-50 mt-1" style="font-size: 0.70rem; text-transform: uppercase;">Ratings</div>
+                <i class="bi bi-bar-chart text-secondary position-absolute top-0 end-0 mt-2 me-2"></i>
+              </div>
             </div>
-          </div>
-          <div class="text-warning fs-5">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star text-secondary"></i>
-            <i class="bi bi-star text-secondary"></i>
+            <div class="col-6">
+              <div class="bg-dark border border-secondary rounded p-3 position-relative h-100 hover-overlay transition-all">
+                <div class="fs-5 fw-bold text-light">286</div>
+                <div class="text-white-50 mt-1" style="font-size: 0.70rem; text-transform: uppercase;">Solved</div>
+                <i class="bi bi-check-circle text-secondary position-absolute top-0 end-0 mt-2 me-2"></i>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="bg-dark border border-secondary rounded p-3 position-relative h-100 hover-overlay transition-all">
+                <div class="fs-5 fw-bold text-light">1,645</div>
+                <div class="text-white-50 mt-1" style="font-size: 0.70rem; text-transform: uppercase;">Submitted</div>
+                <i class="bi bi-code-slash text-secondary position-absolute top-0 end-0 mt-2 me-2"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-  </div>
-  <!-- Tier 2: Compact Routing Grid -->
-  <div class="row g-3 mt-2">
-    
-  <!-- Platform 1: HackerRank -->
-  <div class="col-md-4 col-sm-6">
-    <!-- Replace with your actual HackerRank URL -->
-    <a href="https://www.hackerrank.com/your_username" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
-      <div class="card bg-black border-secondary h-100 hover-overlay p-3 d-flex flex-row align-items-center transition-all">
-        <i class="bi bi-braces fs-3 text-success me-3"></i>
-        <div>
-          <h6 class="text-light mb-0">HackerRank</h6>
-          <small class="text-white-50">660+ Pts & Verified Badges</small>
+    <!-- COLUMN 2: HackerRank Profile -->
+    <div class="col-xl-4 col-lg-12">
+      <div class="card bg-dark border-secondary h-100">
+        <!-- Taller Header (py-3) -->
+        <div class="card-header border-secondary text-white-50 small text-uppercase fw-bold d-flex justify-content-between align-items-center py-3">
+          <span><i class="bi bi-braces me-2"></i>HackerRank Fluency</span>
+          <span class="badge bg-success text-dark">660+ Points</span>
+        </div>
+        <div class="card-body bg-black p-4 d-flex flex-column justify-content-center">
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex justify-content-between align-items-center p-3 border border-secondary rounded bg-dark hover-overlay transition-all">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-puzzle-fill text-primary fs-3 me-3"></i>
+                <div>
+                  <h6 class="mb-0 text-light fw-bold">Problem Solving</h6>
+                  <small class="text-white-50">Data Structures</small>
+                </div>
+              </div>
+              <div class="text-warning fs-6">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star text-secondary"></i>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center p-3 border border-secondary rounded bg-dark hover-overlay transition-all">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-filetype-py text-success fs-3 me-3"></i>
+                <div>
+                  <h6 class="mb-0 text-light fw-bold">Python</h6>
+                  <small class="text-white-50">Language Proficiency</small>
+                </div>
+              </div>
+              <div class="text-warning fs-6">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star text-secondary"></i>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center p-3 border border-secondary rounded bg-dark hover-overlay transition-all">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-calendar3 text-info fs-3 me-3"></i>
+                <div>
+                  <h6 class="mb-0 text-light fw-bold">30 Days of Code</h6>
+                  <small class="text-white-50">Consistent Execution</small>
+                </div>
+              </div>
+              <div class="text-warning fs-6">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star text-secondary"></i><i class="bi bi-star text-secondary"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </a>
-  </div>
-
-  <!-- Platform 2: Stack Exchange (Global Network) -->
-  <div class="col-md-4 col-sm-6">
-    <!-- Replace with your Global StackExchange profile URL -->
-    <a href="https://stackexchange.com/users/your_network_id" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
-      <div class="card bg-black border-secondary h-100 hover-overlay p-3 d-flex flex-row align-items-center transition-all">
-        <i class="bi bi-stack-overflow fs-3 text-warning me-3"></i>
-        <div>
-          <h6 class="text-light mb-0">Stack Exchange</h6>
-          <small class="text-white-50">750+ Rep (Multi-Node)</small>
+    </div>
+    <!-- COLUMN 3: Tier 2 Routing & Tier 3 Connect -->
+    <div class="col-xl-4 col-lg-12 d-flex flex-column gap-3">
+      <!-- Tier 2: Stack Exchange -->
+      <a href="https://stackexchange.com/users/your_network_id" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+        <div class="card bg-black border-secondary hover-overlay p-3 d-flex flex-row align-items-center transition-all">
+          <i class="bi bi-stack-overflow fs-2 text-warning me-3"></i>
+          <div>
+            <h6 class="text-light mb-0">Stack Exchange</h6>
+            <small class="text-white-50">750+ Rep (Linux, Math, SO)</small>
+          </div>
+        </div>
+      </a>
+      <!-- Tier 2: GitHub -->
+      <a href="https://github.com/coderstech" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+        <div class="card bg-black border-secondary hover-overlay p-3 d-flex flex-row align-items-center transition-all">
+          <i class="bi bi-github fs-2 text-light me-3"></i>
+          <div>
+            <h6 class="text-light mb-0">GitHub</h6>
+            <small class="text-white-50">R&D Repositories</small>
+          </div>
+        </div>
+      </a>
+      <!-- Tier 3: Compact Social Links (Pushed to bottom via mt-auto) -->
+      <div class="card bg-dark border-secondary p-3 mt-auto">
+        <h6 class="text-white-50 small text-uppercase fw-bold mb-3">Connect & Network</h6>
+        <div class="d-flex gap-2 flex-wrap">
+          <a href="https://linkedin.com/in/your_profile" target="_blank" class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center hover-overlay transition-all" style="width: 45px; height: 45px;">
+            <i class="bi bi-linkedin fs-5"></i>
+          </a>
+          <a href="#" target="_blank" class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center hover-overlay transition-all" style="width: 45px; height: 45px;">
+            <i class="bi bi-twitter-x fs-5"></i>
+          </a>
+          <a href="mailto:your@email.com" class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center hover-overlay transition-all" style="width: 45px; height: 45px;">
+            <i class="bi bi-envelope-fill fs-5"></i>
+          </a>
         </div>
       </div>
-    </a>
-  </div>
-
-  <!-- Platform 3: LinkedIn -->
-  <div class="col-md-4 col-sm-6">
-    <!-- Replace with your LinkedIn URL -->
-    <a href="https://linkedin.com/in/your_profile" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
-      <div class="card bg-black border-secondary h-100 hover-overlay p-3 d-flex flex-row align-items-center transition-all">
-        <i class="bi bi-linkedin fs-3 text-primary me-3"></i>
-        <div>
-          <h6 class="text-light mb-0">LinkedIn</h6>
-          <small class="text-white-50">Professional Network</small>
-        </div>
-      </div>
-    </a>
-  </div>
-
+    </div>
   </div>
 </div>
