@@ -20,43 +20,141 @@ permalink: /
 <!-- HR-Optimized Skill Matrix -->
 <div class="py-5 border-bottom border-secondary">
   <h2 class="mb-4 text-light"><i class="bi bi-cpu-fill me-2 text-primary"></i>Technical Matrix</h2>
-  <div class="row g-4">
-    
-  <!-- AI & Logic -->
-  <div class="col-md-4">
-    <div class="p-4 border border-secondary rounded bg-dark h-100">
-      <h4 class="text-light mb-3"><i class="bi bi-braces me-2"></i>Software & AI</h4>
-      <ul class=" list-unstyled">
-        <li class="mb-2"><strong class="text-light">Languages:</strong> Python, C++, Lua [ Insert a left to right icons with expertise level for 8085, C, CPP, AutoIt, Lua, Python. Better use  tiered architecture ]</li>
-        <li class="mb-2"><strong class="text-light">AI/ML:</strong> OpenCV, Custom Neural Nets</li>
-        <li class="mb-2"><strong class="text-light">Core:</strong> Genetic Algorithms, Matrix Math</li>
-      </ul>
+  <div class="row g-4 align-items-stretch">
+    <!-- COLUMN 1: Software & AI -->
+    <div class="col-lg-4 col-md-12">
+      <div class="card bg-dark border-secondary h-100 p-4 d-flex flex-column">
+        <h5 class="text-light mb-4 border-bottom border-secondary pb-2"><i class="bi bi-braces me-2"></i>Software & AI</h5>
+        <!-- Tier 1 Languages -->
+        <div class="mb-4">
+          <small class="text-white-50 text-uppercase fw-bold d-block mb-3">Core Languages</small>
+          <div class="d-flex gap-3">
+            <div class="bg-black border border-secondary rounded p-2 text-center hover-overlay transition-all" style="width: 70px;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="35" height="35" alt="Python">
+              <div class="text-light small mt-1" style="font-size: 0.65rem;">Python</div>
+            </div>
+            <div class="bg-black border border-secondary rounded p-2 text-center hover-overlay transition-all" style="width: 70px;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" width="35" height="35" alt="C++">
+              <div class="text-light small mt-1" style="font-size: 0.65rem;">C++</div>
+            </div>
+          </div>
+        </div>
+        <!-- Tier 2 Languages -->
+        <div class="mb-4">
+          <small class="text-white-50 text-uppercase fw-bold d-block mb-2">Familiar / Legacy</small>
+          <div class="d-flex gap-2 flex-wrap">
+            <span class="badge bg-black border border-secondary text-light px-2 py-1"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" width="12" class="me-1">Lua</span>
+            <span class="badge bg-black border border-secondary text-light px-2 py-1"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" width="12" class="me-1">C</span>
+            <span class="badge bg-black border border-secondary text-light px-2 py-1"><i class="bi bi-cpu me-1"></i>8085 ASM</span>
+            <span class="badge bg-black border border-secondary text-light px-2 py-1"><i class="bi bi-window-terminal me-1"></i>AutoIt</span>
+          </div>
+        </div>
+        <!-- AI & Logic Cloud -->
+        <div class="mt-auto">
+          <small class="text-white-50 text-uppercase fw-bold d-block mb-3">Algorithms & Vision</small>
+          <!-- Logo Cloud -->
+          <div class="d-flex gap-2 mb-3 flex-wrap">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" width="30" alt="OpenCV" title="OpenCV">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" width="30" alt="PyTorch" title="PyTorch">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" width="30" alt="NumPy" title="NumPy">
+          </div>
+          <!-- High-Level Topics -->
+          <div class="d-flex gap-2 flex-wrap">
+            <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary border border-primary">Custom ANNs</span>
+            <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary border border-primary">Genetic Algorithms</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <!-- Hardware & IoT -->
-  <div class="col-md-4">
-    <div class="p-4 border border-secondary rounded bg-dark h-100">
-      <h4 class="text-light mb-3"><i class="bi bi-motherboard me-2"></i>Hardware & IoT</h4>
-      <ul class=" list-unstyled">
-        <li class="mb-2"><strong class="text-light">Embedded:</strong> OBD (Automotive), CHDK Firmware, Raspberry Pi</li>
-        <li class="mb-2"><strong class="text-light">Mechatronics:</strong> Soldering, PCB, Power tools, Wiring, Multimeter testing[ A small image]</li>
-        <li class="mb-2"><strong class="text-light">Basic Repairs:</strong>Electronic, Electrical, Automotive, Computers etc.</li>
-      </ul>
+    <!-- COLUMN 2: Hardware & IoT -->
+    <div class="col-lg-4 col-md-12">
+      <div class="card bg-dark border-secondary h-100 p-4 d-flex flex-column">
+        <h5 class="text-light mb-4 border-bottom border-secondary pb-2"><i class="bi bi-motherboard me-2"></i>Hardware & IoT</h5>
+        <!-- Mechatronics Custom Banner (21:9 Ratio) -->
+        <div class="mb-4">
+          <div class="ratio overflow-hidden rounded border border-secondary" style="--bs-aspect-ratio: 42.8%;"> <!-- 42.8% is 21:9 -->
+            <!-- Replace this src with your actual custom JPG banner -->
+            <img src="https://via.placeholder.com/800x343/000000/333333?text=Mechatronics+%7C+PCB+%7C+Soldering" class="object-fit-cover" alt="Mechatronics & PCB">
+          </div>
+          <div class="text-white-50 small mt-2 d-flex justify-content-between">
+            <span>Soldering & PCB Design</span>
+            <span>Multimeter Diagnostics</span>
+          </div>
+        </div>
+        <!-- Embedded Tech Cloud -->
+        <div class="mt-auto">
+          <small class="text-white-50 text-uppercase fw-bold d-block mb-3">Embedded Ecosystem</small>
+          <div class="d-flex gap-3 align-items-center flex-wrap">
+            <div class="bg-black border border-secondary rounded p-2 text-center hover-overlay transition-all">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg" width="35" height="35" alt="Raspberry Pi">
+            </div>
+            <!-- Custom Badges for tech without standard logos -->
+            <span class="badge bg-black border border-secondary text-light px-3 py-2 fs-6">OBD-II</span>
+            <span class="badge bg-black border border-secondary text-light px-3 py-2 fs-6">CHDK</span>
+          </div>
+          <div class="text-white-50 small mt-3">
+            <i class="bi bi-tools me-1"></i> Hardware repair spanning automotive, electrical, and raw silicon components.
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <!-- Infrastructure -->
-  <div class="col-md-4">
-    <div class="p-4 border border-secondary rounded bg-dark h-100">
-      <h4 class="text-light mb-3"><i class="bi bi-terminal-x me-2"></i>IT & Infra</h4>
-      <ul class=" list-unstyled">
-        <li class="mb-2"><strong class="text-light">OS:</strong> Linux (Ubuntu, Kali), Bare-metal [ OS icons here ]</li>
-        <li class="mb-2"><strong class="text-light">NetSec:</strong> 802.11 Auditing, SSH Tunnels</li>
-        <li class="mb-2"><strong class="text-light">Ops:</strong> Virtualization, Disaster Recovery</li>
-      </ul>
+    <!-- COLUMN 3: IT & Infra -->
+    <div class="col-lg-4 col-md-12">
+      <div class="card bg-dark border-secondary h-100 p-4 d-flex flex-column">
+        <h5 class="text-light mb-4 border-bottom border-secondary pb-2"><i class="bi bi-terminal-x me-2"></i>IT & Infra</h5>
+        <!-- OS Environments -->
+        <div class="mb-4">
+          <small class="text-white-50 text-uppercase fw-bold d-block mb-3">Operating Systems</small>
+          <div class="d-flex gap-3">
+            <div class="bg-black border border-secondary rounded p-2 text-center hover-overlay transition-all" style="width: 70px;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-plain.svg" width="35" height="35" alt="Ubuntu">
+              <div class="text-light small mt-1" style="font-size: 0.65rem;">Ubuntu</div>
+            </div>
+            <div class="bg-black border border-secondary rounded p-2 text-center hover-overlay transition-all" style="width: 70px;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" width="35" height="35" alt="Kali/Linux">
+              <div class="text-light small mt-1" style="font-size: 0.65rem;">Linux</div>
+            </div>
+            <div class="bg-black border border-secondary rounded p-2 text-center hover-overlay transition-all" style="width: 70px;">
+              <i class="bi bi-hdd-network text-light" style="font-size: 2.2rem;"></i>
+              <div class="text-light small mt-1" style="font-size: 0.65rem;">Bare-Metal</div>
+            </div>
+          </div>
+        </div>
+        <!-- Network & Sec -->
+        <div class="mt-auto">
+          <small class="text-white-50 text-uppercase fw-bold d-block mb-3">Operations & Security</small>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-3 d-flex align-items-center">
+              <div class="bg-black rounded-circle border border-secondary d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                <i class="bi bi-wifi text-success fs-5"></i>
+              </div>
+              <div>
+                <strong class="text-light d-block">802.11 Auditing</strong>
+                <small class="text-white-50">Wireless Network Security</small>
+              </div>
+            </li>
+            <li class="mb-3 d-flex align-items-center">
+              <div class="bg-black rounded-circle border border-secondary d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                <i class="bi bi-shield-lock text-primary fs-5"></i>
+              </div>
+              <div>
+                <strong class="text-light d-block">Secure Tunneling</strong>
+                <small class="text-white-50">SSH & Cryptographic Routing</small>
+              </div>
+            </li>
+            <li class="d-flex align-items-center">
+              <div class="bg-black rounded-circle border border-secondary d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                <i class="bi bi-server text-warning fs-5"></i>
+              </div>
+              <div>
+                <strong class="text-light d-block">Virtualization</strong>
+                <small class="text-white-50">Disaster Recovery Protocol</small>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
 
   </div>
 </div>
