@@ -1,78 +1,80 @@
 ---
 layout: main
-title: Systems Architecture
-permalink: /projects
+title: "Systems Architecture"
+permalink: /projects/
 ---
-
-<!-- Hero Section -->
+<!-- Systems Engine Header -->
 <div class="py-5 border-bottom border-secondary">
-  <h1 class="display-5 fw-bold text-light"><i class="bi bi-cpu-fill text-primary me-3"></i>Systems Architecture</h1>
+  <h1 class="display-5 fw-bold text-light"><i class="bi bi-journal-code text-primary me-3"></i>Systems Engine</h1>
   <p class="lead mt-3 text-white-50">
-    High-density R&D logs, algorithmic problem solving, and bare-metal hardware integrations. 
+    Core software architectures, algorithmic optimizations, and AI models. Structured for rapid technical parsing.
   </p>
 </div>
-<!-- Case Studies Grid -->
+<!-- Hacker Format Case Studies -->
 <div class="py-5">
-  <div class="row g-4">
-    <!-- Case Study 1: AI / Computer Vision -->
-    <div class="col-lg-6">
-      <div class="card bg-dark border-secondary h-100 p-4 hover-overlay transition-all">
-        <div class="d-flex justify-content-between align-items-start mb-3">
-          <h4 class="text-light fw-bold mb-0">Edge Object Detection</h4>
-          <i class="bi bi-webcam text-primary fs-3"></i>
+  <div class="row g-5">
+    <!-- Case Study 1: Real-Time AI / Computer Vision -->
+    <div class="col-12">
+      <div class="card bg-dark border-secondary">
+        <div class="card-header border-secondary bg-black p-3 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+          <h3 class="text-light mb-0 fs-4">Real-Time Object Detection Pipeline</h3>
+          <div class="d-flex gap-2 flex-wrap">
+            <span class="badge border border-secondary text-light px-3 py-2"><i class="bi bi-filetype-py me-1"></i>Python</span>
+            <span class="badge border border-secondary text-light px-3 py-2">OpenCV</span>
+            <span class="badge border border-secondary text-light px-3 py-2">TensorFlow</span>
+          </div>
         </div>
-        <div class="bg-black border border-secondary rounded p-3 mb-4 flex-grow-1">
-          <div class="mb-3">
-            <div class="text-white-50 small text-uppercase fw-bold mb-1"><i class="bi bi-exclamation-triangle text-warning me-2"></i>Problem</div>
-            <div class="text-light text-opacity-75 small">Standard detection models bottlenecked at 12 FPS on low-power IoT hardware, rendering real-time tracking unviable for embedded deployments.</div>
-          </div>
-          <div class="mb-3">
-            <div class="text-white-50 small text-uppercase fw-bold mb-1"><i class="bi bi-tools text-success me-2"></i>The Hack</div>
-            <div class="text-light text-opacity-75 small">Stripped redundant convolutional layers and leveraged hardware acceleration to force inference up to 30+ FPS while maintaining a 94% bounding box confidence threshold.</div>
-          </div>
-          <div>
-            <div class="text-white-50 small text-uppercase fw-bold mb-2"><i class="bi bi-layers text-info me-2"></i>Tech Stack</div>
-            <div class="d-flex flex-wrap gap-2">
-              <span class="badge border border-secondary text-light">Python</span>
-              <span class="badge border border-secondary text-light">OpenCV</span>
-              <span class="badge border border-secondary text-light">Neural Nets</span>
+        <div class="card-body bg-black p-4">
+          <div class="row g-4">
+            <!-- The Problem -->
+            <div class="col-md-4">
+              <h6 class="text-primary text-uppercase fw-bold mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Problem</h6>
+              <p class="text-white-50 small mb-0">Standard models failed to process high-resolution video streams at 60 FPS on edge hardware due to severe memory bottlenecks and thermal throttling.</p>
+            </div>
+            <!-- The Hack -->
+            <div class="col-md-5 border-start border-secondary">
+              <h6 class="text-success text-uppercase fw-bold mb-3"><i class="bi bi-wrench-adjustable me-2"></i>Hack</h6>
+              <p class="text-white-50 small mb-0">Implemented a custom frame-skipping algorithm paired with multi-threaded matrix operations, reducing computational load by 40% without compromising bounding box accuracy.</p>
+            </div>
+            <!-- Routing -->
+            <div class="col-md-3 border-start border-secondary d-flex flex-column justify-content-center gap-2">
+              <a href="#" target="_blank" class="btn btn-outline-light btn-sm w-100 fw-bold transition-all hover-overlay">
+                <i class="bi bi-github me-2"></i>Repository
+              </a>
+              <a href="#" target="_blank" class="btn btn-primary btn-sm w-100 fw-bold transition-all">
+                <i class="bi bi-terminal me-2"></i>Live Log
+              </a>
             </div>
           </div>
-        </div>
-        <div class="d-flex gap-2 mt-auto">
-          <a href="#" class="btn btn-outline-primary flex-grow-1 fw-bold"><i class="bi bi-github me-2"></i>Source Code</a>
-          <a href="#" class="btn btn-outline-secondary flex-grow-1 fw-bold"><i class="bi bi-journal-code me-2"></i>Read Log</a>
         </div>
       </div>
     </div>
-    <!-- Case Study 2: Embedded Systems / Firmware -->
-    <div class="col-lg-6">
-      <div class="card bg-dark border-secondary h-100 p-4 hover-overlay transition-all">
-        <div class="d-flex justify-content-between align-items-start mb-3">
-          <h4 class="text-light fw-bold mb-0">Custom CHDK Firmware</h4>
-          <i class="bi bi-motherboard text-primary fs-3"></i>
+    <!-- Case Study 2: Low-Level Architecture -->
+    <div class="col-12">
+      <div class="card bg-dark border-secondary">
+        <div class="card-header border-secondary bg-black p-3 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+          <h3 class="text-light mb-0 fs-4">Bare-Metal 8085 Assembler</h3>
+          <div class="d-flex gap-2 flex-wrap">
+            <span class="badge border border-secondary text-light px-3 py-2"><i class="bi bi-cpu me-1"></i>8085 ASM</span>
+            <span class="badge border border-secondary text-light px-3 py-2">C++</span>
+          </div>
         </div>
-        <div class="bg-black border border-secondary rounded p-3 mb-4 flex-grow-1">
-          <div class="mb-3">
-            <div class="text-white-50 small text-uppercase fw-bold mb-1"><i class="bi bi-exclamation-triangle text-warning me-2"></i>Problem</div>
-            <div class="text-light text-opacity-75 small">Stock camera OS heavily restricted raw sensor output and completely lacked automated intervalometer triggers for long-term data collection.</div>
-          </div>
-          <div class="mb-3">
-            <div class="text-white-50 small text-uppercase fw-bold mb-1"><i class="bi bi-tools text-success me-2"></i>The Hack</div>
-            <div class="text-light text-opacity-75 small">Flashed modified CHDK binaries via SD card boot partition, writing custom Lua scripts to bypass OEM constraints and unlock raw processing pipelines.</div>
-          </div>
-          <div>
-            <div class="text-white-50 small text-uppercase fw-bold mb-2"><i class="bi bi-layers text-info me-2"></i>Tech Stack</div>
-            <div class="d-flex flex-wrap gap-2">
-              <span class="badge border border-secondary text-light">C / C++</span>
-              <span class="badge border border-secondary text-light">Lua</span>
-              <span class="badge border border-secondary text-light">Hardware Interfacing</span>
+        <div class="card-body bg-black p-4">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <h6 class="text-primary text-uppercase fw-bold mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Problem</h6>
+              <p class="text-white-50 small mb-0">Existing cross-assemblers were bloated, requiring heavy dependencies that frequently broke across different Linux distributions during deployment.</p>
+            </div>
+            <div class="col-md-5 border-start border-secondary">
+              <h6 class="text-success text-uppercase fw-bold mb-3"><i class="bi bi-wrench-adjustable me-2"></i>Hack</h6>
+              <p class="text-white-50 small mb-0">Engineered a standalone, dependency-free C++ compiler that directly translates 8085 opcodes into hex binaries in a single pass.</p>
+            </div>
+            <div class="col-md-3 border-start border-secondary d-flex flex-column justify-content-center gap-2">
+              <a href="#" target="_blank" class="btn btn-outline-light btn-sm w-100 fw-bold transition-all hover-overlay">
+                <i class="bi bi-github me-2"></i>Source Code
+              </a>
             </div>
           </div>
-        </div>
-        <div class="d-flex gap-2 mt-auto">
-          <a href="#" class="btn btn-outline-primary flex-grow-1 fw-bold"><i class="bi bi-github me-2"></i>Scripts</a>
-          <a href="#" class="btn btn-outline-secondary flex-grow-1 fw-bold"><i class="bi bi-tools me-2"></i>Hardware Build</a>
         </div>
       </div>
     </div>
