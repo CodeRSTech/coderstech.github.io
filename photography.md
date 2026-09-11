@@ -20,7 +20,7 @@ permalink: /photography/
   <img src="/assets/images/purple_hills.jpeg" alt="Purple Hills">
 </a>
 
-<a href="/assets/images/winter_night.jpg" data-lightbox="gallery" data-title="Winter Nights - Long Exposure HDR">
+<a href="/assets/images/winter_night.jpg" data-lightbox="gallery" data-title="Winter Nights - Long Exposure HDR - Made from n images with exposure times ranging from 0.5s to 30s, taking with the help of custom CHDK script.">
   <img src="/assets/images/winter_night.jpg" alt="Winter">
 </a>
 
@@ -28,7 +28,7 @@ permalink: /photography/
   <img src="/assets/images/curious_chipmunk.jpg" alt="A chipmunk">
 </a>
 
-<a href="/assets/images/Urban.jpeg" data-lightbox="gallery" data-title="">
+<a href="/assets/images/Urban.jpeg" data-lightbox="gallery" data-title="Night time Urban landscape - Made from n images with exposure times ranging from 0.5s to 30s, taking with the help of custom CHDK script.">
   <img src="/assets/images/Urban.jpeg" alt="">
 </a>
 
@@ -36,7 +36,7 @@ permalink: /photography/
   <img src="/assets/images/valley.jpg" alt="">
 </a>
 
-<a href="/assets/images/himalaya.jpg" data-lightbox="gallery" data-title="">
+<a href="/assets/images/himalaya.jpg" data-lightbox="gallery" data-title="Himalayan Foothills - Single shot - 30s - CHDK">
   <img src="/assets/images/himalaya.jpg" alt="">
 </a>
 
