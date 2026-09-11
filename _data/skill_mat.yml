@@ -1,0 +1,51 @@
+software_ai:
+  core_languages:
+    - name: "Python"
+      icon: "python.svg"
+    - name: "C++"
+      icon: "cpp.svg"
+  familiar:
+    - "Lua"
+    - "C"
+    - "8085 ASM"
+    - "AutoIt"
+  algorithms:
+    icons:
+      - "opencv.svg"
+      - "pytorch.svg"
+      - "numpy.svg"
+    tags:
+      - "Custom ANNs"
+      - "Genetic Algorithms"
+
+hardware_systems:
+  teardowns:
+    title: "Teardowns & Logs"
+    subtitle: "Automotive, PCB, Power Tools"
+    button_text: "View Gallery"
+    button_url: "/gallery"
+  embedded:
+    icons:
+      - "raspberry-pi.svg"
+    tags:
+      - "OBD-II"
+      - "CHDK"
+
+it_infra:
+  operating_systems:
+    - name: "Ubuntu"
+      icon: "ubuntu.svg"
+    - name: "Linux"
+      icon: "linux.svg"
+    - name: "Bare-Metal"
+      icon: "bare-metal.svg"
+  operations:
+    - title: "802.11 Auditing"
+      description: "Wireless Network Security"
+      icon: "wifi-icon.svg"
+    - title: "Secure Tunneling"
+      description: "SSH & Cryptographic Routing"
+      icon: "shield-icon.svg"
+    - title: "Virtualization"
+      description: "Disaster Recovery Protocol"
+      icon: "server-icon.svg"
