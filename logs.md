@@ -8,6 +8,8 @@ permalink: /logs/
   <p class="text-white-50">Chronological cascade of hardware diagnostics and rebuilds.</p>
 </div>
 
+<!-- A Banner will be inserted here -->
+
 <!-- The Liquid Loop -->
 {% for post in site.posts %}
   <div class="card bg-dark border-secondary mb-4">

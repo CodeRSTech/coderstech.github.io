@@ -66,34 +66,32 @@ permalink: /
         </div>
       </div>
     </div>
-    <!-- COLUMN 2: Hardware & IoT -->
+<!-- COLUMN 2: Hardware & Teardowns -->
     <div class="col-lg-4 col-md-12">
       <div class="card bg-dark border-secondary h-100 p-4 d-flex flex-column">
-        <h5 class="text-light mb-4 border-bottom border-secondary pb-2"><i class="bi bi-motherboard me-2"></i>Hardware & IoT</h5>
-        <!-- Mechatronics Custom Banner (21:9 Ratio) -->
-        <div class="mb-4">
-          <div class="ratio overflow-hidden rounded border border-secondary" style="--bs-aspect-ratio: 42.8%;"> <!-- 42.8% is 21:9 -->
-            <!-- Replace this src with your actual custom JPG banner -->
-            <img src="https://via.placeholder.com/800x343/000000/333333?text=Mechatronics+%7C+PCB+%7C+Soldering" class="object-fit-cover" alt="Mechatronics & PCB">
+        <h5 class="text-light mb-4 border-bottom border-secondary pb-2"><i class="bi bi-tools me-2"></i>Hardware & Systems</h5>
+        <!-- Clickable Collage Banner Portal -->
+        <a href="/logs" class="text-decoration-none flex-grow-1 d-flex flex-column mb-4">
+          <div class="position-relative overflow-hidden rounded border border-secondary hover-overlay transition-all h-100" style="min-height: 200px;">
+            <!-- Replace src with your actual 16:9 collage JPG -->
+            <img src="https://via.placeholder.com/800x450/111111/333333?text=Hardware+Collage" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="Hardware Teardowns">
+            <!-- Cinematic Dark Overlay & Text -->
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-black bg-opacity-50 d-flex flex-column justify-content-center align-items-center p-3 text-center transition-all">
+              <h4 class="text-light fw-bold mb-1">Teardowns & Logs</h4>
+              <p class="text-white-50 small mb-0">Automotive, PCB, Power Tools</p>
+              <span class="btn btn-sm btn-primary mt-3 rounded-pill px-3 fw-bold">View Gallery <i class="bi bi-arrow-right ms-1"></i></span>
+            </div>
           </div>
-          <div class="text-white-50 small mt-2 d-flex justify-content-between">
-            <span>Soldering & PCB Design</span>
-            <span>Multimeter Diagnostics</span>
-          </div>
-        </div>
-        <!-- Embedded Tech Cloud -->
+        </a>
+        <!-- Embedded Micro-controllers (De-cluttered) -->
         <div class="mt-auto">
           <small class="text-white-50 text-uppercase fw-bold d-block mb-3">Embedded Ecosystem</small>
-          <div class="d-flex gap-3 align-items-center flex-wrap">
-            <div class="bg-black border border-secondary rounded p-2 text-center hover-overlay transition-all">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg" width="35" height="35" alt="Raspberry Pi">
+          <div class="d-flex gap-2 align-items-center flex-wrap">
+            <div class="bg-black border border-secondary rounded d-flex align-items-center justify-content-center hover-overlay transition-all" style="width: 42px; height: 42px;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg" width="24" height="24" alt="Raspberry Pi">
             </div>
-            <!-- Custom Badges for tech without standard logos -->
             <span class="badge bg-black border border-secondary text-light px-3 py-2 fs-6">OBD-II</span>
             <span class="badge bg-black border border-secondary text-light px-3 py-2 fs-6">CHDK</span>
-          </div>
-          <div class="text-white-50 small mt-3">
-            <i class="bi bi-tools me-1"></i> Hardware repair spanning automotive, electrical, and raw silicon components.
           </div>
         </div>
       </div>
