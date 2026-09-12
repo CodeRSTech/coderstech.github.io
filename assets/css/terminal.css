@@ -1,0 +1,38 @@
+:root {
+  /* Terminal Backgrounds */
+  --bs-body-bg: #000000;
+  --bs-dark: #0c0c0c;
+  --bs-black: #000000;
+
+  /* Typography Colors */
+  --bs-body-color: #4AF626; /* Bright terminal green */
+  --bs-light: #4AF626; /* Overrides text-light */
+
+  /* Muted Text (Overrides text-white-50) */
+  --bs-body-color-rgb: 74, 246, 38;
+
+  /* Shell Accents for Icons & Badges */
+  --bs-primary: #56B6C2; /* Cyan */
+  --bs-success: #98C379; /* Soft Green */
+  --bs-warning: #E5C07B; /* Yellow */
+  --bs-secondary: #333333; /* For subtle borders */
+
+  /* Global Font Application */
+  --bs-body-font-family: 'Fira Code', monospace;
+  --bs-font-sans-serif: 'Fira Code', monospace;
+}
+
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+/* Optional: Remove rounded corners for a blockier, raw terminal feel */
+.rounded, .rounded-pill, .rounded-circle, .card, .badge, .btn {
+  border-radius: 0 !important;
+}
+
+/* Optional: Add a subtle green glow to your cards on hover */
+.card:hover {
+  box-shadow: 0 0 10px rgba(74, 246, 38, 0.2);
+}
