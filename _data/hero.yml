@@ -1,0 +1,11 @@
+name: "Rishbh Sharma"
+tagline: "Bridging the gap between low-level hardware, embedded systems, and high-level AI algorithms. Over 8 years of intensive, self-directed R&D experience designing cross-disciplinary architectures."
+buttons:
+  - text: "Contact"
+    icon: "bi bi-envelope-fill"
+    url: "mailto:your-email@example.com"
+    style: "btn-primary"
+  - text: "GitHub"
+    icon: "bi bi-github"
+    url: "https://github.com/coderstech"
+    style: "btn-outline-light border-secondary"
