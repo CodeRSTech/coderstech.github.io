@@ -1,0 +1,67 @@
+software_ai:
+  core_languages:
+    - name: "Python"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+    - name: "C++"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+  familiar:
+    - name: "Lua"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg"
+      is_img: true
+    - name: "C"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
+      is_img: true
+    - name: "8085 ASM"
+      icon: "bi bi-cpu"
+      is_img: false
+    - name: "AutoIt"
+      icon: "bi bi-window-terminal"
+      is_img: false
+  algorithms:
+    icons:
+      - name: "OpenCV"
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg"
+      - name: "PyTorch"
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg"
+      - name: "NumPy"
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg"
+    tags:
+      - "Custom ANNs"
+      - "Genetic Algorithms"
+
+hardware_systems:
+  teardowns:
+    link: "/logs"
+    image: "https://via.placeholder.com/800x450/111111/333333?text=Hardware+Collage"
+    title: "Teardowns & Logs"
+    subtitle: "Automotive, PCB, Power Tools"
+    button_text: "View Gallery"
+  embedded:
+    icons:
+      - name: "Raspberry Pi"
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg"
+    tags:
+      - "OBD-II"
+      - "CHDK"
+
+it_infra:
+  operating_systems:
+    - name: "Ubuntu"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-plain.svg"
+      is_img: true
+    - name: "Linux"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+      is_img: true
+    - name: "Bare-Metal"
+      icon: "bi bi-hdd-network text-light"
+      is_img: false
+  operations:
+    - title: "802.11 Auditing"
+      description: "Wireless Network Security"
+      icon_class: "bi bi-wifi text-success"
+    - title: "Secure Tunneling"
+      description: "SSH & Cryptographic Routing"
+      icon_class: "bi bi-shield-lock text-primary"
+    - title: "Virtualization"
+      description: "Disaster Recovery Protocol"
+      icon_class: "bi bi-server text-warning"
