@@ -1,12 +1,12 @@
 ---
 layout: main
-title: Rishbh Sharma
+title: Rishbh
 permalink: /
 ---
 
 <!-- Hero Section: The Executive Summary -->
 <div class="py-5 border-bottom border-secondary">
-  <h1 class="display-5 fw-bold text-light">Rishbh Sharma</h1>
+  <h1 class="display-5 fw-bold text-light">Rishbh</h1>
   <p class="lead  mt-3">
     Bridging the gap between low-level hardware, embedded systems, and high-level AI algorithms. Over 8 years of intensive, self-directed R&D experience designing cross-disciplinary architectures.
   </p>

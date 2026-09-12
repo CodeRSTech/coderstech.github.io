@@ -70,6 +70,6 @@ p, small, .text-white-50 {
 
 /* The Terminal Prompt styling */
 .terminal-prompt::before {
-  content: "user@coderstech:~$ ";
+  content: "root@system:~$ ";
   color: var(--accent-cyan);
 }
