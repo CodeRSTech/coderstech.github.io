@@ -1,7 +1,7 @@
 ---
 layout: gallery
 title: "Computational Photography & Optics"
-permalink: /photography
+permalink: /photography/
 ---
 <!-- Local Asset Payload -->
 <a href="/assets/images/milky_way.jpg" data-lightbox="gallery" data-title="Milky way - Long Exposure (Nikon D7200, 18mm, 30s).">
