@@ -1,66 +1,75 @@
 :root {
-  /* Deep Black Backgrounds */
-  --bs-body-bg: #050505;
-  --bs-dark: #0a0a0a;
+  /* Core Backgrounds */
+  --bg-base: #09090b;
+  --bg-surface: #121212;
+  --border-ghost: #27272a;
 
-  /* Core Terminal Green */
-  --bs-primary: #00FF66; /* Bright Neon Green */
-  --bs-body-color: #00FF66;
+  /* Typography - Readable Defaults */
+  --text-main: #f4f4f5;
+  --text-muted: #a1a1aa;
 
-  /* Cyan & Magenta Accents */
-  --bs-info: #00FFFF; /* Pure Cyan */
-  --bs-danger: #FF00FF; /* Pure Magenta */
+  /* Cyber Accents */
+  --accent-green: #00ff66;
+  --accent-cyan: #00ffff;
+  --accent-magenta: #ff00ff;
 
-  /* Muted Elements */
-  --bs-secondary: #1a1a1a; /* Ghost Borders */
-  --bs-light: #00FF66;
-
-  /* Global Font Application */
   --bs-body-font-family: 'Fira Code', monospace;
-  --bs-font-sans-serif: 'Fira Code', monospace;
 }
 
-/* Force Dark Mode Core */
+/* Base Body Application */
 body {
-  background-color: var(--bs-body-bg) !important;
-  color: var(--bs-body-color);
+  background-color: var(--bg-base) !important;
+  color: var(--text-main) !important;
+  font-family: var(--bs-body-font-family) !important;
 }
 
-/* Hard Overrides for Utility Classes */
-.bg-dark { background-color: var(--bs-dark) !important; }
-.border-secondary { border-color: var(--bs-secondary) !important; }
-.text-light { color: var(--bs-primary) !important; }
-.text-white-50 { color: #2E9918 !important; } /* Dimmer green for reading */
+/* Card & Container Overrides */
+.bg-dark, .bg-black, .card {
+  background-color: var(--bg-surface) !important;
+  border-radius: 4px !important;
+}
 
-/* Flatten UI */
-.card, .badge, .btn, .rounded, .rounded-pill, .rounded-circle {
+/* Ghost Borders */
+.border-secondary, .border-bottom, .border, .border-top {
+  border-color: var(--border-ghost) !important;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6, .text-light {
+  color: var(--text-main) !important;
+}
+p, small, .text-white-50 {
+  color: var(--text-muted) !important;
+}
+
+/* Navbar Overrides */
+.navbar, .nav-link {
+  background-color: transparent !important;
+  color: var(--text-muted) !important;
+}
+.nav-link:hover {
+  color: var(--accent-green) !important;
+}
+
+/* Bootstrap Accent Mappings */
+.text-primary { color: var(--accent-green) !important; }
+.text-info { color: var(--accent-cyan) !important; }
+.text-danger { color: var(--accent-magenta) !important; }
+
+/* Primary Button Styling */
+.btn-primary {
+  background-color: var(--accent-green) !important;
+  border-color: var(--accent-green) !important;
+  color: #000000 !important;
+  font-weight: 600;
   border-radius: 2px !important;
 }
-
-/* Custom Buttons - Cyan */
-.btn-info {
-  background-color: var(--bs-info) !important;
-  border-color: var(--bs-info) !important;
-  color: #000000 !important;
-  font-weight: bold;
-}
-.btn-info:hover {
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+.btn-primary:hover {
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
 }
 
-/* Custom Buttons - Magenta */
-.btn-danger {
-  background-color: var(--bs-danger) !important;
-  border-color: var(--bs-danger) !important;
-  color: #000000 !important;
-  font-weight: bold;
-}
-.btn-danger:hover {
-  box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
-}
-
-/* Terminal Prompt Decorator */
+/* The Terminal Prompt styling */
 .terminal-prompt::before {
   content: "user@coderstech:~$ ";
-  color: var(--bs-info); /* Cyan prompt */
+  color: var(--accent-cyan);
 }
