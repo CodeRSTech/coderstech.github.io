@@ -1,0 +1,12 @@
+brand: "R&D LAB"
+links:
+  - title: "Main"
+    url: "/"
+  - title: "Logs"
+    url: "/logs"
+  - title: "Systems"
+    url: "/systems"
+  - title: "Hardware"
+    url: "/hardware"
+  - title: "Photography"
+    url: "/gallery"

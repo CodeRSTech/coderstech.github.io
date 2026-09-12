@@ -1,0 +1,7 @@
+sectors:
+  - title: "Systems Architecture"
+    description: "View deep-dives into real-time object detection and bare-metal AI development."
+    url: "/systems"
+  - title: "Hardware Experiments"
+    description: "View firmware modifications, physical teardowns, and IT infrastructure hacks."
+    url: "/hardware"
