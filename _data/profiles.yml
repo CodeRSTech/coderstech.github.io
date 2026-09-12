@@ -1,0 +1,54 @@
+hackerearth:
+  name: "Rishbh Sharma"
+  subtitle: "Developer • HPTU • India"
+  avatar: "https://github.com/coderstech.png" # Replace with your actual avatar URL
+  tags:
+    - "2% ALGOS"
+    - "2% BASIC"
+  stats:
+    - label: "POINTS"
+      value: "2,245"
+      icon: "bi bi-award"
+    - label: "RATINGS"
+      value: "1,108"
+      icon: "bi bi-bar-chart"
+    - label: "SOLVED"
+      value: "286"
+      icon: "bi bi-check2-circle"
+    - label: "SUBMITTED"
+      value: "1,645"
+      icon: "bi bi-code-slash"
+
+hackerrank:
+  badge: "660+ POINTS"
+  skills:
+    - name: "Problem Solving"
+      domain: "Data Structures"
+      stars: 4
+      icon: "bi bi-puzzle-fill text-primary"
+    - name: "Python"
+      domain: "Language Proficiency"
+      stars: 4
+      icon: "bi bi-filetype-py text-success"
+    - name: "30 Days of Code"
+      domain: "Consistent Execution"
+      stars: 3
+      icon: "bi bi-calendar3 text-info"
+
+platforms:
+  - name: "Stack Exchange"
+    description: "750+ Rep (Linux, Math, SO)"
+    icon: "bi bi-stack-overflow text-warning"
+    url: "#"
+  - name: "GitHub"
+    description: "R&D Repositories"
+    icon: "bi bi-github text-light"
+    url: "#"
+
+socials:
+  - icon: "bi bi-linkedin"
+    url: "#"
+  - icon: "bi bi-twitter-x"
+    url: "#"
+  - icon: "bi bi-envelope"
+    url: "mailto:test@example.com"
