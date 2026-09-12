@@ -1,38 +1,66 @@
 :root {
-  /* Terminal Backgrounds */
-  --bs-body-bg: #000000;
-  --bs-dark: #0c0c0c;
-  --bs-black: #000000;
+  /* Deep Black Backgrounds */
+  --bs-body-bg: #050505;
+  --bs-dark: #0a0a0a;
 
-  /* Typography Colors */
-  --bs-body-color: #4AF626; /* Bright terminal green */
-  --bs-light: #4AF626; /* Overrides text-light */
+  /* Core Terminal Green */
+  --bs-primary: #00FF66; /* Bright Neon Green */
+  --bs-body-color: #00FF66;
 
-  /* Muted Text (Overrides text-white-50) */
-  --bs-body-color-rgb: 74, 246, 38;
+  /* Cyan & Magenta Accents */
+  --bs-info: #00FFFF; /* Pure Cyan */
+  --bs-danger: #FF00FF; /* Pure Magenta */
 
-  /* Shell Accents for Icons & Badges */
-  --bs-primary: #56B6C2; /* Cyan */
-  --bs-success: #98C379; /* Soft Green */
-  --bs-warning: #E5C07B; /* Yellow */
-  --bs-secondary: #333333; /* For subtle borders */
+  /* Muted Elements */
+  --bs-secondary: #1a1a1a; /* Ghost Borders */
+  --bs-light: #00FF66;
 
   /* Global Font Application */
   --bs-body-font-family: 'Fira Code', monospace;
   --bs-font-sans-serif: 'Fira Code', monospace;
 }
 
+/* Force Dark Mode Core */
 body {
-  background-color: var(--bs-body-bg);
+  background-color: var(--bs-body-bg) !important;
   color: var(--bs-body-color);
 }
 
-/* Optional: Remove rounded corners for a blockier, raw terminal feel */
-.rounded, .rounded-pill, .rounded-circle, .card, .badge, .btn {
-  border-radius: 0 !important;
+/* Hard Overrides for Utility Classes */
+.bg-dark { background-color: var(--bs-dark) !important; }
+.border-secondary { border-color: var(--bs-secondary) !important; }
+.text-light { color: var(--bs-primary) !important; }
+.text-white-50 { color: #2E9918 !important; } /* Dimmer green for reading */
+
+/* Flatten UI */
+.card, .badge, .btn, .rounded, .rounded-pill, .rounded-circle {
+  border-radius: 2px !important;
 }
 
-/* Optional: Add a subtle green glow to your cards on hover */
-.card:hover {
-  box-shadow: 0 0 10px rgba(74, 246, 38, 0.2);
+/* Custom Buttons - Cyan */
+.btn-info {
+  background-color: var(--bs-info) !important;
+  border-color: var(--bs-info) !important;
+  color: #000000 !important;
+  font-weight: bold;
+}
+.btn-info:hover {
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Custom Buttons - Magenta */
+.btn-danger {
+  background-color: var(--bs-danger) !important;
+  border-color: var(--bs-danger) !important;
+  color: #000000 !important;
+  font-weight: bold;
+}
+.btn-danger:hover {
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+/* Terminal Prompt Decorator */
+.terminal-prompt::before {
+  content: "user@coderstech:~$ ";
+  color: var(--bs-info); /* Cyan prompt */
 }
