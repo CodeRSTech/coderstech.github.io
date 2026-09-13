@@ -121,7 +121,7 @@
         <small class="text-white-50 text-uppercase fw-bold mb-0">Network</small>
         <div class="d-flex gap-2">
           {% for social in site.data.profiles.socials %}
-            <a href="{{ social.url }}" class="btn border-secondary bg-black d-flex align-items-center justify-content-center transition-all" style="width: 42px; height: 42px; border-radius: 2px;">
+            <a href="{{ social.url }}" aria-label="Visit my {{ social.icon | replace: 'bi bi-', '' }}" class="btn border border-secondary...">
               <i class="{{ social.icon }} text-light fs-5"></i>
             </a>
           {% endfor %}
