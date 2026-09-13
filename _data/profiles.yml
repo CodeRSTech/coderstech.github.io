@@ -26,6 +26,8 @@ hackerearth:
       value: "1,645"
       icon: "bi bi-code-slash text-light"
   badges:
+    - name: "Global: Explorer (Lvl 3)"
+      url: "/assets/images/hackerearth_badges/global_3.png"
     - name: "C++ Language"
       url: "/assets/images/hackerearth_badges/cpp_1.png"
     - name: "Python Language"
