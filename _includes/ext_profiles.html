@@ -46,19 +46,16 @@
         </div>
 
         <!-- Badges Row -->
-        <div class="mt-auto d-flex gap-3 align-items-stretch">
+        <div class="mt-auto d-flex gap-2 align-items-stretch justify-content-between">
           {% for badge in site.data.profiles.hackerearth.badges %}
-            <div class="d-flex flex-column align-items-center text-center" style="width: 100px;">
 
-              <!-- Fixed-height image wrapper ensures text starts at the exact same vertical line -->
-              <div class="d-flex align-items-center justify-content-center mb-2" style="height: 110px; width: 100%;">
-                <img src="{{ badge.url }}" alt="{{ badge.name }}" class="img-fluid badge-img" style="max-height: 100%; width: auto; object-fit: contain;">
+            <div class="d-flex flex-column align-items-center text-center he-badge-col">
+              <div class="d-flex align-items-center justify-content-center mb-2 he-badge-wrapper">
+                <img src="{{ badge.url }}" alt="{{ badge.name }}" class="img-fluid he-badge-img">
               </div>
-
-              <!-- mt-auto pins the text to the bottom edge -->
-              <small class="text-white-50 text-uppercase fw-bold mt-auto" style="font-size: 0.6rem;">{{ badge.name }}</small>
-
+              <small class="text-white-50 text-uppercase fw-bold mt-auto he-badge-text">{{ badge.name }}</small>
             </div>
+
           {% endfor %}
         </div>
 
