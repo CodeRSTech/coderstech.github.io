@@ -1,8 +1,10 @@
 hackerearth:
+  logo:
+    name: "HackerEarth"
+    url: "https://cdn.prod.website-files.com/67767d919e878fb670aab52d/67bb7eb79b970d0e42b0f32f_Light-table-logo.svg"
   name: "Rishbh Sharma"
-  subtitle: "Freelance Developer @ Self • Bilaspur, Himachal Pradesh"
+  subtitle: "Developer • India"
   avatar: "https://uc.hackerearth.com/he-s3-ap-south-1/media/avatars/codetechrs/resized/200/e6aab18mobcovrwithoutlogo.jpg"
-  bio: "I am a dedicated freelance developer with a strong foundation in competitive coding, consistently solving complex problems and submitting innovative solutions."
   tags:
     - name: "Top 2% in Algorithms"
       color: "info" # Cyan
@@ -32,6 +34,9 @@ hackerearth:
       url: "https://your-cdn-link.com/algo-badge.png"
 
 hackerrank:
+  logo:
+    name: "HackerRank"
+    url: "https://hrcdn.net/hrc/_next/static/next_assets/brand/logo-light.svg"
   badge: "660+ POINTS"
   skills:
     - name: "Problem Solving"
