@@ -1,26 +1,35 @@
 hackerearth:
   name: "Rishbh Sharma"
-  subtitle: "Developer • HPTU • India"
-  avatar: "https://github.com/coderstech.png"
+  subtitle: "Freelance Developer @ Self • Bilaspur, Himachal Pradesh"
+  avatar: "https://uc.hackerearth.com/he-s3-ap-south-1/media/avatars/codetechrs/resized/200/e6aab18mobcovrwithoutlogo.jpg"
+  bio: "I am a dedicated freelance developer with a strong foundation in competitive coding, consistently solving complex problems and submitting innovative solutions."
   tags:
-    - "2% ALGOS"
-    - "2% BASIC"
+    - name: "Top 2% in Algorithms"
+      color: "info" # Cyan
+    - name: "Top 2% in Basic Programming"
+      color: "primary" # Green
+    - name: "Top 8% in Data Structures"
+      color: "warning" # Yellow
   stats:
     - label: "Points"
       value: "2,245"
+      icon: "bi bi-award text-light"
     - label: "Ratings"
       value: "1,108"
+      icon: "bi bi-bar-chart-fill text-light"
     - label: "Solved"
       value: "286"
-    - label: "Submit"
-      value: "1.6k"
+      icon: "bi bi-check-circle-fill text-light"
+    - label: "Submitted"
+      value: "1,645"
+      icon: "bi bi-code-slash text-light"
   badges:
     - name: "C++ Language"
-      url: "https://cdn.hackerearth.com/static/badges/language/cpp_1.png"
+      url: "https://your-cdn-link.com/cpp-badge.png"
     - name: "Python Language"
-      url: "https://cdn.hackerearth.com/static/badges/language/python_1.png"
+      url: "https://your-cdn-link.com/python-badge.png"
     - name: "Algorithms"
-      url: "https://cdn.hackerearth.com/static/badges/practice_track/algorithms_4.png"
+      url: "https://your-cdn-link.com/algo-badge.png"
 
 hackerrank:
   badge: "660+ POINTS"
