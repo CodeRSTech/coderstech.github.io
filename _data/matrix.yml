@@ -16,7 +16,7 @@ software_ai:
       is_img: false
     - name: "AutoIt"
       icon: "/assets/icons/autoit.svg"
-      is_img: false
+      is_img: true
   algorithms:
     icons:
       - name: "OpenCV"
@@ -44,9 +44,9 @@ hardware_systems:
         src: "/assets/logos/chdk.webp"
       - name: "CHDK"
         src: "/assets/icons/obd.png"
-    tags:
-      - "OBD-II"
-      - "CHDK"
+    #tags:
+    #  - "OBD-II"
+    #  - "CHDK"
 
 it_infra:
   operating_systems:
