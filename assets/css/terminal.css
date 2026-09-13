@@ -20,7 +20,7 @@
 body {
   background-color: var(--bg-base) !important;
   color: var(--text-main) !important;
-  font-family: var(--bs-body-font-family) !important;
+  font-family: var(--bs-body-font-family), serif !important;
 }
 
 /* Card & Container Overrides */
@@ -80,8 +80,8 @@ p, small, .text-white-50 {
 }
 
 .badge-img {
-  max-width: 128px;
-  width: 75%;
+  max-width: 96px;
+  width: 100%;
   height: auto;
   object-fit: contain;
 }
