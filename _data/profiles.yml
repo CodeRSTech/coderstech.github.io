@@ -27,11 +27,11 @@ tags:
       icon: "bi bi-code-slash text-light"
   badges:
     - name: "C++ Language"
-      url: "https://cdn.hackerearth.com/static/badges/language/cpp_1.png"
+      url: "/assets/images/hackerearth_badges/cpp_1.png"
     - name: "Python Language"
-      url: "https://cdn.hackerearth.com/static/badges/language/python_1.png"
+      url: "/assets/images/hackerearth_badges/python_1.png"
     - name: "Algorithms"
-      url: "https://cdn.hackerearth.com/static/badges/practice_track/algorithms_4.png"
+      url: "/assets/images/hackerearth_badges/algorithms_4.png"
 
 hackerrank:
   logo:
