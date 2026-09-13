@@ -5,13 +5,13 @@ hackerearth:
   name: "Rishbh Sharma"
   subtitle: "Developer • India"
   avatar: "https://uc.hackerearth.com/he-s3-ap-south-1/media/avatars/codetechrs/resized/200/e6aab18mobcovrwithoutlogo.jpg"
-  tags:
+tags:
     - name: "Top 2% in Algorithms"
       color: "info" # Cyan
     - name: "Top 2% in Basic Programming"
-      color: "primary" # Green
+      color: "danger" # Magenta
     - name: "Top 8% in Data Structures"
-      color: "warning" # Yellow
+      color: "primary" # Green
   stats:
     - label: "Points"
       value: "2,245"
