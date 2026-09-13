@@ -1,23 +1,26 @@
 hackerearth:
   name: "Rishbh Sharma"
   subtitle: "Developer • HPTU • India"
-  avatar: "https://uc.hackerearth.com/he-s3-ap-south-1/media/avatars/codetechrs/resized/200/e6aab18mobcovrwithoutlogo.jpg"
+  avatar: "https://github.com/coderstech.png"
   tags:
-    - "TOP 2% ALGOS"
-    - "TOP 2% BASIC"
+    - "2% ALGOS"
+    - "2% BASIC"
   stats:
-    - label: "POINTS"
+    - label: "Points"
       value: "2,245"
-      icon: "bi bi-award"
-    - label: "RATINGS"
+    - label: "Ratings"
       value: "1,108"
-      icon: "bi bi-bar-chart"
-    - label: "SOLVED"
+    - label: "Solved"
       value: "286"
-      icon: "bi bi-check2-circle"
-    - label: "SUBMITTED"
-      value: "1,645"
-      icon: "bi bi-code-slash"
+    - label: "Submit"
+      value: "1.6k"
+  badges:
+    - name: "C++ Language"
+      url: "https://cdn.hackerearth.com/static/badges/language/cpp_1.png"
+    - name: "Python Language"
+      url: "https://cdn.hackerearth.com/static/badges/language/python_1.png"
+    - name: "Algorithms"
+      url: "https://cdn.hackerearth.com/static/badges/practice_track/algorithms_4.png"
 
 hackerrank:
   badge: "660+ POINTS"

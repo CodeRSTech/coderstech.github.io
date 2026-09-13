@@ -1,5 +1,5 @@
 <div class="py-5 border-bottom border-secondary">
-  <h2 class="mb-4 text-light"><i class="bi bi-patch-check-fill me-2 text-primary"></i>Verified Profiles</h2>
+  <h2 class="mb-4 text-light terminal-prompt">Verified Profiles</h2>
 
   <div class="row g-4 align-items-stretch">
     <!-- COLUMN 1: HackerEarth -->
@@ -10,34 +10,39 @@
           <small class="text-white-50 text-uppercase fw-bold"><i class="bi bi-code-slash me-2"></i>HackerEarth</small>
           <div class="d-flex gap-2">
             {% for tag in site.data.profiles.hackerearth.tags %}
-              <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary border border-primary">{{ tag }}</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary border border-primary">{{ tag }}</span>
             {% endfor %}
           </div>
         </div>
 
         <!-- User Bio -->
         <div class="d-flex align-items-center mb-4">
-          <img src="{{ site.data.profiles.hackerearth.avatar }}" class="rounded-circle border border-secondary me-3" width="48" height="48" alt="Avatar">
+          <img src="{{ site.data.profiles.hackerearth.avatar }}" class="border border-secondary me-3" width="48" height="48" alt="Avatar">
           <div>
             <h6 class="text-light mb-0">{{ site.data.profiles.hackerearth.name }}</h6>
             <small class="text-white-50" style="font-size: 0.75rem;">{{ site.data.profiles.hackerearth.subtitle }}</small>
           </div>
         </div>
 
-        <!-- Stats Grid -->
-        <div class="row g-2">
+        <!-- Compressed Stats Grid (1x4) -->
+        <div class="row g-2 mb-4">
           {% for stat in site.data.profiles.hackerearth.stats %}
-            <div class="col-6">
-              <div class="border border-secondary rounded p-3 bg-black h-100">
-                <div class="d-flex justify-content-between align-items-start mb-1">
-                  <h5 class="text-light mb-0 fw-bold">{{ stat.value }}</h5>
-                  <i class="{{ stat.icon }} text-white-50"></i>
-                </div>
-                <small class="text-white-50 text-uppercase" style="font-size: 0.65rem;">{{ stat.label }}</small>
+            <div class="col-3">
+              <div class="border border-secondary p-2 bg-black h-100 d-flex flex-column align-items-center justify-content-center text-center">
+                <span class="text-light fw-bold" style="font-size: 0.9rem;">{{ stat.value }}</span>
+                <span class="text-white-50 text-uppercase mt-1" style="font-size: 0.55rem; letter-spacing: 0.5px;">{{ stat.label }}</span>
               </div>
             </div>
           {% endfor %}
         </div>
+
+        <!-- Badges Row -->
+        <div class="mt-auto d-flex justify-content-between align-items-center">
+          {% for badge in site.data.profiles.hackerearth.badges %}
+            <img src="{{ badge.url }}" alt="{{ badge.name }}" class="img-fluid transition-all" style="max-width: 110px; filter: drop-shadow(0 0 5px rgba(0, 255, 102, 0.2));">
+          {% endfor %}
+        </div>
+
       </div>
     </div>
 
@@ -47,13 +52,13 @@
         <!-- Header -->
         <div class="d-flex justify-content-between align-items-center border-bottom border-secondary pb-3 mb-3">
           <small class="text-white-50 text-uppercase fw-bold"><i class="bi bi-braces me-2"></i>HackerRank Fluency</small>
-          <span class="badge rounded-pill bg-success bg-opacity-10 text-success border border-success">{{ site.data.profiles.hackerrank.badge }}</span>
+          <span class="badge bg-success bg-opacity-10 text-success border border-success">{{ site.data.profiles.hackerrank.badge }}</span>
         </div>
 
         <!-- Skill List -->
         <div class="d-flex flex-column gap-2 mt-2">
           {% for skill in site.data.profiles.hackerrank.skills %}
-            <div class="border border-secondary rounded p-3 bg-black d-flex justify-content-between align-items-center">
+            <div class="border border-secondary p-3 bg-black d-flex justify-content-between align-items-center">
               <div class="d-flex align-items-center">
                 <i class="{{ skill.icon }} fs-4 me-3"></i>
                 <div>
@@ -98,7 +103,7 @@
         <small class="text-white-50 text-uppercase fw-bold d-block mb-3">Connect & Network</small>
         <div class="d-flex gap-2">
           {% for social in site.data.profiles.socials %}
-            <a href="{{ social.url }}" class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center transition-all" style="width: 45px; height: 45px;">
+            <a href="{{ social.url }}" class="btn btn-outline-secondary d-flex align-items-center justify-content-center transition-all" style="width: 45px; height: 45px; border-radius: 2px;">
               <i class="{{ social.icon }} text-light fs-5"></i>
             </a>
           {% endfor %}
