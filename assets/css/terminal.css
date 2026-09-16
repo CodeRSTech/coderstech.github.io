@@ -130,3 +130,20 @@ p, small, .text-white-50 {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-green);
 }
+/* Mobile Hamburger Menu (Navbar Toggler) */
+.navbar-toggler {
+  border-color: var(--accent-cyan) !important;
+  border-radius: 2px !important;
+  transition: all 0.3s ease;
+}
+
+/* Neon glow when tapped/opened */
+.navbar-toggler:focus, .navbar-toggler:active {
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4) !important;
+  outline: none;
+}
+
+/* Injecting a pure Cyan SVG for the 3 lines */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
