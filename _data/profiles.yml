@@ -14,26 +14,28 @@ hackerearth:
       color: "primary" # Green
   stats:
     - label: "Points"
-      value: "2,245"
+      value: "2,405"
       icon: "bi bi-award text-light"
     - label: "Ratings"
       value: "1,108"
       icon: "bi bi-bar-chart-fill text-light"
     - label: "Solved"
-      value: "286"
+      value: "297"
       icon: "bi bi-check-circle-fill text-light"
     - label: "Submitted"
-      value: "1,645"
+      value: "1,690"
       icon: "bi bi-code-slash text-light"
   badges:
-    - name: "Global: Explorer (Lvl 3)"
-      url: "/assets/images/hackerearth_badges/global_3.png"
+    - name: "Global: Elite (Lvl 4)"
+      url: "/assets/images/hackerearth_badges/global_4.png"
     - name: "C++ Language"
       url: "/assets/images/hackerearth_badges/cpp_1.png"
     - name: "Python Language"
       url: "/assets/images/hackerearth_badges/python_1.png"
     - name: "Algorithms"
       url: "/assets/images/hackerearth_badges/algorithms_4.png"
+    - name: "Basic Programming"
+      url: "/assets/images/hackerearth_badges/basic_programming_4.png"
 
 hackerrank:
   logo:
@@ -49,6 +51,10 @@ hackerrank:
       domain: "Language Proficiency"
       stars: 4
       icon: "bi bi-filetype-py text-success"
+    - name: "C++"
+      domain: "Language Proficiency"
+      stars: 3
+      icon: "bi bi-filetype-cpp text-info"
     - name: "30 Days of Code"
       domain: "Consistent Execution"
       stars: 3
