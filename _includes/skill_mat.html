@@ -113,6 +113,9 @@
             </li>
             {% endfor %}
           </ul>
+          {% for tag in site.data.matrix.hardware_systems.it_infra.tags %}
+          <span class="badge bg-black border border-secondary text-light px-3 py-2 fs-6">{{ tag }}</span>
+          {% endfor %}
         </div>
       </div>
     </div>

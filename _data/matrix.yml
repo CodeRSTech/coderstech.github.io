@@ -56,6 +56,9 @@ it_infra:
     - name: "Linux"
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
       is_img: true
+    - name: "Windows"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg"
+      is_img: true
     - name: "Bare-Metal"
       icon: "bi bi-hdd-network text-light"
       is_img: false
@@ -69,3 +72,12 @@ it_infra:
     - title: "Virtualization"
       description: "Disaster Recovery Protocol"
       icon_class: "bi bi-server text-warning"
+  tags:
+    - "CLI Commands"
+    - "Permissions & Ownership"
+    - "grep"
+    - "nano"
+    - "Package management"
+    - "Shell scripting"
+    - "OS Installation"
+    - "HDD Partitioning"
