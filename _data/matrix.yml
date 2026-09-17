@@ -43,7 +43,7 @@ hardware_systems:
       - name: "OBD-II"
         src: "/assets/logos/chdk.webp"
       - name: "CHDK"
-        src: "/assets/icons/obd.png"
+        src: "/assets/icons/obd2.png"
     #tags:
     #  - "OBD-II"
     #  - "CHDK"
