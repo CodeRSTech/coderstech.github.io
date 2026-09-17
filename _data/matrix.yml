@@ -62,7 +62,7 @@ it_infra:
     - name: "Bare-Metal"
       icon: "bi bi-hdd-network text-light"
       is_img: false
-  operations:
+  operations: # EXCLUDED
     - title: "802.11 Auditing"
       description: "Wireless Network Security"
       icon_class: "bi bi-wifi text-success"
@@ -83,6 +83,7 @@ it_infra:
     - "msconfig"
     - "taskman"
     - "apt"
+    - "ssh"
 #    - "Package management"
 #    - "CLI Commands"
 #    - "Shell scripting"
