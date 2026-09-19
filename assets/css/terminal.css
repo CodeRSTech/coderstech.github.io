@@ -153,6 +153,42 @@ p, small, .text-white-50 {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
+
+
+/* ---------------------------------------------------
+   Post Content Images
+----------------------------------------------------- */
+.post-content img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 1.5rem auto;
+}
+
+/* ---------------------------------------------------
+   Markdown Table Styling (Mobile Responsive)
+----------------------------------------------------- */
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    display: block;      /* Establishes scrolling context for mobile */
+    overflow-x: auto;    /* Enables horizontal scroll */
+    white-space: nowrap; /* Prevents column text squishing */
+}
+
+.post-content th,
+.post-content td {
+    padding: 12px 15px;
+    border: 1px solid var(--border-ghost);
+}
+
+.post-content th {
+    background-color: rgba(255, 255, 255, 0.05);
+    font-weight: bold;
+    color: var(--accent-cyan);
+}
+
 /* ---------------------------------------------------
    Code Snippet Styling (Universal for all languages)
 ----------------------------------------------------- */
@@ -189,7 +225,7 @@ div.highlighter-rouge .highlight pre {
   text-align: right;
   padding-right: 16px;
   user-select: none; /* Prevents selecting line numbers when copying */
-  border-right: 1px solid #3e4451;
+  border-right: 1px solid #3e4451 !important;
   width: 1%;
 }
 
@@ -197,40 +233,6 @@ div.highlighter-rouge .highlight pre {
 .highlighter-rouge .rouge-code {
   padding-left: 16px;
   white-space: pre;
-}
-
-/* ---------------------------------------------------
-   Post Content Images
------------------------------------------------------ */
-.post-content img {
-    max-width: 100% !important;
-    height: auto !important;
-    display: block;
-    margin: 1.5rem auto;
-}
-
-/* ---------------------------------------------------
-   Markdown Table Styling (Mobile Responsive)
------------------------------------------------------ */
-.post-content table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-    display: block;      /* Establishes scrolling context for mobile */
-    overflow-x: auto;    /* Enables horizontal scroll */
-    white-space: nowrap; /* Prevents column text squishing */
-}
-
-.post-content th,
-.post-content td {
-    padding: 12px 15px;
-    border: 1px solid var(--border-ghost);
-}
-
-.post-content th {
-    background-color: rgba(255, 255, 255, 0.05);
-    font-weight: bold;
-    color: var(--accent-cyan);
 }
 
 /* Prevent markdown table styles from ruining Rouge code blocks */
