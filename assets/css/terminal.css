@@ -44,6 +44,8 @@ body {
 /* Typography Overrides */
 h1, h2, h3, h4, h5, h6, .text-light {
   color: var(--text-main) !important;
+  padding-top: 0.4em;
+  padding-bottom: 0.2em;
 }
 p, small, .text-white-50 {
   color: var(--text-muted) !important;
@@ -146,4 +148,79 @@ p, small, .text-white-50 {
 /* Injecting a pure Cyan SVG for the 3 lines */
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Container styling */
+.language-javascript.highlighter-rouge {
+  background-color: #282c34;
+  color: #abb2bf;
+  border-radius: 8px;
+  padding: 16px;
+  font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Table layout adjustments */
+.highlighter-rouge .rouge-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+/* Line numbers column */
+.highlighter-rouge .rouge-gutter {
+  color: #4b5263;
+  text-align: right;
+  padding-right: 16px;
+  user-select: none; /* Prevents selecting line numbers when copying code */
+  border-right: 1px solid #3e4451;
+  width: 1%;
+}
+
+/* Actual code column */
+.highlighter-rouge .rouge-code {
+  padding-left: 16px;
+  white-space: pre;
+}
+
+.post-content img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 1.5rem auto;
+}
+
+/* ---------------------------------------------------
+   Markdown Table Styling
+----------------------------------------------------- */
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.post-content th,
+.post-content td {
+    padding: 12px 15px;
+    border: 1px solid #30363d;
+}
+
+.post-content th {
+    background-color: rgba(255, 255, 255, 0.05);
+    font-weight: bold;
+    color: #58a6ff; /* Matches your accent color */
+}
+
+/* Ensure the table styles don't accidentally break Pygments line numbers */
+.highlight table,
+.highlight th,
+.highlight td {
+    border: none !important;
+    background-color: transparent !important;
+}
+.highlight td {
+    padding: 0 !important;
 }
