@@ -275,35 +275,43 @@ img[src*="wikimedia.org/api/rest_v1/media/math/render/svg"] {
     filter: invert(1) brightness(1.2);
 }
 
-/* Jekyll Tabs Dark Theme Styling */
-.tabs ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 0 10px 0;
+/* ---------------------------------------------------
+   Jekyll Tabs - Raw HTML Styling
+----------------------------------------------------- */
+ul.tab {
+    list-style: none !important;
+    padding: 0 !important;
     display: flex;
-    border-bottom: 1px solid #495057; /* Bootstrap border-secondary */
+    border-bottom: 1px solid #495057; /* Matches Bootstrap border-secondary */
+    margin-bottom: 0;
 }
 
-.tabs ul li {
-    padding: 8px 16px;
-    cursor: pointer;
-    background-color: transparent;
-    color: #6c757d; /* Bootstrap text-white-50 */
+ul.tab li {
+    margin-bottom: -1px;
+}
+
+ul.tab li a {
+    display: block;
+    padding: 0.5rem 1.25rem;
+    color: #6c757d; /* Inactive text color */
+    text-decoration: none; /* Removes the blue underline */
     border-bottom: 2px solid transparent;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease;
 }
 
-.tabs ul li.active {
-    color: #f8f9fa; /* Bootstrap text-light */
-    border-bottom: 2px solid #0d6efd; /* Bootstrap primary */
+ul.tab li.active a,
+ul.tab li a:hover {
+    color: #f8f9fa; /* Active text color */
 }
 
-.tabs ul li:hover:not(.active) {
-    color: #dee2e6;
+ul.tab li.active a {
+    border-bottom: 2px solid #0d6efd; /* Bootstrap primary blue highlight */
 }
 
+/* Hide inactive code blocks */
 .tab-content {
     display: none;
+    padding-top: 1rem;
 }
 
 .tab-content.active {
