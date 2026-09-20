@@ -274,3 +274,38 @@ div.highlighter-rouge .highlight pre {
 img[src*="wikimedia.org/api/rest_v1/media/math/render/svg"] {
     filter: invert(1) brightness(1.2);
 }
+
+/* Jekyll Tabs Dark Theme Styling */
+.tabs ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+    display: flex;
+    border-bottom: 1px solid #495057; /* Bootstrap border-secondary */
+}
+
+.tabs ul li {
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #6c757d; /* Bootstrap text-white-50 */
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.tabs ul li.active {
+    color: #f8f9fa; /* Bootstrap text-light */
+    border-bottom: 2px solid #0d6efd; /* Bootstrap primary */
+}
+
+.tabs ul li:hover:not(.active) {
+    color: #dee2e6;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
