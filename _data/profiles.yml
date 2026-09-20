@@ -44,19 +44,15 @@ hackerrank:
   badge: "660+ POINTS"
   skills:
     - name: "Problem Solving"
-      domain: "Data Structures"
       stars: 4
       icon: "bi bi-puzzle-fill text-primary"
     - name: "Python"
-      domain: "Language Proficiency"
       stars: 4
       icon: "bi bi-filetype-py text-success"
     - name: "C++"
-      domain: "Language Proficiency"
       stars: 3
       icon: "bi bi-filetype-cpp text-info"
     - name: "30 Days of Code"
-      domain: "Consistent Execution"
       stars: 3
       icon: "bi bi-calendar3 text-info"
 
