@@ -168,6 +168,23 @@ p, small, .text-white-50 {
 /* ---------------------------------------------------
    Markdown Table Styling (Mobile Responsive)
 ----------------------------------------------------- */
+/* Compact Tables & Code Blocks on Mobile */
+@media (max-width: 767.98px) {
+  table, .rouge-table pre {
+    font-size: 0.8rem; /* Shrinks text specifically in tables/code */
+  }
+
+  /* Reduce cell padding */
+  table td, table th, .rouge-table td {
+    padding: 0.25rem 0.4rem !important;
+  }
+
+  /* Ensure code blocks don't force page widening */
+  .highlight pre {
+    margin-bottom: 0.5rem;
+  }
+}
+
 .post-content table {
     width: 100%;
     border-collapse: collapse;
