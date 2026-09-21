@@ -325,3 +325,8 @@ ul.tab-content > li {
 ul.tab-content > li.active {
     display: block;
 }
+
+/* Invert Image */
+.invert-svg {
+  filter: invert(1);
+}
