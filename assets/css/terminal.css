@@ -24,9 +24,9 @@ body {
 
   /* Subtle Terminal Grid & Top Glow */
   background-image:
-    radial-gradient(circle at 50% 10%, rgba(0, 255, 102, 0.08) 0%, transparent 60%),
-    linear-gradient(rgba(0, 255, 40, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 40, 0.03) 1px, transparent 1px);
+    radial-gradient(circle at 50% 60%, rgba(0, 255, 102, 0.15) 0%, transparent 60%),
+    linear-gradient(rgba(0, 255, 40, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 40, 0.08) 1px, transparent 1px);
   background-size: 100% 100%, 30px 30px, 30px 30px;
   background-attachment: fixed;
 }
