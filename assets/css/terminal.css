@@ -327,6 +327,15 @@ ul.tab-content > li.active {
 }
 
 /* Invert Image */
-.invert-svg {
+.invert-img {
   filter: invert(1);
+}
+
+/* Centers the caption and styles the text */
+.image-caption {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9em;
+  color: var(--text-muted);
+  margin-top: 4px;
 }
