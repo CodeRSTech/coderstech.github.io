@@ -54,7 +54,7 @@ p, small, .text-white-50 {
 
 /* Navbar Overrides */
 .navbar, .nav-link {
-  background-color: transparent !important;
+  background-color: #00000080 !important;
   color: var(--text-muted) !important;
 }
 .nav-link:hover {
