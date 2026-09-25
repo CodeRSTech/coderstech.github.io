@@ -279,27 +279,31 @@ p, small, .text-white-50 {
 /* --- end of Scroll-Driven Terminal Typing Effect --- */
 
 /* --- High Priority Neon Hero Title --- */
-/* --- Hardware-Accelerated High-FPS Neon Engine (Zero Text-Shadow Lag) --- */
+/* --- Ultra-Realistic Old Fluorescent Tube Neon (High-FPS Snapping Engine) --- */
 h1.display-5 {
   position: relative;
   color: #ffffff !important;
   opacity: 0.05;
-
-  /* HARDWARE ACCELERATION COMPOSITOR PROMOTION */
-  will-change: opacity, filter, transform;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
+  text-shadow: none;
 
   /*
-    Because drop-shadow() runs completely on the GPU compositor thread,
-    we can restore our aggressive 120Hz-style timing cycles without losing performance!
+    CRITICAL CHANGE: We switch the animation-timing-function to steps(1).
+    This completely disables smooth fading and forces raw, jagged electrical snaps.
   */
   animation:
-    tubeIgnite 3.5s steps(1) forwards,
-    tubeAmbient 8s 3.5s infinite steps(1);
+    tubeIgnite 5s steps(1) forwards,
+    tubeAmbient 10s 5s infinite steps(1);
+
+  will-change: opacity, filter;
+  transform: translate3d(0, 0, 0); /* Forces GPU layer promotion */
+  backface-visibility: hidden;     /* Prevents accidental texture flickering */
+}
 }
 
-/* FILAMENT GLOW ENGINE (GPU Layer Promoted) */
+/*
+  FILAMENT GLOW ENGINE (Dual Pseudo-Elements)
+  Clean, localized amber hot-spots sitting exactly at the far margins.
+*/
 h1.display-5::before,
 h1.display-5::after {
   content: "";
@@ -310,14 +314,14 @@ h1.display-5::after {
   border-radius: 50%;
   pointer-events: none;
   opacity: 0;
-  will-change: opacity;
 
   background: #ffcc00;
   box-shadow:
-    0 0 5px #ff5500,
-    0 0 15px rgba(255, 51, 0, 0.8);
+    0 0 6px #ff5500,
+    0 0 15px #ff3300,
+    0 0 25px rgba(255, 85, 0, 0.8);
 
-  animation: filamentGlow 3.5s steps(1) forwards;
+  animation: filamentGlow 5s steps(1) forwards;
 }
 
 h1.display-5::before { left: -18px; }
@@ -325,114 +329,92 @@ h1.display-5::after { right: -18px; }
 
 
 /* =========================================================
-   PHASE 1: CHAOTIC HIGH-SPEED IGNITION (GPU Filter Engine)
+   PHASE 1: CHAOTIC HIGH-SPEED IGNITION (5.0s Stretched)
    ========================================================= */
 @keyframes tubeIgnite {
-  /* 0s to 1.0s: Thermal Preheat Phase */
-  0%, 30% { opacity: 0.05; filter: none; }
+  /* 0s to 1.5s: Dead preheating phase. Gas is dark, filaments are baking. */
+  0%, 30% { opacity: 0.05; text-shadow: none; }
 
-  /* Striking Phase: Sharp, instantaneous hardware snaps */
-  32%   { opacity: 0.8; filter: drop-shadow(0 0 4px #fff) drop-shadow(0 0 12px var(--accent-cyan)); }
-  33%   { opacity: 0.05; filter: none; }
+  /* 1.5s to 3.8s: The Striking Phase.
+     Violent, instant pixel snaps with chaotic durations. */
+  32%   { opacity: 0.8; text-shadow: 0 0 8px #fff, 0 0 16px var(--accent-cyan); }
+  32.4% { opacity: 0.05; text-shadow: none; } /* Sharp drop to black */
 
-  45%   { opacity: 0.6; filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 8px var(--accent-cyan)); }
-  46.5% { opacity: 0.05; filter: none; }
+  40%   { opacity: 0.6; text-shadow: 0 0 6px #fff, 0 0 12px var(--accent-cyan); }
+  41.2% { opacity: 0.05; text-shadow: none; }
 
-  58%   { opacity: 0.9; filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 15px var(--accent-cyan)); }
-  59%   { opacity: 0.1; filter: drop-shadow(0 0 3px var(--accent-cyan)); }
-  60.5% { opacity: 0.05; filter: none; }
+  /* Machine-gun sputter cluster */
+  55%   { opacity: 0.9; text-shadow: 0 0 10px #fff, 0 0 20px var(--accent-cyan); }
+  55.6% { opacity: 0.1; text-shadow: 0 0 4px var(--accent-cyan); }
+  56.2% { opacity: 0.7; text-shadow: 0 0 8px #fff, 0 0 15px var(--accent-cyan); }
+  56.8% { opacity: 0.05; text-shadow: none; }
 
-  72%   { opacity: 0.95; filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 18px var(--accent-cyan)); }
-  73.5% { opacity: 0.05; filter: none; }
+  68%   { opacity: 0.95; text-shadow: 0 0 12px #fff, 0 0 25px var(--accent-cyan); }
+  69.4% { opacity: 0.2; text-shadow: 0 0 4px var(--accent-cyan); }
+  70.2% { opacity: 0.05; text-shadow: none; }
 
-  /* Ignite Overshoot Surge */
+  /* Final gas struggle before catch */
+  76%   { opacity: 0.7; text-shadow: 0 0 10px var(--accent-cyan); }
+  76.6% { opacity: 0.05; text-shadow: none; }
+
+  /* 3.8s to 4.2s: The Arc Catches - Massive Luminescent Overshoot */
   84% {
     opacity: 1.35;
-    filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 18px var(--accent-cyan)) drop-shadow(0 0 35px var(--accent-cyan));
+    text-shadow:
+      0 0 6px #ffffff, 0 0 15px #ffffff,
+      0 0 30px var(--accent-cyan), 0 0 60px var(--accent-cyan), 0 0 100px var(--accent-cyan);
   }
 
-  /* Ready State Baseline */
+  /* 4.2s to 5.0s: Sinking into base running parameters */
   100% {
     opacity: 1;
-    filter: drop-shadow(0 0 3px #ffffff) drop-shadow(0 0 10px var(--accent-cyan)) drop-shadow(0 0 25px var(--accent-cyan));
+    text-shadow:
+      0 0 4px #ffffff, 0 0 10px #ffffff,
+      0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan), 0 0 80px var(--accent-cyan);
   }
 }
 
 
 /* =========================================================
-   PHASE 2: TUNGSTEN CATHODE GLOW (Unchanged)
+   PHASE 2: TUNGSTEN CATHODE GLOW (Thermal Engine)
    ========================================================= */
 @keyframes filamentGlow {
+  /* 0s to 1.5s: Current passes through filaments. They snap on instantly and glow bright hot. */
   0% { opacity: 0; }
   2%, 30% { opacity: 0.95; }
+
+  /* 1.5s to 3.8s: Filaments dynamically lose power when main gas arcs draw the current path away */
   32%   { opacity: 0.2; }
-  33%   { opacity: 0.95; }
-  45%   { opacity: 0.3; }
-  46.5% { opacity: 0.95; }
-  58%   { opacity: 0.1; }
-  60.5% { opacity: 0.95; }
-  72%   { opacity: 0.1; }
-  73.5% { opacity: 0.95; }
+  32.4% { opacity: 0.95; }
+  40%   { opacity: 0.3; }
+  41.2% { opacity: 0.95; }
+  55%   { opacity: 0.1; }
+  56.8% { opacity: 0.95; }
+  68%   { opacity: 0.1; }
+  70.2% { opacity: 0.95; }
+
+  /* 3.8s+: Tube is ionized. Circuit disconnects filaments permanently. */
   84%, 100% { opacity: 0; }
 }
 
 
 /* =========================================================
-   PHASE 3: TRUE HARDWARE-ACCELERATED 120Hz PLASMA HUM
-   By removing text-shadow entirely from this loop, your GPU handles
-   the transitions directly inside the hardware compositor.
+   PHASE 3: 120Hz PLASMA HUM & MACRO-BUZZ MATRIX
+   Overlapping high-frequency step loop
    ========================================================= */
+/* High-performance alternative inside your keyframe steps: */
 @keyframes tubeAmbient {
-  /* Stable High-Frequency Plasma Humming */
-  0%, 4%, 8%, 12%, 16%, 20%, 24%, 28%, 32%, 36%, 40% {
+  0%, 4%, 8% {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
-    filter: drop-shadow(0 0 3px #ffffff) drop-shadow(0 0 10px var(--accent-cyan)) drop-shadow(0 0 25px var(--accent-cyan));
+    filter: drop-shadow(0 0 4px #fff) drop-shadow(0 0 15px var(--accent-cyan));
   }
-  1%, 5%, 9%, 13%, 17%, 21%, 25%, 29%, 33%, 37% {
+  2%, 6%, 10% {
     opacity: 0.96;
-    transform: translate3d(-0.5px, 0.5px, 0); /* Mechanical Jitter */
-    filter: drop-shadow(0 0 2px #ffffff) drop-shadow(0 0 8px var(--accent-cyan)) drop-shadow(0 0 20px var(--accent-cyan));
+    /* To mimic spatial jitter efficiently without redrawing text paths,
+       just nudge the GPU element matrix instead of shifting shadow text offsets! */
+    transform: translate3d(-0.5px, 0.5px, 0);
+    filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 12px var(--accent-cyan));
   }
-  2%, 6%, 10%, 14%, 18%, 22%, 26%, 30%, 34%, 38% {
-    opacity: 0.98;
-    transform: translate3d(0.5px, -0.5px, 0);
-    filter: drop-shadow(0 0 3px #ffffff) drop-shadow(0 0 11px var(--accent-cyan)) drop-shadow(0 0 28px var(--accent-cyan));
-  }
-  3%, 7%, 11%, 15%, 19%, 23%, 27%, 31%, 35%, 39% {
-    opacity: 0.95;
-    transform: translate3d(-0.5px, -0.5px, 0);
-    filter: drop-shadow(0 0 2px #ffffff) drop-shadow(0 0 9px var(--accent-cyan)) drop-shadow(0 0 22px var(--accent-cyan));
-  }
-
-  /* 40% to 45%: High-Voltage Drop (Macro-Buzz) */
-  40.1% { opacity: 0.60; transform: translate3d(0,0,0); filter: drop-shadow(0 0 2px #ffffff) drop-shadow(0 0 6px var(--accent-cyan)); }
-  41.5% { opacity: 0.95; filter: drop-shadow(0 0 3px #ffffff) drop-shadow(0 0 12px var(--accent-cyan)) drop-shadow(0 0 25px var(--accent-cyan)); }
-  42.8% { opacity: 0.40; filter: none; } /* Complete electric drop out */
-  44.2% { opacity: 0.90; filter: drop-shadow(0 0 3px #ffffff) drop-shadow(0 0 10px var(--accent-cyan)); }
-
-  /* 45% to 82%: Resume High-Frequency Hum Track */
-  45%, 49%, 53%, 57%, 61%, 65%, 69%, 73%, 77%, 81%, 82% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    filter: drop-shadow(0 0 3px #ffffff) drop-shadow(0 0 10px var(--accent-cyan)) drop-shadow(0 0 25px var(--accent-cyan));
-  }
-  46%, 50%, 54%, 58%, 62%, 66%, 70%, 74%, 78% { opacity: 0.96; transform: translate3d(-0.5px, 0.5px, 0); }
-  47%, 51%, 55%, 59%, 63%, 67%, 71%, 75%, 79% { opacity: 0.98; transform: translate3d(0.5px, -0.5px, 0); }
-  48%, 52%, 56%, 60%, 64%, 68%, 72%, 76%, 80% { opacity: 0.95; transform: translate3d(-0.5px, -0.5px, 0); }
-
-  /* 82% to 85%: Quick Secondary Macro-Buzz */
-  82.1% { opacity: 0.55; filter: drop-shadow(0 0 2px #ffffff); }
-  83.5% { opacity: 0.92; filter: drop-shadow(0 0 3px #ffffff) drop-shadow(0 0 10px var(--accent-cyan)); }
-  84.5% { opacity: 0.40; filter: none; }
-
-  /* 85% to 100%: Final Hum track until loop resets */
-  85%, 89%, 93%, 97%, 100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    filter: drop-shadow(0 0 3px #ffffff) drop-shadow(0 0 10px var(--accent-cyan)) drop-shadow(0 0 25px var(--accent-cyan));
-  }
-  86%, 90%, 94%, 98% { opacity: 0.96; transform: translate3d(-0.5px, 0.5px, 0); }
-  87%, 91%, 95%, 99% { opacity: 0.98; transform: translate3d(0.5px, -0.5px, 0); }
 }
+
 /* END OF NEON TITLE */
