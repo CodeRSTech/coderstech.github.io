@@ -402,59 +402,19 @@ h1.display-5::after { right: -18px; }
    PHASE 3: 120Hz PLASMA HUM & MACRO-BUZZ MATRIX
    Overlapping high-frequency step loop
    ========================================================= */
+/* High-performance alternative inside your keyframe steps: */
 @keyframes tubeAmbient {
-  /* 0% to 40%: The Core 120Hz Plasma Hum.
-     We constantly skip shadow positions and densities by 1% intervals */
-  0%, 4%, 8%, 12%, 16%, 20%, 24%, 28%, 32%, 36%, 40% {
+  0%, 4%, 8% {
     opacity: 1;
-    text-shadow:
-      0 0 4px #ffffff, 0 0 10px #ffffff,
-      0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan), 0 0 80px var(--accent-cyan);
+    filter: drop-shadow(0 0 4px #fff) drop-shadow(0 0 15px var(--accent-cyan));
   }
-  1%, 5%, 9%, 13%, 17%, 21%, 25%, 29%, 33%, 37% {
+  2%, 6%, 10% {
     opacity: 0.96;
-    text-shadow:
-      -1px 1px 4px #ffffff, 0 0 8px #ffffff,
-      1px -1px 18px var(--accent-cyan), 0 0 36px var(--accent-cyan), -2px 0 70px var(--accent-cyan);
+    /* To mimic spatial jitter efficiently without redrawing text paths,
+       just nudge the GPU element matrix instead of shifting shadow text offsets! */
+    transform: translate3d(-0.5px, 0.5px, 0);
+    filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 12px var(--accent-cyan));
   }
-  2%, 6%, 10%, 14%, 18%, 22%, 26%, 30%, 34%, 38% {
-    opacity: 0.98;
-    text-shadow:
-      0 0 4px #ffffff, 0 0 11px #ffffff,
-      0 0 22px var(--accent-cyan), 0 0 44px var(--accent-cyan), 0 0 85px var(--accent-cyan);
-  }
-  3%, 7%, 11%, 15%, 19%, 23%, 27%, 31%, 35%, 39% {
-    opacity: 0.95;
-    text-shadow:
-      1px -1px 4px #ffffff, 0 0 9px #ffffff,
-      -1px 1px 19px var(--accent-cyan), 0 0 38px var(--accent-cyan), 2px 0 75px var(--accent-cyan);
-  }
-
-  /* 40% to 45%: High-Voltage Voltage Drop (Heavy Macro-Buzz) */
-  40.1% { opacity: 0.65; text-shadow: 0 0 4px #ffffff, 0 0 8px var(--accent-cyan); }
-  40.8% { opacity: 0.95; text-shadow: 0 0 4px #ffffff, 0 0 12px #ffffff, 0 0 24px var(--accent-cyan), 0 0 50px var(--accent-cyan); }
-  41.5% { opacity: 0.50; text-shadow: none; } /* Severe micro-drop */
-  42.2% { opacity: 0.98; text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan), 0 0 80px var(--accent-cyan); }
-  42.9% { opacity: 0.60; text-shadow: 0 0 4px #ffffff, 0 0 8px var(--accent-cyan); }
-  43.6% { opacity: 0.90; text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 45px var(--accent-cyan), 0 0 65px var(--accent-cyan); }
-
-  /* 45% to 82%: Resume 120Hz Plasma Hum */
-  45%, 49%, 53%, 57%, 61%, 65%, 69%, 73%, 77%, 81%, 82% { opacity: 1; text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan), 0 0 80px var(--accent-cyan); }
-  46%, 50%, 54%, 58%, 62%, 66%, 70%, 74%, 78% { opacity: 0.96; text-shadow: -1px 1px 4px #ffffff, 0 0 8px var(--accent-cyan), 1px -1px 18px var(--accent-cyan); }
-  47%, 51%, 55%, 59%, 63%, 67%, 71%, 75%, 79% { opacity: 0.98; }
-  48%, 52%, 56%, 60%, 64%, 68%, 72%, 76%, 80% { opacity: 0.95; text-shadow: 1px -1px 4px #ffffff, 0 0 9px var(--accent-cyan), -1px 1px 19px var(--accent-cyan); }
-
-  /* 82% to 85%: Quick Secondary Macro-Buzz */
-  82.1% { opacity: 0.55; text-shadow: 0 0 4px #ffffff; }
-  82.8% { opacity: 0.94; text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 50px var(--accent-cyan); }
-  83.5% { opacity: 0.40; text-shadow: none; }
-  84.2% { opacity: 0.88; text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan); }
-
-  /* 85% to 100%: Final High-Frequency Hum track until loop resets */
-  85%, 89%, 93%, 97%, 100% { opacity: 1; text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan), 0 0 80px var(--accent-cyan); }
-  86%, 90%, 94%, 98% { opacity: 0.96; }
-  87%, 91%, 95%, 99% { opacity: 0.98; }
-  88%, 92%, 96% { opacity: 0.95; }
 }
 
 /* END OF NEON TITLE */
