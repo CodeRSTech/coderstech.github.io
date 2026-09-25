@@ -232,3 +232,48 @@ p, small, .text-white-50 {
   transition: color 0.3s ease;
 }
 /* end of interactive cards */
+
+/* --- Scroll-Driven Terminal Typing Effect --- */
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+
+  /* The blinking terminal block cursor */
+  border-right: 12px solid var(--accent-green);
+
+  /* Fallback animation for older browsers (runs once on load with 1s delay) */
+  width: 0;
+  animation:
+    typeCommand 1.5s steps(22, end) 1s forwards,
+    blinkCursor 0.8s step-end infinite;
+}
+
+@keyframes typeCommand {
+  from { width: 0; }
+  /* 22ch matches exactly 22 characters in "./view_tech_matrix.sh" */
+  to { width: 22ch; }
+}
+
+@keyframes blinkCursor {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--accent-green); }
+}
+
+/* Modern CSS: Binds the typing directly to the user's scroll position */
+@supports (animation-timeline: view()) {
+  .typewriter {
+    /* We reset the width and let the scroll position control the keyframes */
+    width: auto;
+    animation:
+      typeCommand steps(22, end) both,
+      blinkCursor 0.8s step-end infinite;
+
+    /* Triggers when the element enters the viewport, finishes typing when 30% up the screen */
+    animation-timeline: view(block);
+    animation-range: entry 10% cover 30%;
+  }
+}
+/* --- end of Scroll-Driven Terminal Typing Effect --- */
