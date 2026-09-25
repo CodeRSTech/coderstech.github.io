@@ -279,7 +279,7 @@ p, small, .text-white-50 {
 /* --- end of Scroll-Driven Terminal Typing Effect --- */
 
 /* --- High Priority Neon Hero Title --- */
-/* --- Max Brightness, Integrated Filament, Overshoot Engine --- */
+/* --- Max Brightness, Character-Mapped Filament, Overshoot Engine --- */
 h1.display-5 {
   position: relative;
   color: #ffffff !important;
@@ -297,43 +297,52 @@ h1.display-5 {
 
   filter: drop-shadow(0 0 15px var(--accent-cyan)) drop-shadow(0 0 30px var(--accent-cyan));
 
-  /*
-    tubeIgnite: steps(1) for raw mechanical snaps.
-    tubeAmbient: ease-in-out for the smooth, casual breathing flicker.
-  */
   animation:
     tubeIgnite 4.5s steps(1) forwards,
     tubeAmbient 7s 4.5s infinite ease-in-out;
 }
 
 /*
-  FILAMENT GLOW ENGINE
-  Changed from flat "underscores" to volumetric heat clouds
-  capping the left and right margins of the text.
+  FILAMENT GLOW ENGINE (Typography Cloned)
+  Creates a pixel-perfect overlay colored by a 90deg gradient.
 */
-h1.display-5::before,
-h1.display-5::after {
-  content: "";
+h1.display-5::before {
+  content: attr(data-text);
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 45px;
-  height: 70px;
-  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
+
+  /*
+    Maps exactly to your character spacing:
+    0-8% (First char), 8-15% (Second char, fading out)
+    85-92% (Second to last char, fading in), 92-100% (Last char)
+  */
+  background: linear-gradient(
+    90deg,
+    #ff5500 0%,
+    #ff5500 8%,
+    rgba(255, 85, 0, 0.15) 15%,
+    transparent 22%,
+    transparent 78%,
+    rgba(255, 85, 0, 0.15) 85%,
+    #ff5500 92%,
+    #ff5500 100%
+  );
+
+  /* Clips the orange gradient exclusively to the shape of the text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* A localized, static orange glow for the heating elements */
+  filter: drop-shadow(0 0 8px rgba(255, 85, 0, 0.8)) drop-shadow(0 0 15px rgba(255, 85, 0, 0.5));
+
   opacity: 0;
-
-  /* Pure volumetric tungsten heat */
-  background: radial-gradient(ellipse at center, rgba(255, 204, 0, 0.5) 0%, rgba(255, 85, 0, 0.2) 50%, transparent 70%);
-  box-shadow: 0 0 25px rgba(255, 85, 0, 0.6);
-  mix-blend-mode: color-dodge;
-
+  will-change: opacity;
   animation: filamentGlow 4.5s steps(1) forwards;
 }
-
-/* Positioned to overlap the first and last characters */
-h1.display-5::before { left: -15px; }
-h1.display-5::after { right: -15px; }
 
 
 /* =========================================================
@@ -362,7 +371,7 @@ h1.display-5::after { right: -15px; }
 
 
 /* =========================================================
-   PHASE 2: TUNGSTEN CATHODE GLOW
+   PHASE 2: TUNGSTEN CATHODE GLOW (Targeted Letters)
    ========================================================= */
 @keyframes filamentGlow {
   0%  { opacity: 0; }
@@ -379,7 +388,6 @@ h1.display-5::after { right: -15px; }
 
 /* =========================================================
    PHASE 3: AMBIENT FLICKER (7.0s Loop)
-   Smooth, gradual opacity waves below the 0.92 baseline.
    ========================================================= */
 @keyframes tubeAmbient {
   0%, 100% { opacity: 0.92; }
