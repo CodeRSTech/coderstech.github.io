@@ -293,6 +293,11 @@ h1.display-5 {
   animation:
     tubeIgnite 5s steps(1) forwards,
     tubeAmbient 10s 5s infinite steps(1);
+
+  will-change: opacity, filter;
+  transform: translate3d(0, 0, 0); /* Forces GPU layer promotion */
+  backface-visibility: hidden;     /* Prevents accidental texture flickering */
+}
 }
 
 /*
