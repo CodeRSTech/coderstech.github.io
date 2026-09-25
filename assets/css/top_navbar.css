@@ -1,5 +1,8 @@
 /* Navbar Overrides */
 .navbar {
+  /* Allow the parent navbar to expand dynamically */
+  min-height: 4.5rem;
+  height: auto !important;
   /* Frosted Glass Base */
   background-color: rgba(9, 9, 11, 0.65) !important;
   backdrop-filter: blur(12px);
@@ -8,7 +11,6 @@
   position: sticky; /* Keeps it locked to the top */
   top: 0;
   z-index: 1050;
-  height: 4.5rem;
 
   /* Add a subtle glowing bottom border instead of a flat grey one */
   border-bottom: 1px solid rgba(0, 255, 102, 0.2) !important;
@@ -60,25 +62,35 @@
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
-/* Mobile Hamburger Menu Dropdown Fix */
+/* Mobile Hamburger Menu Dropdown */
+/* Seamless Unified Menu & Right-Aligned Text*/
 @media (max-width: 991.98px) {
+  /* Strip away any separate background so it merges with the parent navbar */
   .navbar-collapse {
-    background-color: rgba(9, 9, 11, 0.85); /* Solidifies the dark background */
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: transparent !important;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
 
-    /* Structural spacing */
     margin-top: 1rem;
-    padding: 1rem 1.5rem;
-    border-radius: 6px;
-
-    /* Glowing border matching the navbar */
-    border: 1px solid rgba(0, 255, 102, 0.2);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    padding-bottom: 1rem;
   }
 
-  /* Space out the stacked links for touch targets */
+  /* Force links to the right */
+  .navbar-nav {
+    text-align: right;
+    align-items: flex-end; /* Ensures flex container pushes children right */
+    width: 100%;
+  }
+
+  /* Space out touch targets for mobile */
   .navbar-nav .nav-item {
     margin-bottom: 0.75rem;
+  }
+
+  /* Adjust the hover underline to originate from the right side */
+  .nav-link::after {
+    left: auto;
+    right: 0;
   }
 }
