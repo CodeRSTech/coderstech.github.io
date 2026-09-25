@@ -298,7 +298,6 @@ h1.display-5 {
   transform: translate3d(0, 0, 0); /* Forces GPU layer promotion */
   backface-visibility: hidden;     /* Prevents accidental texture flickering */
 }
-}
 
 /*
   FILAMENT GLOW ENGINE (Dual Pseudo-Elements)
