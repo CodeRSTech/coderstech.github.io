@@ -279,7 +279,7 @@ p, small, .text-white-50 {
 /* --- end of Scroll-Driven Terminal Typing Effect --- */
 
 /* --- High Priority Neon Hero Title --- */
-/* --- Maximum Brightness / Zero-Lag Engine --- */
+/* --- Max Brightness, Integrated Filament, Overshoot Engine --- */
 h1.display-5 {
   position: relative;
   color: #ffffff !important;
@@ -287,11 +287,7 @@ h1.display-5 {
 
   transform: translateZ(0);
 
-  /*
-    RESTORED EXPLOSION:
-    We stack both the text-shadow and the drop-shadow here statically.
-    Calculated once, giving you the massive bloom without the CPU hit.
-  */
+  /* Massive static bloom. Calculated once. */
   text-shadow:
     0 0 4px #ffffff,
     0 0 10px #ffffff,
@@ -301,57 +297,67 @@ h1.display-5 {
 
   filter: drop-shadow(0 0 15px var(--accent-cyan)) drop-shadow(0 0 30px var(--accent-cyan));
 
-  /* Ignition sequence runs once, then the GPU idles */
-  animation: tubeIgnite 4s steps(1) forwards;
+  /*
+    tubeIgnite: steps(1) for raw mechanical snaps.
+    tubeAmbient: ease-in-out for the smooth, casual breathing flicker.
+  */
+  animation:
+    tubeIgnite 4.5s steps(1) forwards,
+    tubeAmbient 7s 4.5s infinite ease-in-out;
 }
 
-/* FILAMENT GLOW ENGINE */
+/*
+  FILAMENT GLOW ENGINE
+  Changed from flat "underscores" to volumetric heat clouds
+  capping the left and right margins of the text.
+*/
 h1.display-5::before,
 h1.display-5::after {
   content: "";
   position: absolute;
-  bottom: 15%;
-  width: 14px;
-  height: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 70px;
   border-radius: 50%;
   pointer-events: none;
   opacity: 0;
 
-  background: #ffcc00;
-  box-shadow:
-    0 0 6px #ff5500,
-    0 0 15px #ff3300,
-    0 0 25px rgba(255, 85, 0, 0.8);
+  /* Pure volumetric tungsten heat */
+  background: radial-gradient(ellipse at center, rgba(255, 204, 0, 0.5) 0%, rgba(255, 85, 0, 0.2) 50%, transparent 70%);
+  box-shadow: 0 0 25px rgba(255, 85, 0, 0.6);
+  mix-blend-mode: color-dodge;
 
-  animation: filamentGlow 4s steps(1) forwards;
+  animation: filamentGlow 4.5s steps(1) forwards;
 }
 
-h1.display-5::before { left: -18px; }
-h1.display-5::after { right: -18px; }
+/* Positioned to overlap the first and last characters */
+h1.display-5::before { left: -15px; }
+h1.display-5::after { right: -15px; }
 
 
 /* =========================================================
-   PHASE 1: CHAOTIC IGNITION (4.0s)
+   PHASE 1: CHAOTIC IGNITION & OVERSHOOT (4.5s)
    ========================================================= */
 @keyframes tubeIgnite {
   0%, 25% { opacity: 0.05; }
 
-  /* Strike 1 */
   27% { opacity: 0.80; }
   29% { opacity: 0.05; }
 
-  /* Strike 2 */
   42% { opacity: 0.60; }
   44% { opacity: 0.05; }
 
-  /* Strike 3 (Cluster) */
   60% { opacity: 0.90; }
   62% { opacity: 0.10; }
   72% { opacity: 0.95; }
   75% { opacity: 0.05; }
 
-  /* Catch - Explodes into high brightness */
-  85%, 100% { opacity: 1.00; }
+  /* 84%: The Catch & Super Glow Overshoot (100% Brightness) */
+  84% { opacity: 1.00; }
+
+  /* 92%: Settles into running baseline (92% Brightness) */
+  92%, 100% { opacity: 0.92; }
 }
 
 
@@ -360,34 +366,27 @@ h1.display-5::after { right: -18px; }
    ========================================================= */
 @keyframes filamentGlow {
   0%  { opacity: 0; }
-  5%  { opacity: 0.95; }
+  5%  { opacity: 1.00; }
   27% { opacity: 0.20; }
-  29% { opacity: 0.95; }
+  29% { opacity: 1.00; }
   42% { opacity: 0.30; }
-  44% { opacity: 0.95; }
+  44% { opacity: 1.00; }
   60% { opacity: 0.10; }
-  62% { opacity: 0.95; }
-  85%, 100% { opacity: 0; }
+  62% { opacity: 1.00; }
+  84%, 100% { opacity: 0; }
 }
 
 
 /* =========================================================
-   PHASE 3: 120Hz PLASMA HUM & MACRO-BUZZ MATRIX
-   Overlapping high-frequency step loop
+   PHASE 3: AMBIENT FLICKER (7.0s Loop)
+   Smooth, gradual opacity waves below the 0.92 baseline.
    ========================================================= */
-/* High-performance alternative inside your keyframe steps: */
 @keyframes tubeAmbient {
-  0%, 4%, 8% {
-    opacity: 1;
-    filter: drop-shadow(0 0 4px #fff) drop-shadow(0 0 15px var(--accent-cyan));
-  }
-  2%, 6%, 10% {
-    opacity: 0.96;
-    /* To mimic spatial jitter efficiently without redrawing text paths,
-       just nudge the GPU element matrix instead of shifting shadow text offsets! */
-    transform: translate3d(-0.5px, 0.5px, 0);
-    filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 12px var(--accent-cyan));
-  }
+  0%, 100% { opacity: 0.92; }
+  15%      { opacity: 0.88; }
+  35%      { opacity: 0.94; }
+  55%      { opacity: 0.85; }
+  75%      { opacity: 0.90; }
+  88%      { opacity: 0.93; }
 }
-
 /* END OF NEON TITLE */
