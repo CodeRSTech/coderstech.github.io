@@ -278,123 +278,69 @@ p, small, .text-white-50 {
 }
 /* --- end of Scroll-Driven Terminal Typing Effect --- */
 
-/* --- High Priority Neon Hero Title --- */
-/* --- Max Brightness, Character-Mapped Filament, Overshoot Engine --- */
-h1.display-5 {
-  position: relative;
-  color: #ffffff !important;
-  opacity: 0.05;
-
-  transform: translateZ(0);
-
-  /* Massive static bloom. Calculated once. */
-  text-shadow:
-    0 0 4px #ffffff,
-    0 0 10px #ffffff,
-    0 0 20px var(--accent-cyan),
-    0 0 40px var(--accent-cyan),
-    0 0 80px var(--accent-cyan);
-
-  filter: drop-shadow(0 0 15px var(--accent-cyan)) drop-shadow(0 0 30px var(--accent-cyan));
-
-  animation:
-    tubeIgnite 4.5s steps(1) forwards,
-    tubeAmbient 7s 4.5s infinite ease-in-out;
-}
-
-/*
-  FILAMENT GLOW ENGINE (Typography Cloned)
-  Creates a pixel-perfect overlay colored by a 90deg gradient.
-*/
-h1.display-5::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-
-  /*
-    Maps exactly to your character spacing:
-    0-8% (First char), 8-15% (Second char, fading out)
-    85-92% (Second to last char, fading in), 92-100% (Last char)
-  */
-  background: linear-gradient(
-    90deg,
-    #ff5500 0%,
-    #ff5500 8%,
-    rgba(255, 85, 0, 0.15) 15%,
-    transparent 22%,
-    transparent 78%,
-    rgba(255, 85, 0, 0.15) 85%,
-    #ff5500 92%,
-    #ff5500 100%
-  );
-
-  /* Clips the orange gradient exclusively to the shape of the text */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  /* A localized, static orange glow for the heating elements */
-  filter: drop-shadow(0 0 8px rgba(255, 85, 0, 0.8)) drop-shadow(0 0 15px rgba(255, 85, 0, 0.5));
-
-  opacity: 0;
-  will-change: opacity;
-  animation: filamentGlow 4.5s steps(1) forwards;
-}
-
-
 /* =========================================================
-   PHASE 1: CHAOTIC IGNITION & OVERSHOOT (4.5s)
+   PHASE 1: 5-STRIKE IGNITION (4.5s)
+   Strictly animates opacity. Zero positional shifting.
    ========================================================= */
 @keyframes tubeIgnite {
-  0%, 25% { opacity: 0.05; }
+  0%, 15% { opacity: 0.05; }
 
-  27% { opacity: 0.80; }
-  29% { opacity: 0.05; }
+  /* Blink 1: Very dim spark */
+  16% { opacity: 0.20; }
+  18% { opacity: 0.05; }
 
-  42% { opacity: 0.60; }
-  44% { opacity: 0.05; }
+  /* Blink 2: Dim spark */
+  32% { opacity: 0.35; }
+  34% { opacity: 0.05; }
 
-  60% { opacity: 0.90; }
-  62% { opacity: 0.10; }
-  72% { opacity: 0.95; }
-  75% { opacity: 0.05; }
+  /* Blink 3: Moderate struggle */
+  48% { opacity: 0.50; }
+  50% { opacity: 0.05; }
 
-  /* 84%: The Catch & Super Glow Overshoot (100% Brightness) */
-  84% { opacity: 1.00; }
+  /* Blink 4: Strongest failed strike */
+  64% { opacity: 0.65; }
+  68% { opacity: 0.05; }
 
-  /* 92%: Settles into running baseline (92% Brightness) */
-  92%, 100% { opacity: 0.92; }
+  /* Blink 5: The Final Catch (Max Brightness held permanently) */
+  76%, 100% { opacity: 1.00; }
 }
 
-
 /* =========================================================
-   PHASE 2: TUNGSTEN CATHODE GLOW (Targeted Letters)
+   PHASE 2: TUNGSTEN CATHODE GLOW (Matches the 5 Blinks)
    ========================================================= */
 @keyframes filamentGlow {
-  0%  { opacity: 0; }
-  5%  { opacity: 1.00; }
-  27% { opacity: 0.20; }
-  29% { opacity: 1.00; }
-  42% { opacity: 0.30; }
-  44% { opacity: 1.00; }
-  60% { opacity: 0.10; }
-  62% { opacity: 1.00; }
-  84%, 100% { opacity: 0; }
+  0%, 15% { opacity: 0; }
+
+  /* Matches Blink 1 */
+  16% { opacity: 1.00; }
+  18% { opacity: 0; }
+
+  /* Matches Blink 2 */
+  32% { opacity: 1.00; }
+  34% { opacity: 0; }
+
+  /* Matches Blink 3 */
+  48% { opacity: 1.00; }
+  50% { opacity: 0; }
+
+  /* Matches Blink 4 */
+  64% { opacity: 1.00; }
+  68% { opacity: 0; }
+
+  /* Disconnects permanently on Blink 5 */
+  76%, 100% { opacity: 0; }
 }
 
-
 /* =========================================================
-   PHASE 3: AMBIENT FLICKER (7.0s Loop)
+   PHASE 3: AMBIENT FLICKER
+   Maintains the 1.00 baseline established by Blink 5
    ========================================================= */
 @keyframes tubeAmbient {
-  0%, 100% { opacity: 0.92; }
-  15%      { opacity: 0.88; }
-  35%      { opacity: 0.94; }
-  55%      { opacity: 0.85; }
-  75%      { opacity: 0.90; }
-  88%      { opacity: 0.93; }
+  0%, 100% { opacity: 1.00; }
+  15%      { opacity: 0.95; }
+  35%      { opacity: 0.98; }
+  55%      { opacity: 0.92; } /* Very subtle gradual breathing */
+  75%      { opacity: 0.97; }
+  88%      { opacity: 0.94; }
 }
 /* END OF NEON TITLE */
