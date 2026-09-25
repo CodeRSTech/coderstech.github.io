@@ -55,7 +55,13 @@ p, small, .text-white-50 {
 
 /* Navbar Overrides */
 .navbar {
-  background-color: #000000d0 !important;
+  background-color: #000000f0 !important;
+  background-image: radial-gradient(circle at 40% -20%, rgba(0, 120, 255, 0.5) 5%, transparent 90%);
+  position: -webkit-sticky; /* For Safari support */
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  height: 4.5rem;
 }
 
 .navbar, .nav-link {
@@ -64,6 +70,13 @@ p, small, .text-white-50 {
 }
 .nav-link:hover {
   color: var(--accent-green) !important;
+}
+
+/* Implemented in post.html */
+.scrollspy-navbar {
+  top: 4.5rem;
+  z-index: 1020;
+  border-radius: 0 !important;
 }
 
 /* Bootstrap Accent Mappings */
