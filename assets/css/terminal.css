@@ -279,24 +279,32 @@ p, small, .text-white-50 {
 /* --- end of Scroll-Driven Terminal Typing Effect --- */
 
 /* --- High Priority Neon Hero Title --- */
-/* --- Ultra-Realistic Old Fluorescent Tube Neon (High-FPS Snapping Engine) --- */
+/* --- Hardware-Optimized, Low-Overhead Neon Engine --- */
 h1.display-5 {
   position: relative;
   color: #ffffff !important;
   opacity: 0.05;
-  text-shadow: none;
+
+  /* Promote strictly to the GPU opacity compositor */
+  will-change: opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   /*
-    CRITICAL CHANGE: We switch the animation-timing-function to steps(1).
-    This completely disables smooth fading and forces raw, jagged electrical snaps.
+    CRITICAL FIX: We calculate this heavy glow exactly ONCE.
+    It sits statically on the element. We NEVER animate this property.
   */
-  animation:
-    tubeIgnite 5s steps(1) forwards,
-    tubeAmbient 10s 5s infinite steps(1);
+  text-shadow:
+    0 0 4px #ffffff,
+    0 0 10px #ffffff,
+    0 0 20px var(--accent-cyan),
+    0 0 40px var(--accent-cyan),
+    0 0 80px var(--accent-cyan);
 
-  will-change: opacity, filter;
-  transform: translate3d(0, 0, 0); /* Forces GPU layer promotion */
-  backface-visibility: hidden;     /* Prevents accidental texture flickering */
+  /* steps(1) guarantees jagged, instant mechanical snaps. No fading. */
+  animation:
+    tubeIgnite 4s steps(1) forwards,
+    tubeAmbient 10s 4s infinite steps(1);
 }
 
 /*
@@ -312,15 +320,18 @@ h1.display-5::after {
   height: 4px;
   border-radius: 50%;
   pointer-events: none;
-  opacity: 0;
 
+  opacity: 0;
+  will-change: opacity;
+
+  /* Static shadow, calculated once */
   background: #ffcc00;
   box-shadow:
     0 0 6px #ff5500,
     0 0 15px #ff3300,
     0 0 25px rgba(255, 85, 0, 0.8);
 
-  animation: filamentGlow 5s steps(1) forwards;
+  animation: filamentGlow 4s steps(1) forwards;
 }
 
 h1.display-5::before { left: -18px; }
@@ -328,92 +339,63 @@ h1.display-5::after { right: -18px; }
 
 
 /* =========================================================
-   PHASE 1: CHAOTIC HIGH-SPEED IGNITION (5.0s Stretched)
+   PHASE 1: CHAOTIC IGNITION (4.0s)
+   Violent snaps spaced naturally. Stripped of all blur math.
    ========================================================= */
 @keyframes tubeIgnite {
-  /* 0s to 1.5s: Dead preheating phase. Gas is dark, filaments are baking. */
-  0%, 30% { opacity: 0.05; text-shadow: none; }
+  0%, 25% { opacity: 0.05; }
 
-  /* 1.5s to 3.8s: The Striking Phase.
-     Violent, instant pixel snaps with chaotic durations. */
-  32%   { opacity: 0.8; text-shadow: 0 0 8px #fff, 0 0 16px var(--accent-cyan); }
-  32.4% { opacity: 0.05; text-shadow: none; } /* Sharp drop to black */
+  /* Strike 1 */
+  27% { opacity: 0.80; }
+  29% { opacity: 0.05; }
 
-  40%   { opacity: 0.6; text-shadow: 0 0 6px #fff, 0 0 12px var(--accent-cyan); }
-  41.2% { opacity: 0.05; text-shadow: none; }
+  /* Strike 2 */
+  42% { opacity: 0.60; }
+  44% { opacity: 0.05; }
 
-  /* Machine-gun sputter cluster */
-  55%   { opacity: 0.9; text-shadow: 0 0 10px #fff, 0 0 20px var(--accent-cyan); }
-  55.6% { opacity: 0.1; text-shadow: 0 0 4px var(--accent-cyan); }
-  56.2% { opacity: 0.7; text-shadow: 0 0 8px #fff, 0 0 15px var(--accent-cyan); }
-  56.8% { opacity: 0.05; text-shadow: none; }
+  /* Strike 3 (Cluster) */
+  60% { opacity: 0.90; }
+  62% { opacity: 0.10; }
+  72% { opacity: 0.95; }
+  75% { opacity: 0.05; }
 
-  68%   { opacity: 0.95; text-shadow: 0 0 12px #fff, 0 0 25px var(--accent-cyan); }
-  69.4% { opacity: 0.2; text-shadow: 0 0 4px var(--accent-cyan); }
-  70.2% { opacity: 0.05; text-shadow: none; }
-
-  /* Final gas struggle before catch */
-  76%   { opacity: 0.7; text-shadow: 0 0 10px var(--accent-cyan); }
-  76.6% { opacity: 0.05; text-shadow: none; }
-
-  /* 3.8s to 4.2s: The Arc Catches - Massive Luminescent Overshoot */
-  84% {
-    opacity: 1.35;
-    text-shadow:
-      0 0 6px #ffffff, 0 0 15px #ffffff,
-      0 0 30px var(--accent-cyan), 0 0 60px var(--accent-cyan), 0 0 100px var(--accent-cyan);
-  }
-
-  /* 4.2s to 5.0s: Sinking into base running parameters */
-  100% {
-    opacity: 1;
-    text-shadow:
-      0 0 4px #ffffff, 0 0 10px #ffffff,
-      0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan), 0 0 80px var(--accent-cyan);
-  }
+  /* Catch */
+  85%, 100% { opacity: 1.00; }
 }
 
 
 /* =========================================================
-   PHASE 2: TUNGSTEN CATHODE GLOW (Thermal Engine)
+   PHASE 2: TUNGSTEN CATHODE GLOW
    ========================================================= */
 @keyframes filamentGlow {
-  /* 0s to 1.5s: Current passes through filaments. They snap on instantly and glow bright hot. */
-  0% { opacity: 0; }
-  2%, 30% { opacity: 0.95; }
-
-  /* 1.5s to 3.8s: Filaments dynamically lose power when main gas arcs draw the current path away */
-  32%   { opacity: 0.2; }
-  32.4% { opacity: 0.95; }
-  40%   { opacity: 0.3; }
-  41.2% { opacity: 0.95; }
-  55%   { opacity: 0.1; }
-  56.8% { opacity: 0.95; }
-  68%   { opacity: 0.1; }
-  70.2% { opacity: 0.95; }
-
-  /* 3.8s+: Tube is ionized. Circuit disconnects filaments permanently. */
-  84%, 100% { opacity: 0; }
+  0%  { opacity: 0; }
+  5%  { opacity: 0.95; }
+  27% { opacity: 0.20; }
+  29% { opacity: 0.95; }
+  42% { opacity: 0.30; }
+  44% { opacity: 0.95; }
+  60% { opacity: 0.10; }
+  62% { opacity: 0.95; }
+  85%, 100% { opacity: 0; } /* Disconnects permanently once gas catches */
 }
 
 
 /* =========================================================
-   PHASE 3: 120Hz PLASMA HUM & MACRO-BUZZ MATRIX
-   Overlapping high-frequency step loop
+   PHASE 3: AMBIENT MACRO-BUZZ (10.0s Loop)
+   Sits totally idle for 95% of the timeline. Zero micro-jitter.
    ========================================================= */
-/* High-performance alternative inside your keyframe steps: */
 @keyframes tubeAmbient {
-  0%, 4%, 8% {
-    opacity: 1;
-    filter: drop-shadow(0 0 4px #fff) drop-shadow(0 0 15px var(--accent-cyan));
-  }
-  2%, 6%, 10% {
-    opacity: 0.96;
-    /* To mimic spatial jitter efficiently without redrawing text paths,
-       just nudge the GPU element matrix instead of shifting shadow text offsets! */
-    transform: translate3d(-0.5px, 0.5px, 0);
-    filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 12px var(--accent-cyan));
-  }
-}
+  0%, 55% { opacity: 1.00; }
 
+  /* Single Violent Voltage Drop */
+  55.1% { opacity: 0.40; }
+  55.3% { opacity: 0.95; }
+  55.5% { opacity: 0.15; } /* Near total blackout */
+  55.7% { opacity: 0.90; }
+  55.9%, 82% { opacity: 1.00; }
+
+  /* Quick Sputter */
+  82.1% { opacity: 0.60; }
+  82.3%, 100% { opacity: 1.00; }
+}
 /* END OF NEON TITLE */
