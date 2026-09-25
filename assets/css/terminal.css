@@ -279,16 +279,21 @@ p, small, .text-white-50 {
 /* --- end of Scroll-Driven Terminal Typing Effect --- */
 
 /* --- High Priority Neon Hero Title --- */
-/* --- Hardware-Optimized: Jagged Ignition + Smooth Ambient --- */
+/* --- Hardware-Optimized, Low-Overhead Neon Engine --- */
 h1.display-5 {
   position: relative;
   color: #ffffff !important;
   opacity: 0.05;
 
+  /* Promote strictly to the GPU opacity compositor */
   will-change: opacity;
   transform: translateZ(0);
+  backface-visibility: hidden;
 
-  /* Static shadow calculated once. Never animated. */
+  /*
+    CRITICAL FIX: We calculate this heavy glow exactly ONCE.
+    It sits statically on the element. We NEVER animate this property.
+  */
   text-shadow:
     0 0 4px #ffffff,
     0 0 10px #ffffff,
@@ -296,16 +301,16 @@ h1.display-5 {
     0 0 40px var(--accent-cyan),
     0 0 80px var(--accent-cyan);
 
-  /*
-    Ignition uses steps(1) for mechanical hard-cuts.
-    Ambient uses ease-in-out for a gradual, soft flicker.
-  */
+  /* steps(1) guarantees jagged, instant mechanical snaps. No fading. */
   animation:
     tubeIgnite 4s steps(1) forwards,
-    tubeAmbient 7s 4s infinite ease-in-out;
+    tubeAmbient 10s 4s infinite steps(1);
 }
 
-/* FILAMENT GLOW ENGINE */
+/*
+  FILAMENT GLOW ENGINE (Dual Pseudo-Elements)
+  Clean, localized amber hot-spots sitting exactly at the far margins.
+*/
 h1.display-5::before,
 h1.display-5::after {
   content: "";
@@ -319,6 +324,7 @@ h1.display-5::after {
   opacity: 0;
   will-change: opacity;
 
+  /* Static shadow, calculated once */
   background: #ffcc00;
   box-shadow:
     0 0 6px #ff5500,
@@ -334,18 +340,26 @@ h1.display-5::after { right: -18px; }
 
 /* =========================================================
    PHASE 1: CHAOTIC IGNITION (4.0s)
-   Retains the raw, jagged electrical snaps via steps(1)
+   Violent snaps spaced naturally. Stripped of all blur math.
    ========================================================= */
 @keyframes tubeIgnite {
   0%, 25% { opacity: 0.05; }
+
+  /* Strike 1 */
   27% { opacity: 0.80; }
   29% { opacity: 0.05; }
+
+  /* Strike 2 */
   42% { opacity: 0.60; }
   44% { opacity: 0.05; }
+
+  /* Strike 3 (Cluster) */
   60% { opacity: 0.90; }
   62% { opacity: 0.10; }
   72% { opacity: 0.95; }
   75% { opacity: 0.05; }
+
+  /* Catch */
   85%, 100% { opacity: 1.00; }
 }
 
@@ -362,21 +376,26 @@ h1.display-5::after { right: -18px; }
   44% { opacity: 0.95; }
   60% { opacity: 0.10; }
   62% { opacity: 0.95; }
-  85%, 100% { opacity: 0; }
+  85%, 100% { opacity: 0; } /* Disconnects permanently once gas catches */
 }
 
 
 /* =========================================================
-   PHASE 3: AMBIENT FLICKER (7.0s Loop)
-   Smooth, gradual opacity waves representing minor voltage
-   fluctuations in an older gas tube.
+   PHASE 3: AMBIENT MACRO-BUZZ (10.0s Loop)
+   Sits totally idle for 95% of the timeline. Zero micro-jitter.
    ========================================================= */
 @keyframes tubeAmbient {
-  0%, 100% { opacity: 1.00; }
-  15%      { opacity: 0.92; }
-  35%      { opacity: 0.98; }
-  55%      { opacity: 0.85; } /* Lowest gradual dip */
-  75%      { opacity: 0.96; }
-  88%      { opacity: 0.89; }
+  0%, 55% { opacity: 1.00; }
+
+  /* Single Violent Voltage Drop */
+  55.1% { opacity: 0.40; }
+  55.3% { opacity: 0.95; }
+  55.5% { opacity: 0.15; } /* Near total blackout */
+  55.7% { opacity: 0.90; }
+  55.9%, 82% { opacity: 1.00; }
+
+  /* Quick Sputter */
+  82.1% { opacity: 0.60; }
+  82.3%, 100% { opacity: 1.00; }
 }
 /* END OF NEON TITLE */
