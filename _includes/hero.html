@@ -3,23 +3,47 @@
   <!-- We keep the original Jekyll data injection but visually hide it from the screen -->
   <h1 class="visually-hidden">{{ site.data.hero.name }}</h1>
 
-  <!-- 2. WebGL Canvas Mount Point (Height increased to prevent clipping the bloom) -->
-  <div id="neon-container" style="width: 100%; height: 120px; margin-top: -15px; margin-bottom: -15px;"></div>
+  <!-- 2. WebGL Canvas Mount Point -->
+  <!-- Replaces the original h1 class="display-4 fw-bold text-light terminal-prompt mb-3" -->
+  <div id="neon-container" class="mb-3" style="width: 100%; height: 90px; overflow: hidden;"></div>
+
+  <!-- 3. Preserved Jekyll Content -->
+  <p class="lead text-white-50 mb-4" style="max-width: 800px;">
+    {{ site.data.hero.tagline }}
+  </p>
+  <div class="d-flex gap-3">
+    {% for btn in site.data.hero.buttons %}
+      <a href="{{ btn.url }}" class="btn {{ btn.style }} px-4 py-2 fw-bold rounded-0">
+        <i class="{{ btn.icon }} me-2"></i>{{ btn.text }}
+      </a>
+    {% endfor %}
+  </div>
+</div>
 
 <!-- ========================================== -->
 <!-- 4. DIRECT JAVASCRIPT EMBED                 -->
 <!-- ========================================== -->
 
-<!-- Load Engine and Filters via Global CDN (Bypasses all ESM module conflicts) -->
-<script src="https://cdn.jsdelivr.net/npm/pixi.js@8.0.4/dist/pixi.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/pixi-filters@6.0.4/dist/pixi-filters.min.js"></script>
+<!-- Import Map: Tells the browser where to download the WebGL packages -->
+<script type="importmap">
+  {
+    "imports": {
+      "pixi.js": "https://esm.sh/pixi.js@8",
+      "pixi-filters": "https://esm.sh/pixi-filters@6"
+    }
+  }
+</script>
 
-<script>
-  // Run immediately after scripts load
-  (async function initNeon() {
+<!-- The Render Engine -->
+<script type="module">
+  import { Application, Text } from 'pixi.js';
+  import { AdvancedBloomFilter } from 'pixi-filters';
+
+  async function initNeon() {
     const container = document.getElementById('neon-container');
-    const app = new PIXI.Application();
+    const app = new Application();
 
+    // Initialize WebGL context to perfectly fit the designated div
     await app.init({
       backgroundAlpha: 0,
       resizeTo: container,
@@ -28,24 +52,27 @@
 
     container.appendChild(app.canvas);
 
-    const neonText = new PIXI.Text({
-      text: "{{ site.data.hero.name }}",
+    // Create the text graphic using Jekyll's Liquid templating directly in the JS
+    const neonText = new Text({
+      text: "{{ site.data.hero.name }}", // Jekyll renders this before shipping to the browser
       style: {
         fontFamily: 'system-ui, -apple-system, sans-serif',
-        fontSize: 64,
+        fontSize: 64, // Roughly equivalent to Bootstrap's display-4
         fill: 0xffffff,
         fontWeight: 'bold'
       }
     });
 
+    // Left-align the WebGL text to match your original Bootstrap layout
     neonText.x = 0;
     neonText.y = app.screen.height / 2;
     neonText.anchor.set(0, 0.5);
 
-    const neonGlow = new PIXI.filters.AdvancedBloomFilter({
+    // Apply the hardware-accelerated bloom
+    const neonGlow = new AdvancedBloomFilter({
       threshold: 0.1,
       bloomScale: 1.5,
-      brightness: 0, // Starts off for the thermal pre-heat phase
+      brightness: 1.2,
       blur: 15,
       quality: 4
     });
@@ -53,64 +80,22 @@
     neonText.filters = [neonGlow];
     app.stage.addChild(neonText);
 
-    // ==========================================
-    // HARDWARE IGNITION & AMBIENT TIMING ENGINE
-    // ==========================================
-    let elapsedTime = 0;
-
+    // The high-FPS animation loop
+    let time = 0;
     app.ticker.add((ticker) => {
-      elapsedTime += ticker.deltaMS;
-      const timeSec = elapsedTime / 1000;
+      time += ticker.deltaTime * 0.05;
 
-      // PHASE 1: Chaotic High-Speed Ignition (0.0s to 3.5s)
-      if (timeSec < 3.5) {
+      const isMacroBuzz = Math.random() > 0.98;
 
-        // 0s to 1.1s: Thermal Preheat
-        if (timeSec < 1.1) {
-          neonText.alpha = 0.05; neonGlow.brightness = 0;
-        }
-        // 1.12s: First Strike
-        else if (timeSec > 1.12 && timeSec < 1.15) {
-          neonText.alpha = 0.8; neonGlow.brightness = 1.0;
-        }
-        // 1.57s: Second Sputter
-        else if (timeSec > 1.57 && timeSec < 1.62) {
-          neonText.alpha = 0.6; neonGlow.brightness = 0.8;
-        }
-        // 2.03s: Machine Gun Cluster
-        else if (timeSec > 2.03 && timeSec < 2.06) {
-          neonText.alpha = 0.9; neonGlow.brightness = 1.2;
-        }
-        // 2.52s: Final Struggle
-        else if (timeSec > 2.52 && timeSec < 2.57) {
-          neonText.alpha = 0.95; neonGlow.brightness = 1.3;
-        }
-        // 2.94s: Arc Catches (Luminescent Overshoot)
-        else if (timeSec > 2.94) {
-          neonText.alpha = 1.35; neonGlow.brightness = 1.8;
-        }
-        // Dead gas drops between strikes
-        else {
-          neonText.alpha = 0.05; neonGlow.brightness = 0;
-        }
-      }
-      // PHASE 2: 120Hz Plasma Hum & Macro-Buzz (3.5s onwards)
-      else {
-        const humTime = timeSec - 3.5;
-        const isMacroBuzz = Math.random() > 0.985;
-
-        if (isMacroBuzz) {
-          // Severe voltage drop with mechanical jitter
-          neonText.alpha = 0.4;
-          neonGlow.brightness = 0.2;
-          neonText.x = (Math.random() - 0.5) * 2.5;
-        } else {
-          // Stable high-frequency oscillation
-          neonText.alpha = 0.95 + (Math.sin(humTime * 60) * 0.05);
-          neonGlow.brightness = 1.0 + (Math.sin(humTime * 90) * 0.2);
-          neonText.x = 0;
-        }
+      if (isMacroBuzz) {
+        neonText.alpha = 0.4;
+        neonGlow.brightness = 0.2;
+      } else {
+        neonText.alpha = 0.95 + (Math.sin(time * 20) * 0.05);
+        neonGlow.brightness = 1.0 + (Math.sin(time * 30) * 0.2);
       }
     });
-  })();
-</script></div>
+  }
+
+  initNeon();
+</script>
