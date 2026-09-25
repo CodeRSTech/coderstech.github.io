@@ -1,38 +1,61 @@
 /* Navbar Overrides */
 .navbar {
-  background-color: #000000f0 !important;
-  background-image:
-          radial-gradient(circle at 40% -20%, rgba(0, 120, 255, 0.5) 5%, transparent 70%),
-          linear-gradient(rgba(20, 140, 255, 0.08) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(20, 140, 255, 0.08) 1px, transparent 1px);
-  position: sticky;
+  /* Frosted Glass Base */
+  background-color: rgba(9, 9, 11, 0.65) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  position: sticky; /* Keeps it locked to the top */
   top: 0;
   z-index: 1050;
   height: 4.5rem;
+
+  /* Add a subtle glowing bottom border instead of a flat grey one */
+  border-bottom: 1px solid rgba(0, 255, 102, 0.2) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
-.navbar, .nav-link {
+.nav-link {
+  position: relative;
   background-color: transparent;
-  color: var(--text-muted) !important;
-}
-.nav-link:hover {
-  color: var(--accent-green) !important;
+  color: var(--text-muted) !important; /* Uses your existing variable */
+  transition: color 0.3s ease;
+  padding-bottom: 0.25rem; /* Gives the underline room to breathe */
 }
 
-/* Mobile Hamburger Menu (Navbar Toggler) */
+.nav-link:hover {
+  color: var(--accent-green) !important; /* Glows green on hover */
+}
+
+/* The Animated Cyber Underline */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-green);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px var(--accent-green); /* Adds the neon glow to the line */
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Keep your mobile toggler exactly as is! */
 .navbar-toggler {
   border-color: var(--accent-cyan) !important;
   border-radius: 2px !important;
   transition: all 0.3s ease;
 }
 
-/* Neon glow when tapped/opened */
 .navbar-toggler:focus, .navbar-toggler:active {
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.4) !important;
   outline: none;
 }
 
-/* Injecting a pure Cyan SVG for the 3 lines */
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
