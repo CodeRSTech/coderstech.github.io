@@ -1,0 +1,18 @@
+/* Invert Wikimedia Math SVGs for Dark Mode Visibility */
+img[src*="wikimedia.org/api/rest_v1/media/math/render/svg"] {
+    filter: invert(1) brightness(1.2);
+}
+
+/* Invert Image */
+.invert-img {
+  filter: invert(1);
+}
+
+/* Centers the caption and styles the text */
+.image-caption {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9em;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
