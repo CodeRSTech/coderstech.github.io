@@ -193,3 +193,42 @@ p, small, .text-white-50 {
     font-weight: bold;
     color: var(--accent-cyan);
 }
+
+/* --- Interactive Cyber Cards --- */
+
+/* 1. Base Card Styling (Frosted & Semi-transparent) */
+.card {
+  background-color: rgba(18, 18, 18, 0.7) !important; /* Slightly transparent */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; /* Bouncy transition */
+  border: 1px solid var(--border-ghost) !important;
+  z-index: 1;
+}
+
+/* 2. Global Hover State for all Cards */
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 255, 255, 0.3) !important; /* Faint cyan border on hover */
+  box-shadow: 0 10px 30px -10px rgba(0, 255, 255, 0.15),
+              inset 0 0 20px rgba(0, 255, 255, 0.02);
+  z-index: 2;
+}
+
+/* 3. Upgrading your existing .hover-overlay elements (Images & Icons) */
+.hover-overlay {
+  transition: all 0.3s ease;
+}
+
+.hover-overlay:hover {
+  border-color: var(--accent-green) !important;
+  box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+  transform: scale(1.05);
+}
+
+/* 4. Glowing text effect for the tags inside cards on hover */
+.card:hover .text-white-50 {
+  color: #e4e4e7 !important;
+  transition: color 0.3s ease;
+}
+/* end of interactive cards */
