@@ -1,0 +1,65 @@
+/* --- High-Performance Neon Hero Title --- */
+h1.display-5 {
+  position: relative;
+  color: #ffffff !important;
+  /* Inner crisp core glow right on the main element */
+  text-shadow:
+    0 0 2px #ffffff,
+    0 0 8px var(--accent-cyan);
+}
+
+/* Single pseudo-element for outer aura and flicker */
+h1.display-5::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  color: transparent;
+
+  /* Inherit layout to stay aligned */
+  padding: inherit;
+  line-height: inherit;
+  text-align: inherit;
+
+  /* Capped blur radii: avoids large compositor tile allocations */
+  text-shadow:
+    0 0 12px var(--accent-cyan),
+    0 0 28px var(--accent-cyan);
+
+  opacity: 0;
+  will-change: opacity;
+  animation: neonPowerSequence 10s infinite;
+}
+
+/* =========================================================
+   CONSOLIDATED LIFECYCLE: IGNITE -> SURGE -> AMBIENT/FLICKER
+   ========================================================= */
+@keyframes neonPowerSequence {
+  /* --- Phase 1: Ignition clicks (0s - 1.5s) --- */
+  0%, 2%   { opacity: 0.1; }
+  3%, 6%   { opacity: 0.9; }
+  7%, 9%   { opacity: 0.1; }
+  10%, 13% { opacity: 0.9; }
+  14%, 18% { opacity: 0.2; }
+
+  /* --- Phase 2: Warm-up & Voltage Surge (1.8s - 2.5s) --- */
+  19%, 23% { opacity: 0.4; }
+  24%      { opacity: 1.0; }
+  25%      { opacity: 0.3; }
+  26%      { opacity: 1.0; }
+
+  /* --- Phase 3: Steady Ambient Glow (2.6s - 6.5s) --- */
+  27%, 65% { opacity: 0.95; }
+
+  /* --- Phase 4: High-voltage electrical buzz (6.6s - 7.0s) --- */
+  66%      { opacity: 0.5; }
+  67%      { opacity: 1.0; }
+  68%      { opacity: 0.4; }
+  69%, 70% { opacity: 0.95; }
+
+  /* --- Phase 5: Subtle relaxation back to cycle end --- */
+  85%      { opacity: 0.85; }
+  100%     { opacity: 0.95; }
+}
+/* --- end of Neon Hero Title section --- */
