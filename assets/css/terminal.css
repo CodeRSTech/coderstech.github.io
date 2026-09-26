@@ -279,135 +279,130 @@ p, small, .text-white-50 {
 /* --- end of Scroll-Driven Terminal Typing Effect --- */
 
 /* --- High Priority Neon Hero Title --- */
-/* --- Max Brightness, Character-Mapped Filament, Overshoot Engine --- */
+/* --- Ultra-Realistic Fluorescent Tube Neon --- */
 h1.display-5 {
-  position: relative;
   color: #ffffff !important;
-  opacity: 0.05;
-
-  transform: translateZ(0);
-
-  /* Massive static bloom. Calculated once. */
-  text-shadow:
-    0 0 4px #ffffff,
-    0 0 10px #ffffff,
-    0 0 20px var(--accent-cyan),
-    0 0 40px var(--accent-cyan),
-    0 0 80px var(--accent-cyan);
-
-  filter: drop-shadow(0 0 15px var(--accent-cyan)) drop-shadow(0 0 30px var(--accent-cyan));
-
-  animation:
-    tubeIgnite 4.5s steps(1) forwards,
-    tubeAmbient 7s 4.5s infinite ease-in-out;
-}
-
-/*
-  FILAMENT GLOW ENGINE (Typography Cloned)
-  Creates a pixel-perfect overlay colored by a 90deg gradient.
-*/
-h1.display-5::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+  /* Start completely off before the animation kicks in */
+  opacity: 0.1;
+  text-shadow: none;
 
   /*
-    Maps exactly to your character spacing:
-    0-8% (First char), 8-15% (Second char, fading out)
-    85-92% (Second to last char, fading in), 92-100% (Last char)
+    1. tubeIgnite runs ONCE for 2.5 seconds and stays at its final frame (forwards).
+    2. tubeAmbient runs INFINITELY, but waits 2.5 seconds to start.
   */
-  background: linear-gradient(
-    90deg,
-    #ff5500 0%,
-    #ff5500 8%,
-    rgba(255, 85, 0, 0.15) 15%,
-    transparent 22%,
-    transparent 78%,
-    rgba(255, 85, 0, 0.15) 85%,
-    #ff5500 92%,
-    #ff5500 100%
-  );
-
-  /* Clips the orange gradient exclusively to the shape of the text */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  /* A localized, static orange glow for the heating elements */
-  filter: drop-shadow(0 0 8px rgba(255, 85, 0, 0.8)) drop-shadow(0 0 15px rgba(255, 85, 0, 0.5));
-
-  opacity: 0;
-  will-change: opacity;
-  animation: filamentGlow 4.5s steps(1) forwards;
+  animation:
+    tubeIgnite 2.5s forwards,
+    tubeAmbient 10s 2.5s infinite;
 }
-
-
-/* =========================================================
-   PHASE 1: 5-STRIKE IGNITION (4.5s)
-   Strictly animates opacity. Zero positional shifting.
-   ========================================================= */
+/* Phase 1: The Ignition Sequence */
 @keyframes tubeIgnite {
-  0%, 15% { opacity: 0.05; }
+  /* Rapid starter clicks */
+  0%    { opacity: 0.1; text-shadow: none; }
+  4%    { opacity: 1;   text-shadow: 0 0 10px #fff, 0 0 20px var(--accent-cyan); }
+  8%    { opacity: 0.1; text-shadow: none; }
+  12%   { opacity: 1;   text-shadow: 0 0 10px #fff, 0 0 20px var(--accent-cyan); }
+  16%   { opacity: 0.1; text-shadow: none; }
 
-  /* Blink 1: Very dim spark */
-  16% { opacity: 0.20; }
-  18% { opacity: 0.05; }
+  /* Instantly snap to a constant dim state (Gas warming up) */
+  16.1% { opacity: 0.3; text-shadow: 0 0 5px var(--accent-cyan); }
+  60%   { opacity: 0.3; text-shadow: 0 0 5px var(--accent-cyan); } /* Holds steady */
 
-  /* Blink 2: Dim spark */
-  32% { opacity: 0.35; }
-  34% { opacity: 0.05; }
-
-  /* Blink 3: Moderate struggle */
-  48% { opacity: 0.50; }
-  50% { opacity: 0.05; }
-
-  /* Blink 4: Strongest failed strike */
-  64% { opacity: 0.65; }
-  68% { opacity: 0.05; }
-
-  /* Blink 5: The Final Catch (Max Brightness held permanently) */
-  76%, 100% { opacity: 1.00; }
+  /* Instantly snap to full voltage */
+  60.1% {
+    opacity: 1;
+    text-shadow:
+      0 0 4px #ffffff,
+      0 0 10px #ffffff,
+      0 0 20px var(--accent-cyan),
+      0 0 40px var(--accent-cyan),
+      0 0 80px var(--accent-cyan);
+  }
+  100% {
+    opacity: 1;
+    text-shadow:
+      0 0 4px #ffffff,
+      0 0 10px #ffffff,
+      0 0 20px var(--accent-cyan),
+      0 0 40px var(--accent-cyan),
+      0 0 80px var(--accent-cyan);
+  }
 }
 
-/* =========================================================
-   PHASE 2: TUNGSTEN CATHODE GLOW (Matches the 5 Blinks)
-   ========================================================= */
-@keyframes filamentGlow {
-  0%, 15% { opacity: 0; }
-
-  /* Matches Blink 1 */
-  16% { opacity: 1.00; }
-  18% { opacity: 0; }
-
-  /* Matches Blink 2 */
-  32% { opacity: 1.00; }
-  34% { opacity: 0; }
-
-  /* Matches Blink 3 */
-  48% { opacity: 1.00; }
-  50% { opacity: 0; }
-
-  /* Matches Blink 4 */
-  64% { opacity: 1.00; }
-  68% { opacity: 0; }
-
-  /* Disconnects permanently on Blink 5 */
-  76%, 100% { opacity: 0; }
-}
-
-/* =========================================================
-   PHASE 3: AMBIENT FLICKER
-   Maintains the 1.00 baseline established by Blink 5
-   ========================================================= */
+/* Phase 2: Post-Ignition Ambient "Buzzing" */
 @keyframes tubeAmbient {
-  0%, 100% { opacity: 1.00; }
-  15%      { opacity: 0.95; }
-  35%      { opacity: 0.98; }
-  55%      { opacity: 0.92; } /* Very subtle gradual breathing */
-  75%      { opacity: 0.97; }
-  88%      { opacity: 0.94; }
+  /* 0% to 40%: Perfectly stable for 4 seconds */
+  0%, 40% {
+    opacity: 1;
+    text-shadow:
+      0 0 4px #ffffff,
+      0 0 10px #ffffff,
+      0 0 20px var(--accent-cyan),
+      0 0 40px var(--accent-cyan),
+      0 0 80px var(--accent-cyan);
+  }
+
+  /* 40% to 45%: A 0.5-second high-frequency electrical buzz.
+     We use strict percentage pairs to force instant snapping instead of fading. */
+  40.1%, 40.6% {
+    opacity: 0.85;
+    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan);
+  }
+  40.7%, 41.2% {
+    opacity: 0.95;
+    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan), 0 0 60px var(--accent-cyan);
+  }
+  41.3%, 41.8% {
+    opacity: 0.88;
+    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan);
+  }
+  41.9%, 42.5% {
+    opacity: 0.98;
+    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan), 0 0 80px var(--accent-cyan);
+  }
+  42.6%, 43.1% {
+    opacity: 0.85;
+    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan);
+  }
+  43.2%, 44.9% {
+    opacity: 0.92;
+    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan), 0 0 60px var(--accent-cyan);
+  }
+
+  /* 45% to 82%: Stable again for a few seconds */
+  45%, 82% {
+    opacity: 1;
+    text-shadow:
+      0 0 4px #ffffff,
+      0 0 10px #ffffff,
+      0 0 20px var(--accent-cyan),
+      0 0 40px var(--accent-cyan),
+      0 0 80px var(--accent-cyan);
+  }
+
+  /* 82% to 85%: A very quick, shorter 0.3-second buzz */
+  82.1%, 82.8% {
+    opacity: 0.86;
+    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan);
+  }
+  82.9%, 83.5% {
+    opacity: 0.94;
+    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan), 0 0 60px var(--accent-cyan);
+  }
+  83.6%, 84.9% {
+    opacity: 0.88;
+    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan);
+  }
+
+  /* 85% to 100%: Stable until the loop restarts */
+  85%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 4px #ffffff,
+      0 0 10px #ffffff,
+      0 0 20px var(--accent-cyan),
+      0 0 40px var(--accent-cyan),
+      0 0 80px var(--accent-cyan);
+  }
 }
-/* END OF NEON TITLE */
+
+/* --- end of Neon Hero Title section --- */
