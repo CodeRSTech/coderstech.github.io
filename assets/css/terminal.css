@@ -279,130 +279,122 @@ p, small, .text-white-50 {
 /* --- end of Scroll-Driven Terminal Typing Effect --- */
 
 /* --- High Priority Neon Hero Title --- */
-/* --- Ultra-Realistic Fluorescent Tube Neon --- */
 h1.display-5 {
+  position: relative;
   color: #ffffff !important;
-  /* Start completely off before the animation kicks in */
-  opacity: 0.1;
-  text-shadow: none;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
+  transform: translateZ(0);
+
+  /* Removed display: flex and alignment rules */
+}
+
+/* Group shared positioning properties */
+h1.display-5::before,
+h1.display-5::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 
   /*
-    1. tubeIgnite runs ONCE for 2.5 seconds and stays at its final frame (forwards).
-    2. tubeAmbient runs INFINITELY, but waits 2.5 seconds to start.
+    The fix: Inherit the parent's exact box model and typography.
+    This accounts for any padding, line-height, or text-align
+    (left, right, or center) applied to the main h1.
   */
+  padding: inherit;
+  line-height: inherit;
+  text-align: inherit;
+}
+
+/* LAYER 1: The Base Glow */
+h1.display-5::before {
+  z-index: -1;
+  color: transparent;
+  text-shadow:
+    0 0 5px #ffffff,
+    0 0 15px var(--accent-cyan),
+    0 0 30px var(--accent-cyan);
+  opacity: 0;
+  will-change: opacity;
   animation:
     tubeIgnite 2.5s forwards,
-    tubeAmbient 10s 2.5s infinite;
+    tubeAmbient 10s 2.5s infinite ease-in-out;
 }
-/* Phase 1: The Ignition Sequence */
+
+/* LAYER 2: The Overdrive Surge */
+h1.display-5::after {
+  z-index: -2;
+  color: transparent;
+  text-shadow:
+    0 0 40px var(--accent-cyan),
+    0 0 80px var(--accent-cyan),
+    0 0 120px var(--accent-cyan);
+  opacity: 0;
+  will-change: opacity;
+  animation:
+    surgePowerUp 3.5s forwards,
+    surgeFlicker 10s 3.5s infinite;
+}
+/* =========================================================
+   PHASE 1: IGNITION SEQUENCE (Runs on Layer 1)
+   ========================================================= */
 @keyframes tubeIgnite {
-  /* Rapid starter clicks */
-  0%    { opacity: 0.1; text-shadow: none; }
-  4%    { opacity: 1;   text-shadow: 0 0 10px #fff, 0 0 20px var(--accent-cyan); }
-  8%    { opacity: 0.1; text-shadow: none; }
-  12%   { opacity: 1;   text-shadow: 0 0 10px #fff, 0 0 20px var(--accent-cyan); }
-  16%   { opacity: 0.1; text-shadow: none; }
+  /* Starter clicks */
+  0%, 3%   { opacity: 0.1; }
+  4%, 7%   { opacity: 1.0; }
+  8%, 11%  { opacity: 0.1; }
+  12%, 15% { opacity: 1.0; }
+  16%, 19% { opacity: 0.1; }
 
-  /* Instantly snap to a constant dim state (Gas warming up) */
-  16.1% { opacity: 0.3; text-shadow: 0 0 5px var(--accent-cyan); }
-  60%   { opacity: 0.3; text-shadow: 0 0 5px var(--accent-cyan); } /* Holds steady */
+  /* Gas warming up at half power */
+  20%, 80% { opacity: 0.4; }
 
-  /* Instantly snap to full voltage */
-  60.1% {
-    opacity: 1;
-    text-shadow:
-      0 0 4px #ffffff,
-      0 0 10px #ffffff,
-      0 0 20px var(--accent-cyan),
-      0 0 40px var(--accent-cyan),
-      0 0 80px var(--accent-cyan);
-  }
-  100% {
-    opacity: 1;
-    text-shadow:
-      0 0 4px #ffffff,
-      0 0 10px #ffffff,
-      0 0 20px var(--accent-cyan),
-      0 0 40px var(--accent-cyan),
-      0 0 80px var(--accent-cyan);
-  }
+  /* Snap to full base power */
+  81%, 100% { opacity: 1.0; }
 }
 
-/* Phase 2: Post-Ignition Ambient "Buzzing" */
+/* =========================================================
+   PHASE 2: BASE TUBE AMBIENT (Runs on Layer 1)
+   Smooth, subtle breathing of the inner tube
+   ========================================================= */
 @keyframes tubeAmbient {
-  /* 0% to 40%: Perfectly stable for 4 seconds */
-  0%, 40% {
-    opacity: 1;
-    text-shadow:
-      0 0 4px #ffffff,
-      0 0 10px #ffffff,
-      0 0 20px var(--accent-cyan),
-      0 0 40px var(--accent-cyan),
-      0 0 80px var(--accent-cyan);
-  }
-
-  /* 40% to 45%: A 0.5-second high-frequency electrical buzz.
-     We use strict percentage pairs to force instant snapping instead of fading. */
-  40.1%, 40.6% {
-    opacity: 0.85;
-    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan);
-  }
-  40.7%, 41.2% {
-    opacity: 0.95;
-    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan), 0 0 60px var(--accent-cyan);
-  }
-  41.3%, 41.8% {
-    opacity: 0.88;
-    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan);
-  }
-  41.9%, 42.5% {
-    opacity: 0.98;
-    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan), 0 0 80px var(--accent-cyan);
-  }
-  42.6%, 43.1% {
-    opacity: 0.85;
-    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan);
-  }
-  43.2%, 44.9% {
-    opacity: 0.92;
-    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan), 0 0 60px var(--accent-cyan);
-  }
-
-  /* 45% to 82%: Stable again for a few seconds */
-  45%, 82% {
-    opacity: 1;
-    text-shadow:
-      0 0 4px #ffffff,
-      0 0 10px #ffffff,
-      0 0 20px var(--accent-cyan),
-      0 0 40px var(--accent-cyan),
-      0 0 80px var(--accent-cyan);
-  }
-
-  /* 82% to 85%: A very quick, shorter 0.3-second buzz */
-  82.1%, 82.8% {
-    opacity: 0.86;
-    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan);
-  }
-  82.9%, 83.5% {
-    opacity: 0.94;
-    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan), 0 0 60px var(--accent-cyan);
-  }
-  83.6%, 84.9% {
-    opacity: 0.88;
-    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffff, 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan);
-  }
-
-  /* 85% to 100%: Stable until the loop restarts */
-  85%, 100% {
-    opacity: 1;
-    text-shadow:
-      0 0 4px #ffffff,
-      0 0 10px #ffffff,
-      0 0 20px var(--accent-cyan),
-      0 0 40px var(--accent-cyan),
-      0 0 80px var(--accent-cyan);
-  }
+  0%, 100% { opacity: 1.0; }
+  50%      { opacity: 0.85; }
 }
 
+/* =========================================================
+   PHASE 3: THE VOLTAGE SURGE (Runs on Layer 2)
+   Reintroduces the massive 2-5x brightness jump
+   ========================================================= */
+@keyframes surgePowerUp {
+  /* Stay completely dark during ignition and the first second of ambient */
+  0%, 93% { opacity: 0; }
+
+  /* The violent kick-on */
+  94% { opacity: 1.0; }
+  96% { opacity: 0.3; }
+  98% { opacity: 1.0; }
+  100% { opacity: 1.0; }
+}
+
+/* =========================================================
+   PHASE 4: HIGH-VOLTAGE FLICKER (Runs on Layer 2)
+   Instant-snapping electrical buzzing on the outer glow
+   ========================================================= */
+@keyframes surgeFlicker {
+  0%, 38% { opacity: 1.0; }
+
+  /* First electrical buzz */
+  38.1%, 38.6% { opacity: 0.6; }
+  38.7%, 39.2% { opacity: 0.95; }
+  39.3%, 39.8% { opacity: 0.5; }
+  39.9%, 40.5% { opacity: 1.0; }
+  40.6%, 41.1% { opacity: 0.7; }
+  41.2%, 78%   { opacity: 1.0; }
+
+  /* Second shorter buzz */
+  78.1%, 78.5% { opacity: 0.65; }
+  78.6%, 79.1% { opacity: 0.9; }
+  79.2%, 100%  { opacity: 1.0; }
+}
 /* --- end of Neon Hero Title section --- */
