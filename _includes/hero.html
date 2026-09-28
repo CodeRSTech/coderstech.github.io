@@ -5,7 +5,11 @@
   </p>
   <div class="d-flex flex-wrap gap-3">
     {% for btn in site.data.hero.buttons %}
-      <a href="{{ btn.url }}" class="btn {{ btn.style }} px-4 py-2 fw-bold rounded-0">
+      {% assign btn_url = btn.url %}
+      {% unless btn.url contains '://' or btn.url contains 'mailto:' or btn.url contains '#' %}
+        {% assign btn_url = btn.url | relative_url %}
+      {% endunless %}
+      <a href="{{ btn_url }}" class="btn {{ btn.style }} px-4 py-2 fw-bold rounded-0">
         <i class="{{ btn.icon }} me-2"></i>{{ btn.text }}
       </a>
     {% endfor %}
