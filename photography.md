@@ -13,11 +13,11 @@ gallery_assets: true
      data-lightbox="photography-gallery"
      data-title="{{ caption | escape }}">
     <img src="{{ image.url | relative_url }}"
-         alt="{{ image.alt }}"
+         alt="{{ image.alt | default: caption }}"
          loading="lazy"
          decoding="async"
-         width="{{ image.width }}"
-         height="{{ image.height }}">
+         {% if image.width and image.height %}width="{{ image.width }}"
+         height="{{ image.height }}"{% endif %}>
   </a>
   <figcaption class="photo-caption">{{ caption | escape }}</figcaption>
 </figure>
