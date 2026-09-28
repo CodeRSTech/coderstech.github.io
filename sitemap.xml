@@ -8,7 +8,10 @@ layout: null
   {% unless p.url contains '.xml' or p.url contains '/404' or p.sitemap == false %}
   <url>
     <loc>{{ p.url | absolute_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    {% assign page_lastmod = p.last_modified_at | default: p.date %}
+    {% if page_lastmod %}
+    <lastmod>{{ page_lastmod | date_to_xmlschema }}</lastmod>
+    {% endif %}
   </url>
   {% endunless %}
 {% endfor %}
