@@ -1,35 +1,53 @@
 - url: "/assets/images/photography/milky_way.jpg"
-  title: "Milky way - Long Exposure (Nikon D7200, 18mm, 30s)."
-  alt: "Milky way - Long Exposure"
+  title: "Milky Way long exposure (Nikon D7200, 18mm, 30s)."
+  alt: "Milky Way over mountain silhouettes captured with a 30-second exposure."
+  width: 1080
+  height: 1620
 
 - url: "/assets/images/photography/mobile_pro.jpeg"
-  title: "Mobile Photography - Long Exposure."
-  alt: "Mobile Photography - Long Exposure"
+  title: "Mobile photography long exposure."
+  alt: "Long-exposure night scene photographed on a mobile phone."
+  width: 2000
+  height: 2667
 
 - url: "/assets/images/photography/temple_laxmi_narayan.jpg"
-  title: "Laxmi Narayan Temple - Composite made by digital manipulation of multiple images merge into HDR."
-  alt: "Laxmi Narayan Temple - Composite"
+  title: "Laxmi Narayan Temple HDR composite."
+  alt: "Illuminated Laxmi Narayan Temple created from a multi-image HDR composite."
+  width: 2000
+  height: 1699
 
 - url: "/assets/images/photography/purple_hills.jpeg"
-  title: "Somewhere in the hills - Night HDR - Made from n images with exposure times ranging from 0.5s to 30s, taking with the help of custom CHDK script."
-  alt: "Purple Hills"
+  title: "Somewhere in the hills: night HDR with CHDK scripting."
+  alt: "Purple-toned hillscape at night blended from bracketed long exposures."
+  width: 2000
+  height: 1500
 
 - url: "/assets/images/photography/winter_night.jpg"
-  title: "Winter Nights - Long Exposure HDR - Made from n images with exposure times ranging from 0.5s to 30s, taking with the help of custom CHDK script."
-  alt: "Winter"
+  title: "Winter nights long-exposure HDR with CHDK scripting."
+  alt: "Winter night landscape created from stacked long exposures."
+  width: 2000
+  height: 1500
 
 - url: "/assets/images/photography/curious_chipmunk.jpg"
   title: "Curious Chipmunk"
-  alt: "A chipmunk"
+  alt: "Chipmunk peeking toward the camera from rocky terrain."
+  width: 4013
+  height: 2367
 
 - url: "/assets/images/photography/Urban.jpeg"
-  title: "Night time Urban landscape - Made from n images with exposure times ranging from 0.5s to 30s, taking with the help of custom CHDK script."
-  alt: "Urban landscape"
+  title: "Night-time urban landscape from CHDK-assisted exposure bracketing."
+  alt: "City lights and buildings captured in a blended night urban panorama."
+  width: 2000
+  height: 1498
 
 - url: "/assets/images/photography/valley.jpg"
-  title: ""
-  alt: "Valley"
+  title: "Valley view at dusk."
+  alt: "Wide valley landscape with layered ridges under fading evening light."
+  width: 2000
+  height: 1494
 
 - url: "/assets/images/photography/himalaya.jpg"
   title: "Himalayan Foothills - Single shot - 30s - CHDK"
-  alt: "Himalayan Foothills"
+  alt: "Himalayan foothills under a dark sky in a single 30-second exposure."
+  width: 1428
+  height: 2000
