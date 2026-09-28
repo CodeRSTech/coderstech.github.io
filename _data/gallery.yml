@@ -1,53 +1,53 @@
 - url: "/assets/images/photography/milky_way.jpg"
   title: "Milky Way long exposure (Nikon D7200, 18mm, 30s)."
-  alt: "Milky Way over mountain silhouettes captured with a 30-second exposure."
+  alt: "Milky Way over mountain silhouettes at night."
   width: 1080
   height: 1620
 
 - url: "/assets/images/photography/mobile_pro.jpeg"
   title: "Mobile photography long exposure."
-  alt: "Long-exposure night scene photographed on a mobile phone."
+  alt: "Long-exposure night scene shot on a mobile phone."
   width: 2000
   height: 2667
 
 - url: "/assets/images/photography/temple_laxmi_narayan.jpg"
   title: "Laxmi Narayan Temple HDR composite."
-  alt: "Illuminated Laxmi Narayan Temple created from a multi-image HDR composite."
+  alt: "Illuminated Laxmi Narayan Temple at night."
   width: 2000
   height: 1699
 
 - url: "/assets/images/photography/purple_hills.jpeg"
   title: "Somewhere in the hills: night HDR with CHDK scripting."
-  alt: "Purple-toned hillscape at night blended from bracketed long exposures."
+  alt: "Purple-toned hills under a night sky."
   width: 2000
   height: 1500
 
 - url: "/assets/images/photography/winter_night.jpg"
   title: "Winter nights long-exposure HDR with CHDK scripting."
-  alt: "Winter night landscape created from stacked long exposures."
+  alt: "Winter night landscape with distant ridgelines."
   width: 2000
   height: 1500
 
 - url: "/assets/images/photography/curious_chipmunk.jpg"
   title: "Curious Chipmunk"
-  alt: "Chipmunk peeking toward the camera from rocky terrain."
+  alt: "Chipmunk peeking from rocky terrain."
   width: 4013
   height: 2367
 
 - url: "/assets/images/photography/Urban.jpeg"
   title: "Night-time urban landscape from CHDK-assisted exposure bracketing."
-  alt: "City lights and buildings captured in a blended night urban panorama."
+  alt: "City lights and buildings in a night urban scene."
   width: 2000
   height: 1498
 
 - url: "/assets/images/photography/valley.jpg"
   title: "Valley view at dusk."
-  alt: "Wide valley landscape with layered ridges under fading evening light."
+  alt: "Layered valley ridges at dusk."
   width: 2000
   height: 1494
 
 - url: "/assets/images/photography/himalaya.jpg"
   title: "Himalayan Foothills - Single shot - 30s - CHDK"
-  alt: "Himalayan foothills under a dark sky in a single 30-second exposure."
+  alt: "Himalayan foothills under a dark night sky."
   width: 1428
   height: 2000
