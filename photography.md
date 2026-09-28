@@ -6,7 +6,7 @@ gallery_assets: true
 ---
 
 {% for image in site.data.gallery %}
-{% assign caption = image.title | default: image.alt %}
+{% assign caption = image.title | default: "Untitled photograph" %}
 <figure class="photo-card">
   <a class="photo-link"
      href="{{ image.url | relative_url }}"
