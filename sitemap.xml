@@ -16,9 +16,10 @@ layout: null
   {% endunless %}
 {% endfor %}
 {% for post in site.posts %}
+  {% assign post_lastmod = post.last_modified_at | default: post.date %}
   <url>
     <loc>{{ post.url | absolute_url }}</loc>
-    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    <lastmod>{{ post_lastmod | date_to_xmlschema }}</lastmod>
   </url>
 {% endfor %}
 </urlset>
