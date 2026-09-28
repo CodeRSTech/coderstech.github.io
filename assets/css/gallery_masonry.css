@@ -48,8 +48,8 @@
 
 .photo-link:focus-visible,
 .gallery-masonry > a:focus-visible {
-  outline: 2px solid var(--bs-info);
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: inset 0 0 0 3px var(--bs-info);
 }
 
 .photo-caption {
