@@ -22,12 +22,12 @@
 .photo-link,
 .gallery-masonry > a {
   display: block;
-  border-radius: 0.5rem;
 }
 
 .gallery-masonry > a {
   overflow: hidden;
   border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 0.5rem;
   background: rgba(2, 6, 23, 0.8);
 }
 
@@ -46,7 +46,7 @@
   transform: scale(1.02);
 }
 
-.photo-link:focus-visible,
+.photo-card:focus-within,
 .gallery-masonry > a:focus-visible {
   outline: 2px solid #22d3ee;
   outline-offset: 2px;

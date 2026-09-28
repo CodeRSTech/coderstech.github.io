@@ -7,12 +7,13 @@ gallery_assets: true
 
 {% for image in site.data.gallery %}
 {% assign caption = image.title | default: image.alt %}
+{% assign caption_id = "photo-caption-" | append: forloop.index %}
 <figure class="photo-card">
   <a class="photo-link"
      href="{{ image.url | relative_url }}"
      data-lightbox="photography-gallery"
      data-title="{{ caption | escape }}"
-     aria-label="Open full-size image: {{ caption | escape }}">
+     aria-labelledby="{{ caption_id }}">
     <img src="{{ image.url | relative_url }}"
          alt="{{ image.alt }}"
          loading="lazy"
@@ -20,6 +21,6 @@ gallery_assets: true
          width="{{ image.width }}"
          height="{{ image.height }}">
   </a>
-  <figcaption class="photo-caption">{{ caption | escape }}</figcaption>
+  <figcaption id="{{ caption_id }}" class="photo-caption">{{ caption | escape }}</figcaption>
 </figure>
 {% endfor %}
