@@ -8,7 +8,7 @@
     <div class="d-flex gap-3">
       <!-- Reusing the socials data from your profiles.yml -->
       {% for social in site.data.profiles.socials %}
-        <a href="{{ social.url }}" class="text-white-50 hover-text-light fs-5 transition-all" aria-label="Visit {{ social.icon | replace: 'bi bi-', '' | replace: '-', ' ' }}">
+        <a href="{{ social.url }}" class="text-white-50 hover-text-light fs-5 transition-all" aria-label="Visit {{ social.icon | replace: 'bi bi-', '' | replace: '-', ' ' }}"{% if social.url contains 'http' %} target="_blank" rel="noopener noreferrer"{% endif %}>
           <i class="{{ social.icon }}"></i>
         </a>
       {% endfor %}
