@@ -46,10 +46,10 @@
   transform: scale(1.02);
 }
 
-.photo-card:focus-within,
+.photo-link:focus-visible,
 .gallery-masonry > a:focus-visible {
   outline: 2px solid var(--bs-info);
-  outline-offset: 3px;
+  outline-offset: -2px;
 }
 
 .photo-caption {
