@@ -17,8 +17,7 @@ gallery_assets: true
          alt="{{ alt_text | escape }}"
          loading="lazy"
          decoding="async"
-         width="{{ image.width }}"
-         height="{{ image.height }}">
+         {% if image.width and image.height %}width="{{ image.width }}" height="{{ image.height }}"{% endif %}>
   </a>
   <figcaption class="photo-caption">{{ caption | escape }}</figcaption>
 </figure>
