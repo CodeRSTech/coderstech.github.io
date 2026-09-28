@@ -11,7 +11,7 @@ permalink: /experiments/
 
 <!-- Experiment 1: Wardriving -->
 <details class="mb-3 bg-dark border border-secondary rounded p-3">
-  <summary class="text-light fw-bold fs-5" style="cursor: pointer;">
+  <summary class="text-light fw-bold fs-5 experiment-summary">
     Covert 802.11 Auditing Rig <span class="badge bg-primary ms-2 fs-6">NetSec</span>
   </summary>
   <div class="mt-3 text-white-50 border-top border-secondary pt-3">
@@ -22,7 +22,7 @@ permalink: /experiments/
 
 <!-- Experiment 2: ATX Conversion -->
 <details class="mb-3 bg-dark border border-secondary rounded p-3">
-  <summary class="text-light fw-bold fs-5" style="cursor: pointer;">
+  <summary class="text-light fw-bold fs-5 experiment-summary">
     ATX PSU Mechatronic Conversion <span class="badge bg-primary ms-2 fs-6">Hardware</span>
   </summary>
   <div class="mt-3 text-white-50 border-top border-secondary pt-3">
@@ -33,7 +33,7 @@ permalink: /experiments/
 
 <!-- Experiment 3: Bare-Metal Recovery -->
 <details class="mb-3 bg-dark border border-secondary rounded p-3">
-  <summary class="text-light fw-bold fs-5" style="cursor: pointer;">
+  <summary class="text-light fw-bold fs-5 experiment-summary">
     Bare-Metal Disaster Recovery <span class="badge bg-primary ms-2 fs-6">IT Ops</span>
   </summary>
   <div class="mt-3 text-white-50 border-top border-secondary pt-3">

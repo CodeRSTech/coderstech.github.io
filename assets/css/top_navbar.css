@@ -55,7 +55,8 @@
 
 .navbar-toggler:focus, .navbar-toggler:active {
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.4) !important;
-  outline: none;
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
 }
 
 .navbar-toggler-icon {
@@ -93,4 +94,12 @@
     left: auto;
     right: 0;
   }
+}
+
+.nav-link:focus-visible,
+.navbar-brand:focus-visible,
+.navbar-toggler:focus-visible {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 3px;
+  border-radius: 2px;
 }

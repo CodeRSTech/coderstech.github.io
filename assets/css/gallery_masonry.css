@@ -22,4 +22,10 @@ transform: scale(1.02);
 
 /* Mobile Breakpoints */
 @media (max-width: 991px) { .gallery-masonry { column-count: 2; } }
-@media (max-width: 575px) { .gallery-masonry { column-count: 1; } }
+@media (max-width: 575px) {
+  .gallery-masonry {
+    column-count: 1;
+    padding: 10px;
+    column-gap: 10px;
+  }
+}
