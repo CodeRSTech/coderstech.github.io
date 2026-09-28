@@ -2,7 +2,6 @@
 layout: gallery
 title: "Computational Photography & Optics"
 permalink: /photography/
-gallery_assets: true
 ---
 
 {% for image in site.data.gallery %}
