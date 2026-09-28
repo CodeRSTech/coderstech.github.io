@@ -2,6 +2,7 @@
 layout: gallery
 title: Hardware & Embedded R&D
 permalink: /hardware/
+gallery_assets: true
 ---
 # Hardware & Firmware Exploitation
 
