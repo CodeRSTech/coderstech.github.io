@@ -6,7 +6,19 @@ gallery_assets: true
 ---
 
 {% for image in site.data.gallery %}
-<a href="{{ image.url | relative_url }}" data-lightbox="gallery" data-title="{{ image.title }}">
-  <img src="{{ image.url | relative_url }}" alt="{{ image.alt }}" loading="lazy" decoding="async" class="img-fluid"></a>
-*{{ image.title }}*{: .image-caption }
+{% assign caption = image.title | default: "Untitled photograph" %}
+{% assign alt_text = image.alt | default: caption %}
+<figure class="photo-card">
+  <a class="photo-link"
+     href="{{ image.url | relative_url }}"
+     data-lightbox="photography-gallery"
+     data-title="{{ caption | escape }}">
+    <img src="{{ image.url | relative_url }}"
+         alt="{{ alt_text | escape }}"
+         loading="lazy"
+         decoding="async"
+         {% if image.width and image.height %}width="{{ image.width }}" height="{{ image.height }}"{% endif %}>
+  </a>
+  <figcaption class="photo-caption">{{ caption | escape }}</figcaption>
+</figure>
 {% endfor %}

@@ -1,31 +1,84 @@
-/* Responsive CSS Masonry */
 .gallery-masonry {
-column-count: 3;
-column-gap: 15px;
-padding: 20px;
-}
-.gallery-masonry a {
-display: block;
-margin-bottom: 15px;
-break-inside: avoid; /* Prevents images from splitting across columns */
-}
-.gallery-masonry img {
-width: 100%;
-height: auto;
-display: block;
-border-radius: 4px;
-transition: transform 0.2s ease-in-out;
-}
-.gallery-masonry img:hover {
-transform: scale(1.02);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+  padding: 1rem 0;
 }
 
-/* Mobile Breakpoints */
-@media (max-width: 991px) { .gallery-masonry { column-count: 2; } }
+.gallery-masonry > * {
+  min-width: 0;
+}
+
+.photo-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--bs-border-color-translucent);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--bs-tertiary-bg);
+}
+
+.photo-link,
+.gallery-masonry > a {
+  display: block;
+}
+
+.gallery-masonry > a {
+  overflow: hidden;
+  border: 1px solid var(--bs-border-color-translucent);
+  border-radius: 0.5rem;
+  background: var(--bs-tertiary-bg);
+}
+
+.photo-link img,
+.gallery-masonry > a img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.photo-link:hover img,
+.photo-link:focus-visible img,
+.gallery-masonry > a:hover img,
+.gallery-masonry > a:focus-visible img {
+  transform: scale(1.02);
+}
+
+.photo-link:focus-visible,
+.gallery-masonry > a:focus-visible {
+  outline: 2px solid var(--bs-info);
+  outline-offset: -2px;
+}
+
+.photo-caption {
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  color: var(--bs-body-color);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  background: var(--bs-secondary-bg);
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 575px) {
   .gallery-masonry {
-    column-count: 1;
-    padding: 10px;
-    column-gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-link img,
+  .gallery-masonry > a img {
+    transition: none;
+  }
+
+  .photo-link:hover img,
+  .photo-link:focus-visible img,
+  .gallery-masonry > a:hover img,
+  .gallery-masonry > a:focus-visible img {
+    transform: none;
   }
 }
