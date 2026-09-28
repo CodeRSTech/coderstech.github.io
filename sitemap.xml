@@ -1,0 +1,25 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% assign sorted_pages = site.pages | sort: 'url' %}
+{% for p in sorted_pages %}
+  {% unless p.url contains '.xml' or p.url contains '/404' or p.sitemap == false %}
+  <url>
+    <loc>{{ p.url | absolute_url }}</loc>
+    {% assign page_lastmod = p.last_modified_at | default: p.date %}
+    {% if page_lastmod %}
+    <lastmod>{{ page_lastmod | date_to_xmlschema }}</lastmod>
+    {% endif %}
+  </url>
+  {% endunless %}
+{% endfor %}
+{% for post in site.posts %}
+  {% assign post_lastmod = post.last_modified_at | default: post.date %}
+  <url>
+    <loc>{{ post.url | absolute_url }}</loc>
+    <lastmod>{{ post_lastmod | date_to_xmlschema }}</lastmod>
+  </url>
+{% endfor %}
+</urlset>

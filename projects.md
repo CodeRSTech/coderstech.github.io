@@ -38,10 +38,10 @@ permalink: /projects/
             </div>
             <!-- Routing -->
             <div class="col-md-3 border-start border-secondary d-flex flex-column justify-content-center gap-2">
-              <a href="#" target="_blank" class="btn btn-outline-light btn-sm w-100 fw-bold transition-all hover-overlay">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm w-100 fw-bold transition-all hover-overlay">
                 <i class="bi bi-github me-2"></i>Repository
               </a>
-              <a href="#" target="_blank" class="btn btn-primary btn-sm w-100 fw-bold transition-all">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm w-100 fw-bold transition-all">
                 <i class="bi bi-terminal me-2"></i>Live Log
               </a>
             </div>
@@ -70,7 +70,7 @@ permalink: /projects/
               <p class="text-white-50 small mb-0">Engineered a standalone, dependency-free C++ compiler that directly translates 8085 opcodes into hex binaries in a single pass.</p>
             </div>
             <div class="col-md-3 border-start border-secondary d-flex flex-column justify-content-center gap-2">
-              <a href="#" target="_blank" class="btn btn-outline-light btn-sm w-100 fw-bold transition-all hover-overlay">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm w-100 fw-bold transition-all hover-overlay">
                 <i class="bi bi-github me-2"></i>Source Code
               </a>
             </div>

@@ -233,3 +233,55 @@ p, small, .text-white-50 {
 }
 /* end of interactive cards */
 
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 0.5rem;
+  z-index: 2000;
+  background: #000;
+  color: #fff;
+  border: 2px solid var(--accent-green);
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 2px;
+}
+
+@media (hover: none) {
+  .card:hover,
+  .hover-overlay:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body {
+    background-attachment: scroll;
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.experiment-summary {
+  cursor: pointer;
+}

@@ -22,23 +22,23 @@
 
         <!-- User Bio Section -->
         <div class="d-flex align-items-center mb-3">
-          <img src="{{ site.data.profiles.hackerearth.avatar }}" class="rounded-circle border border-secondary me-3" width="56" height="56" alt="Avatar">
+          <img src="{{ site.data.profiles.hackerearth.avatar | relative_url }}" class="rounded-circle border border-secondary me-3" width="56" height="56" alt="Avatar" loading="lazy" decoding="async">
           <div>
             <h5 class="text-light mb-0">{{ site.data.profiles.hackerearth.name }}</h5>
-            <small class="text-white-50" style="font-size: 0.8rem;">{{ site.data.profiles.hackerearth.subtitle }}</small>
+            <small class="text-white-50 profile-subtitle">{{ site.data.profiles.hackerearth.subtitle }}</small>
           </div>
         </div>
         <!-- Stats Grid (1x4 with Absolute Icons) -->
         <div class="row g-2 mb-4">
           {% for stat in site.data.profiles.hackerearth.stats %}
             <div class="col-6 col-sm-3">
-              <div class="border border-secondary p-3 bg-black h-100 position-relative d-flex flex-column justify-content-end" style="min-height: 90px;">
+              <div class="border border-secondary p-3 bg-black h-100 position-relative d-flex flex-column justify-content-end profile-stat-card">
                 <!-- Icon in top right corner -->
-                <div class="position-absolute top-0 end-0 mt-2 me-2 rounded-circle bg-dark d-flex align-items-center justify-content-center" style="width: 28px; height: 28px;">
-                  <i class="{{ stat.icon }}" style="font-size: 0.8rem;"></i>
+                <div class="position-absolute top-0 end-0 mt-2 me-2 rounded-circle bg-dark d-flex align-items-center justify-content-center profile-stat-icon">
+                  <i class="{{ stat.icon }} profile-stat-icon-glyph"></i>
                 </div>
                 <h5 class="text-light mb-0 fw-bold">{{ stat.value }}</h5>
-                <small class="text-white-50 text-uppercase mt-1" style="font-size: 0.6rem; letter-spacing: 0.5px;">{{ stat.label }}</small>
+                <small class="text-white-50 text-uppercase mt-1 profile-stat-label">{{ stat.label }}</small>
               </div>
             </div>
           {% endfor %}
@@ -50,7 +50,7 @@
 
             <div class="d-flex flex-column align-items-center text-center he-badge-col">
               <div class="d-flex align-items-center justify-content-center mb-2 he-badge-wrapper">
-                <img src="{{ badge.url }}" alt="{{ badge.name }}" class="img-fluid he-badge-img">
+                <img src="{{ badge.url | relative_url }}" alt="{{ badge.name }}" class="img-fluid he-badge-img" loading="lazy" decoding="async">
               </div>
               <small class="text-white-50 text-uppercase fw-bold mt-auto he-badge-text">{{ badge.name }}</small>
             </div>
@@ -66,7 +66,7 @@
       <div class="card bg-dark border-secondary p-4 h-100">
         <!-- Header -->
         <div class="d-flex justify-content-between align-items-center border-bottom border-secondary pb-3 mb-3">
-          <img src="{{ site.data.profiles.hackerrank.logo.url }}" alt="{{ site.data.profiles.hackerrank.logo.name }}" class="brand-logo">
+          <img src="{{ site.data.profiles.hackerrank.logo.url | relative_url }}" alt="{{ site.data.profiles.hackerrank.logo.name }}" class="brand-logo" loading="lazy" decoding="async">
           <span class="badge bg-success bg-opacity-10 text-success border border-success">{{ site.data.profiles.hackerrank.badge }}</span>
         </div>
 
@@ -80,7 +80,7 @@
                   <strong class="text-light d-block fs-5">{{ skill.name }}</strong>
                 </div>
               </div>
-              <div class="text-warning" style="font-size: 0.9rem;">
+              <div class="text-warning profile-star-rating">
                 {% for i in (1..5) %}
                   {% if i <= skill.stars %}
                     <i class="bi bi-star-fill"></i>
@@ -101,12 +101,12 @@
     <!-- Platform Links span across horizontally now -->
     {% for platform in site.data.profiles.platforms %}
     <div class="col-lg-4 col-md-6">
-      <a href="{{ platform.url }}" class="text-decoration-none">
+      <a href="{{ platform.url }}" class="text-decoration-none"{% if platform.url contains 'http' %} target="_blank" rel="noopener noreferrer"{% endif %}>
         <div class="card bg-dark border-secondary p-3 hover-overlay transition-all d-flex flex-row align-items-center h-100">
           <i class="{{ platform.icon }} fs-2 me-3"></i>
           <div>
             <strong class="text-light d-block">{{ platform.name }}</strong>
-            <small class="text-white-50" style="font-size: 0.8rem;">{{ platform.description }}</small>
+            <small class="text-white-50 profile-platform-description">{{ platform.description }}</small>
           </div>
         </div>
       </a>
@@ -119,7 +119,7 @@
         <small class="text-white-50 text-uppercase fw-bold mb-0">Network</small>
         <div class="d-flex gap-2">
           {% for social in site.data.profiles.socials %}
-            <a href="{{ social.url }}" aria-label="Visit my {{ social.icon | replace: 'bi bi-', '' }}" class="btn border border-secondary...">
+            <a href="{{ social.url }}" aria-label="Visit my {{ social.icon | replace: 'bi bi-', '' }}" class="btn border border-secondary rounded-circle p-2 d-inline-flex align-items-center justify-content-center"{% if social.url contains 'http' %} target="_blank" rel="noopener noreferrer"{% endif %}>
               <i class="{{ social.icon }} text-light fs-5"></i>
             </a>
           {% endfor %}

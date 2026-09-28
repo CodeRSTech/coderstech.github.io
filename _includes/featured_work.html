@@ -3,7 +3,7 @@
   <div class="row g-4">
     {% for sector in site.data.featured.sectors %}
     <div class="col-md-6">
-      <a href="{{ sector.url }}" class="text-decoration-none">
+      <a href="{{ sector.url | relative_url }}" class="text-decoration-none">
         <div class="card bg-dark border-secondary p-4 h-100 hover-overlay">
           <h4 class="text-light mb-2">{{ sector.title }} <i class="bi bi-arrow-right ms-2"></i></h4>
           <p class="text-white-50 mb-0">{{ sector.description }}</p>
