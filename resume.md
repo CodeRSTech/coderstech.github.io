@@ -106,13 +106,13 @@ resume_page: true
           <h3>AI-Pong</h3>
           <p>A Neural Network based Genetic Algorithm finds the optimal solution for playing 2d game, pong.</p>
           <p class="resume-tech"><strong>Technology</strong> Arcade/Pygame, Torch/NumPy, Torchvision</p>
-          <span class="resume-placeholder">Project details to be added</span>
+          <span class="resume-placeholder">Over a hundred individuals evolve to play the classic game "Pong". Over multiple generations, each individual plays the game. At the end of each generation, top performers create their unique offspring. This cycle is repeated several times. Initial implementation used Pygame and NumPy, later migrated to Arcade and Torch for performance improvements.</span>
         </article>
         <article class="resume-project">
           <h3>Blurzy</h3>
           <p>Blurzy is a PySide6 desktop app for video detection, tracking, annotation, and exporting video with blurred subjects.</p>
           <p class="resume-tech"><strong>Technology</strong> PySide6, PyTorch, Ultralytics</p>
-          <span class="resume-placeholder">Project details to be added</span>
+          <span class="resume-placeholder">Detect people using object-detection models, track their movements and apply blur to them. Works with all possible kinds of object categories. The development phase is still WIP and could use more feature additions.</span>
         </article>
       </div>
     </section>
