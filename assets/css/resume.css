@@ -319,13 +319,13 @@
 
   main#main-content {
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0 !important; /* revert — no gap outside the colored box */
     max-width: 100% !important;
-    /* Bootstrap's .container adds left/right gutters; drop them so the
-       card reaches the page edges cleanly. */
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    min-height: 100%;
+    /* Must be an explicit (not min-) height so it establishes a
+       definite height for .resume-page's percentage height below;
+       otherwise the percentage chain can't resolve and the sidebar
+       fails to stretch to the full page height. */
+    height: 100%;
   }
 
   .resume-page {
@@ -336,11 +336,14 @@
        to the same height as the main column. */
     align-items: stretch;
     gap: 0;
-    padding: 0;
+    padding-top: 1rem;   /* <- top breathing room lives here now, inside the tint */
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
     border: none;
     border-radius: 0;
     margin-bottom: 0;
-    min-height: 100%;
+    height: 100%;
   }
 
   .resume-sidebar {
