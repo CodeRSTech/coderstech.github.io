@@ -303,8 +303,12 @@
   }
 
   html, body.resume-document {
-    background: #fff !important;
+    /* Match the card's own surface color instead of white so the
+       rounded corners and any leftover page space don't show through
+       as blank white gaps. */
+    background: var(--bg-surface, #121212) !important;
     font-size: 92%;
+    height: 100%;
   }
 
   .navbar,
@@ -317,6 +321,11 @@
     margin: 0 !important;
     padding: 0 !important;
     max-width: 100% !important;
+    /* Bootstrap's .container adds left/right gutters; drop them so the
+       card reaches the page edges cleanly. */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    min-height: 100%;
   }
 
   .resume-page {
@@ -324,7 +333,9 @@
     gap: 0;
     padding: 0;
     border: none;
+    border-radius: 0;
     margin-bottom: 0;
+    min-height: 100%;
   }
 
   .resume-sidebar {
