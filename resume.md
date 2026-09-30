@@ -83,14 +83,14 @@ resume_page: true
         <li>
           <a href="{{ '/' | relative_url }}">
             <i class="bi bi-globe2" aria-hidden="true"></i>
-            <span>Portfolio</span>
+            <span>{{ '/' | relative_url }}</span>
           </a>
         </li>
         {% if github_profile and github_profile.url != "" and github_profile.url != "#" %}
         <li>
           <a href="{{ github_profile.url }}" target="_blank" rel="noopener noreferrer">
             <i class="bi bi-github" aria-hidden="true"></i>
-            <span>GitHub</span>
+            <span>{{ github_profile.url }}</span>
           </a>
         </li>
         {% endif %}
@@ -104,12 +104,15 @@ resume_page: true
       <div class="resume-contact-list">
         <a class="resume-contact-item" href="tel:XXXXX-XXXXX" aria-label="Call XXXXX-XXXXX">
           <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+          <span>XXXXX-XXXXX</span>
         </a>
         <a class="resume-contact-item" href="mailto:XXXX@XXX.com" aria-label="Email XXXX@XXX.com">
           <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+          <span>XXXX@XXX.com</span>
         </a>
         <span class="resume-contact-item" role="img" aria-label="Location: India">
           <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+          <span>India</span>
         </span>
       </div>
     </section>
