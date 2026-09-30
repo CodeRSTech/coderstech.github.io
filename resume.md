@@ -16,11 +16,11 @@ resume_page: true
       <h2 id="resume-skills"><i class="bi bi-tools" aria-hidden="true"></i> Skills</h2>
       <div class="resume-skill-group">
         <h3>Languages</h3>
-        <p>{% for lang in site.data.matrix.software_ai.core_languages %}{{ lang.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}{% for item in site.data.matrix.software_ai.familiar %}, {{ item.name }}{% endfor %}</p>
+        <p>{% for lang in site.data.matrix.software_ai.core_languages %}{{ lang.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}<!--{% for item in site.data.matrix.software_ai.familiar %}, {{ item.name }}{% endfor %}--></p>
       </div>
       <div class="resume-skill-group">
         <h3>Libraries &amp; frameworks</h3>
-        <p>Arcade, PySide6, PyTorch, Ultralytics, OpenCV, NumPy</p>
+        <p>Arcade, PySide6, PyTorch, Ultralytics, OpenCV, NumPy, Torch, TorchVision</p>
       </div>
       <div class="resume-skill-group">
         <h3>Areas &amp; platforms</h3>
@@ -48,12 +48,14 @@ resume_page: true
         <h3><i class="bi bi-trophy-fill" aria-hidden="true"></i> HackerRank</h3>
         <div class="resume-stars" aria-label="HackerRank skills">
           {% for skill in site.data.profiles.hackerrank.skills %}
+          {% if skill.stars > 3 %}
           <span class="resume-star-row">
-            <span>{{ skill.name }}</span>
+          <span>{{ skill.name }}</span>
             <span class="resume-star-rating" role="img" aria-label="{{ skill.stars }} out of 5 stars">
               {% for i in (1..5) %}<i class="bi {% if i <= skill.stars %}bi-star-fill{% else %}bi-star{% endif %}" aria-hidden="true"></i>{% endfor %}
             </span>
           </span>
+          {% endif %}
           {% endfor %}
         </div>
         <p class="resume-profile-stat">{{ site.data.profiles.hackerrank.badge }}</p>
@@ -75,6 +77,7 @@ resume_page: true
       </ul>
     </section>
   </aside>
+  <!-- Main content -->
   <div class="resume-main">
     <header class="resume-header">
       <p class="resume-kicker">SOFTWARE DEVELOPMENT · AI · SYSTEMS</p>
@@ -100,14 +103,14 @@ resume_page: true
       <h2 id="resume-projects"><i class="bi bi-kanban-fill" aria-hidden="true"></i> Projects</h2>
       <div class="resume-project-grid">
         <article class="resume-project">
-          <h3>Arcade Game Project</h3>
-          <p>Personal project built with an arcade game library and supporting libraries.</p>
-          <p class="resume-tech"><strong>Technology</strong> Arcade, supporting libraries</p>
+          <h3>AI-Pong</h3>
+          <p>A Neural Network based Genetic Algorithm finds the optimal solution for playing 2d game, pong.</p>
+          <p class="resume-tech"><strong>Technology</strong> Arcade/Pygame, Torch/NumPy, Torchvision</p>
           <span class="resume-placeholder">Project details to be added</span>
         </article>
         <article class="resume-project">
-          <h3>PySide6 / AI Project</h3>
-          <p>Personal project built with desktop and machine-learning tools.</p>
+          <h3>Blurzy</h3>
+          <p>Blurzy is a PySide6 desktop app for video detection, tracking, annotation, and exporting video with blurred subjects.</p>
           <p class="resume-tech"><strong>Technology</strong> PySide6, PyTorch, Ultralytics</p>
           <span class="resume-placeholder">Project details to be added</span>
         </article>

@@ -59,9 +59,9 @@ it_infra:
     - name: "Windows"
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg"
       is_img: true
-    - name: "Bare-Metal"
-      icon: "bi bi-hdd-network text-light"
-      is_img: false
+#    - name: "Bare-Metal"
+#      icon: "bi bi-hdd-network text-light"
+#      is_img: false
   operations: # EXCLUDED
     - title: "802.11 Auditing"
       description: "Wireless Network Security"
