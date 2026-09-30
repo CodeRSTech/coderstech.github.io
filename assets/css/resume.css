@@ -336,10 +336,7 @@
        to the same height as the main column. */
     align-items: stretch;
     gap: 0;
-    padding-top: 1rem;   /* <- top breathing room lives here now, inside the tint */
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
+    padding: 0;
     border: none;
     border-radius: 0;
     margin-bottom: 0;
@@ -352,14 +349,14 @@
        way down, while content itself stays anchored to the top with
        the same vertical padding as resume-main. */
     height: 100%;
-    padding: 1.25rem 1.5rem;
+    padding:4.25rem 1.5rem;
     gap: 1.1rem;
     border-radius: 0;
     border-right: 1px solid var(--border-ghost, #37373a);
   }
 
   .resume-main {
-    padding: 1.25rem 1.5rem;
+    padding: 3.25rem 1.5rem;
     gap: 1.1rem;
   }
 
