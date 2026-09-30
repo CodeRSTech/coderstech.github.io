@@ -83,14 +83,14 @@ resume_page: true
         <li>
           <a href="{{ '/' | relative_url }}">
             <i class="bi bi-globe2" aria-hidden="true"></i>
-            <span>{{ '/' | relative_url }}</span>
+            <span>coderstech.github.io</span>
           </a>
         </li>
         {% if github_profile and github_profile.url != "" and github_profile.url != "#" %}
         <li>
           <a href="{{ github_profile.url }}" target="_blank" rel="noopener noreferrer">
             <i class="bi bi-github" aria-hidden="true"></i>
-            <span>{{ github_profile.url }}</span>
+            <span>{{ github_profile.url | remove_first: "https://" | remove_first: "http://" }}</span>
           </a>
         </li>
         {% endif %}
@@ -99,7 +99,7 @@ resume_page: true
     <section class="resume-side-section resume-contact" aria-labelledby="resume-contact">
       <h2 id="resume-contact">
         <i class="bi bi-person-lines-fill" aria-hidden="true"></i>
-        <span class="visually-hidden">Contact</span>
+        Contact
       </h2>
       <div class="resume-contact-list">
         <a class="resume-contact-item" href="tel:XXXXX-XXXXX" aria-label="Call XXXXX-XXXXX">
@@ -110,7 +110,7 @@ resume_page: true
           <i class="bi bi-envelope-fill" aria-hidden="true"></i>
           <span>XXXX@XXX.com</span>
         </a>
-        <span class="resume-contact-item" role="img" aria-label="Location: India">
+        <span class="resume-contact-item">
           <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
           <span>India</span>
         </span>

@@ -212,6 +212,7 @@ body.resume-light-document {
   font-size: 0.85rem;
   color: var(--text-main);
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .resume-links-list a i {
@@ -232,27 +233,30 @@ body.resume-light-document {
 
 .resume-contact-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 .resume-contact-item {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 1px solid var(--border-ghost);
-  border-radius: 50%;
+  gap: 0.55rem;
   color: var(--accent-cyan);
-  background-color: rgba(14, 116, 144, 0.06);
   font-size: 1rem;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.resume-contact-item span {
+  color: var(--text-main);
+  font-size: 0.85rem;
 }
 
 .resume-contact-item[href]:hover,
 .resume-contact-item[href]:focus-visible {
-  border-color: var(--accent-cyan);
-  background-color: rgba(14, 116, 144, 0.12);
+  color: var(--accent-cyan);
+  text-decoration: underline;
 }
 
 /* ---------------------------------------------------
@@ -453,14 +457,8 @@ body.resume-light-document {
     margin-top: 0.75rem;
   }
 
-  .resume-links-list,
   .resume-contact-list {
-    gap: 0.35rem;
-  }
-
-  .resume-contact-item {
-    width: 2rem;
-    height: 2rem;
+    gap: 0.25rem;
   }
 
   .resume-entry + .resume-entry {
