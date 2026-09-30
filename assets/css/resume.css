@@ -330,6 +330,11 @@
 
   .resume-page {
     grid-template-columns: 2fr 3fr;
+    /* The desktop 2-col layout is normally gated behind a min-width
+       media query, which a print page (often narrower than 992px)
+       may not match. Force it here so the sidebar reliably stretches
+       to the same height as the main column. */
+    align-items: stretch;
     gap: 0;
     padding: 0;
     border: none;
@@ -339,9 +344,15 @@
   }
 
   .resume-sidebar {
+    /* Stretch the sidebar container to the full row height (set by
+       align-items: stretch above) so its background extends all the
+       way down, while content itself stays anchored to the top with
+       the same vertical padding as resume-main. */
+    height: 100%;
     padding: 1.25rem 1.5rem;
     gap: 1.1rem;
     border-radius: 0;
+    border-right: 1px solid var(--border-ghost, #37373a);
   }
 
   .resume-main {
