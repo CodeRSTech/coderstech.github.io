@@ -1,0 +1,326 @@
+/* ---------------------------------------------------
+   Resume Page Layout
+   2:3 column split (sidebar : main) on desktop
+----------------------------------------------------- */
+.resume-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  background-color: var(--bg-surface, #121212);
+  border: 1px solid var(--border-ghost, #37373a);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 992px) {
+  .resume-page {
+    grid-template-columns: 2fr 3fr;
+    gap: 0;
+    padding: 0;
+    align-items: stretch;
+  }
+}
+
+/* ---------------------------------------------------
+   Sidebar
+----------------------------------------------------- */
+.resume-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding: 2rem 1.5rem;
+  background-color: rgba(0, 255, 102, 0.04);
+  border-radius: 8px;
+}
+
+@media (min-width: 992px) {
+  .resume-sidebar {
+    border-radius: 8px 0 0 8px;
+    border-right: 1px solid var(--border-ghost, #37373a);
+  }
+}
+
+.resume-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 0.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--accent-green, #00ff66);
+  background-color: rgba(0, 255, 102, 0.08);
+  color: var(--accent-green, #00ff66);
+}
+
+.resume-avatar i {
+  font-size: 1.75rem;
+}
+
+.resume-avatar span {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.resume-side-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-green, #00ff66) !important;
+  border-bottom: 1px solid var(--border-ghost, #37373a);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.resume-skill-group + .resume-skill-group {
+  margin-top: 1rem;
+}
+
+.resume-skill-group h3 {
+  font-size: 0.8rem;
+  color: var(--text-main, #f4f4f5) !important;
+  margin-bottom: 0.25rem;
+}
+
+.resume-skill-group p {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+.resume-profiles .resume-platform + .resume-platform {
+  margin-top: 1.25rem;
+}
+
+.resume-platform h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-main, #f4f4f5) !important;
+  margin-bottom: 0.5rem;
+}
+
+.resume-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.resume-badge {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent-cyan, #00ffff);
+  color: var(--accent-cyan, #00ffff);
+  background-color: rgba(0, 255, 255, 0.06);
+}
+
+.resume-stars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.resume-star-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  gap: 0.5rem;
+}
+
+.resume-star-rating {
+  color: var(--accent-yellow, #ffff00);
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.resume-profile-stat {
+  font-size: 0.75rem;
+  margin-bottom: 0;
+}
+
+.resume-profile-stat span {
+  margin: 0 0.35rem;
+  color: var(--text-muted, #b1b1ba);
+}
+
+.resume-profile-links {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.resume-profile-links li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.resume-profile-links li i {
+  color: var(--accent-green, #00ff66);
+  flex-shrink: 0;
+}
+
+.resume-profile-links li small {
+  display: block;
+  color: var(--text-muted, #b1b1ba) !important;
+  font-size: 0.7rem;
+}
+
+/* ---------------------------------------------------
+   Main Column
+----------------------------------------------------- */
+.resume-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1.5rem;
+}
+
+.resume-header {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-ghost, #37373a);
+}
+
+.resume-kicker {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent-cyan, #00ffff) !important;
+  margin-bottom: 0.25rem;
+}
+
+.resume-header h1 {
+  margin-bottom: 0.15rem;
+  padding-top: 0 !important;
+}
+
+.resume-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted, #b1b1ba) !important;
+  margin-bottom: 0;
+}
+
+.resume-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--accent-green, #00ff66) !important;
+  margin-bottom: 1rem;
+}
+
+.resume-entry + .resume-entry {
+  margin-top: 1rem;
+}
+
+.resume-entry h3 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-main, #f4f4f5) !important;
+  margin-bottom: 0.25rem;
+}
+
+.resume-entry h3 span {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-muted, #b1b1ba);
+  white-space: nowrap;
+}
+
+.resume-project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 576px) {
+  .resume-project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.resume-project {
+  padding: 1rem;
+  border: 1px solid var(--border-ghost, #37373a);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.resume-project h3 {
+  font-size: 0.95rem;
+  color: var(--text-main, #f4f4f5) !important;
+  margin-bottom: 0.35rem;
+}
+
+.resume-tech {
+  font-size: 0.8rem;
+}
+
+.resume-tech strong {
+  color: var(--accent-cyan, #00ffff);
+  margin-right: 0.35rem;
+}
+
+.resume-placeholder {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  font-style: italic;
+  color: var(--text-muted, #b1b1ba);
+}
+
+.resume-education-meta span {
+  margin: 0 0.35rem;
+  color: var(--text-muted, #b1b1ba);
+}
+
+/* ---------------------------------------------------
+   Print Styles
+----------------------------------------------------- */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  body.resume-document {
+    background: #fff !important;
+  }
+
+  .navbar,
+  footer,
+  .skip-link {
+    display: none !important;
+  }
+
+  .resume-page {
+    grid-template-columns: 2fr 3fr;
+    gap: 0;
+    padding: 0;
+    border: none;
+    margin-bottom: 0;
+  }
+
+  .resume-sidebar {
+    border-radius: 0;
+  }
+}
