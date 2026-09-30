@@ -45,7 +45,7 @@ body.resume-light-document {
   flex-direction: column;
   gap: 1.75rem;
   padding: 2rem 1.5rem;
-  background-color: rgba(22, 101, 52, 0.05);
+  background-color: rgba(0, 192, 192, 0.08);
   border-radius: 8px;
 }
 
@@ -66,9 +66,9 @@ body.resume-light-document {
   height: 96px;
   margin: 0 auto 0.5rem;
   border-radius: 50%;
-  border: 2px solid var(--accent-green);
+  border: 2px solid var(--accent-cyan);
   background-color: rgba(22, 101, 52, 0.08);
-  color: var(--accent-green);
+  color: var(--accent-cyan);
 }
 
 .resume-avatar i {
@@ -88,7 +88,7 @@ body.resume-light-document {
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--accent-green) !important;
+  color: var(--accent-cyan) !important;
   border-bottom: 1px solid var(--border-ghost);
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
@@ -186,7 +186,7 @@ body.resume-light-document {
 }
 
 .resume-profile-links li i {
-  color: var(--accent-green);
+  color: var(--accent-cyan);
   flex-shrink: 0;
 }
 
@@ -235,7 +235,7 @@ body.resume-light-document {
   align-items: center;
   gap: 0.5rem;
   font-size: 1.1rem;
-  color: var(--accent-green) !important;
+  color: var(--accent-cyan) !important;
   margin-bottom: 1rem;
 }
 
