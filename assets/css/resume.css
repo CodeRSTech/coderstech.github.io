@@ -302,14 +302,21 @@
     color-adjust: exact !important;
   }
 
-  body.resume-document {
+  html, body.resume-document {
     background: #fff !important;
+    font-size: 92%;
   }
 
   .navbar,
   footer,
   .skip-link {
     display: none !important;
+  }
+
+  main#main-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
   }
 
   .resume-page {
@@ -321,6 +328,53 @@
   }
 
   .resume-sidebar {
+    padding: 1.25rem 1.5rem;
+    gap: 1.1rem;
     border-radius: 0;
+  }
+
+  .resume-main {
+    padding: 1.25rem 1.5rem;
+    gap: 1.1rem;
+  }
+
+  .resume-header {
+    padding-bottom: 0.6rem;
+  }
+
+  .resume-section h2,
+  .resume-side-section h2 {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
+  }
+
+  .resume-skill-group + .resume-skill-group {
+    margin-top: 0.5rem;
+  }
+
+  .resume-profiles .resume-platform + .resume-platform {
+    margin-top: 0.75rem;
+  }
+
+  .resume-entry + .resume-entry {
+    margin-top: 0.5rem;
+  }
+
+  .resume-project-grid {
+    gap: 0.75rem;
+  }
+
+  .resume-project {
+    padding: 0.7rem;
+  }
+
+  /* Keep logical blocks intact instead of splitting across pages */
+  .resume-side-section,
+  .resume-section,
+  .resume-entry,
+  .resume-project,
+  .resume-header {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }

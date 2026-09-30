@@ -12,7 +12,6 @@ resume_page: true
       <i class="bi bi-person-fill" aria-hidden="true"></i>
       <span>RS</span>
     </div>
-
     <section class="resume-side-section resume-skills" aria-labelledby="resume-skills">
       <h2 id="resume-skills"><i class="bi bi-tools" aria-hidden="true"></i> Skills</h2>
       <div class="resume-skill-group">
@@ -28,7 +27,6 @@ resume_page: true
         <p>{% for tag in site.data.matrix.software_ai.algorithms.tags %}{{ tag }}{% unless forloop.last %}, {% endunless %}{% endfor %}{% for os in site.data.matrix.it_infra.operating_systems %}, {{ os.name }}{% endfor %}</p>
       </div>
     </section>
-
     <section class="resume-side-section resume-profiles" aria-labelledby="resume-profiles">
       <h2 id="resume-profiles"><i class="bi bi-award-fill" aria-hidden="true"></i> External Profiles</h2>
       <div class="resume-platform">
@@ -77,14 +75,12 @@ resume_page: true
       </ul>
     </section>
   </aside>
-
   <div class="resume-main">
     <header class="resume-header">
       <p class="resume-kicker">SOFTWARE DEVELOPMENT · AI · SYSTEMS</p>
       <h1>{{ site.data.hero.name }}</h1>
       <p class="resume-subtitle">Fresher / Entry-level Developer</p>
     </header>
-
     <section class="resume-section" aria-labelledby="resume-profile">
       <h2 id="resume-profile"><i class="bi bi-person-lines-fill" aria-hidden="true"></i> Profile</h2>
       <p>
@@ -93,7 +89,6 @@ resume_page: true
         computer vision, machine learning, algorithms, and embedded systems.
       </p>
     </section>
-
     <section class="resume-section" aria-labelledby="resume-experience">
       <h2 id="resume-experience"><i class="bi bi-briefcase-fill" aria-hidden="true"></i> Experience</h2>
       <div class="resume-entry">
@@ -101,7 +96,6 @@ resume_page: true
         <p>No formal employment experience to date. Relevant self-directed work is listed under Projects.</p>
       </div>
     </section>
-
     <section class="resume-section" aria-labelledby="resume-projects">
       <h2 id="resume-projects"><i class="bi bi-kanban-fill" aria-hidden="true"></i> Projects</h2>
       <div class="resume-project-grid">
@@ -119,7 +113,6 @@ resume_page: true
         </article>
       </div>
     </section>
-
     <section class="resume-section" aria-labelledby="resume-education">
       <h2 id="resume-education"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> Education</h2>
       <div class="resume-entry resume-education">
