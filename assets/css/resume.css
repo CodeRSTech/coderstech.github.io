@@ -181,6 +181,65 @@
   font-size: 0.7rem;
 }
 
+.resume-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.resume-links-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.85rem;
+  color: var(--text-main, #f4f4f5);
+  text-decoration: none;
+}
+
+.resume-links-list a i {
+  color: var(--accent-green, #00ff66);
+}
+
+.resume-links-list a:hover,
+.resume-links-list a:focus-visible {
+  color: var(--accent-green, #00ff66);
+  text-decoration: underline;
+}
+
+.resume-links-list a:focus-visible,
+.resume-contact-item:focus-visible {
+  outline: 2px solid var(--accent-green, #00ff66);
+  outline-offset: 3px;
+}
+
+.resume-contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.resume-contact-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--border-ghost, #37373a);
+  border-radius: 50%;
+  color: var(--accent-green, #00ff66);
+  background-color: rgba(0, 255, 102, 0.06);
+  font-size: 1rem;
+}
+
+.resume-contact-item[href]:hover,
+.resume-contact-item[href]:focus-visible {
+  border-color: var(--accent-green, #00ff66);
+  background-color: rgba(0, 255, 102, 0.12);
+}
+
 /* ---------------------------------------------------
    Main Column
 ----------------------------------------------------- */
@@ -376,6 +435,16 @@
 
   .resume-profiles .resume-platform + .resume-platform {
     margin-top: 0.75rem;
+  }
+
+  .resume-links-list,
+  .resume-contact-list {
+    gap: 0.35rem;
+  }
+
+  .resume-contact-item {
+    width: 2rem;
+    height: 2rem;
   }
 
   .resume-entry + .resume-entry {

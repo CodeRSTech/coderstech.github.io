@@ -76,6 +76,43 @@ resume_page: true
         {% endfor %}
       </ul>
     </section>
+    {% assign github_profile = site.data.hero.buttons | where: "text", "GitHub" | first %}
+    <section class="resume-side-section resume-links" aria-labelledby="resume-links">
+      <h2 id="resume-links"><i class="bi bi-link-45deg" aria-hidden="true"></i> Links</h2>
+      <ul class="resume-links-list">
+        <li>
+          <a href="{{ '/' | relative_url }}">
+            <i class="bi bi-globe2" aria-hidden="true"></i>
+            <span>Portfolio</span>
+          </a>
+        </li>
+        {% if github_profile and github_profile.url != "" and github_profile.url != "#" %}
+        <li>
+          <a href="{{ github_profile.url }}" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-github" aria-hidden="true"></i>
+            <span>GitHub</span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </section>
+    <section class="resume-side-section resume-contact" aria-labelledby="resume-contact">
+      <h2 id="resume-contact">
+        <i class="bi bi-person-lines-fill" aria-hidden="true"></i>
+        <span class="visually-hidden">Contact</span>
+      </h2>
+      <div class="resume-contact-list">
+        <a class="resume-contact-item" href="tel:XXXXX-XXXXX" aria-label="Call XXXXX-XXXXX">
+          <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+        </a>
+        <a class="resume-contact-item" href="mailto:XXXX@XXX.com" aria-label="Email XXXX@XXX.com">
+          <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+        </a>
+        <span class="resume-contact-item" role="img" aria-label="Location: India">
+          <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+        </span>
+      </div>
+    </section>
   </aside>
   <!-- Main content -->
   <div class="resume-main">
