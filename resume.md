@@ -96,7 +96,7 @@ resume_page: true
         {% endif %}
         <li>
           <a href="https://www.hackerearth.com/@codetechrs" target="_blank" rel="noopener noreferrer">
-            <i class="bi" aria-hidden="true"><img src="https://cdn.hackerearth.com/community/production/static/img/favicon/favicon-16x16.png" alt="HackerEarth"></i>
+            <i class="bi" aria-hidden="true"><img src="https://cdn.hackerearth.com/community/production/static/img/favicon/favicon-16x16.png" height=12px; alt="HackerEarth"></i>
             <span>www.hackerearth.com/@codetechrs</span>
           </a>
         </li>
