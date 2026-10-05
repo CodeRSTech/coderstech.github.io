@@ -1,0 +1,58 @@
+name: Sync navigation to learn
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "_data/navigation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-navigation-to-learn
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: source
+          persist-credentials: false
+
+      - name: Check out learn
+        uses: actions/checkout@v4
+        with:
+          repository: CodeRSTech/learn
+          ref: master
+          path: target
+          token: ${{ secrets.LEARN_SYNC_TOKEN }}
+
+      - name: Copy and commit navigation
+        shell: bash
+        working-directory: target
+        run: |
+          set -euo pipefail
+
+          mkdir -p _data
+          cp ../source/_data/navigation.yml _data/navigation.yml
+          git add -- _data/navigation.yml
+
+          if git diff --cached --quiet; then
+            echo "Navigation is already up to date."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git commit -m "chore: sync navigation from main site"
+          git push origin HEAD:master
