@@ -1,8 +1,8 @@
 sectors:
   - title: "AI-Pong"
     description: "A genetic algorithm evolves neural networks to play Pong, with parallel batched PyTorch inference and a live network visualization."
-    url: "/projects/"
-    image: "/assets/images/projects/ai-pong.png"
+    url: "/AI-Pong/"
+    image: "/assets/images/projects/AI-Pong.gif"
     image_alt: "AI-Pong gameplay beside its live neural-network visualization"
   - title: "Blurzy"
     description: "A PySide6 desktop app for detecting, tracking, and annotating video subjects, then exporting footage with subjects blurred."
