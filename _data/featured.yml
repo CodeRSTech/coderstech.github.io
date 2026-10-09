@@ -7,5 +7,5 @@ sectors:
   - title: "Blurzy"
     description: "A PySide6 desktop app for detecting, tracking, and annotating video subjects, then exporting footage with subjects blurred."
     url: "/Blurzy/"
-    image: "/assets/images/projects/blurzy.png"
+    image: "/assets/images/projects/blurzy.webp"
     image_alt: "Blurzy interface showing video detection and tracking controls"
