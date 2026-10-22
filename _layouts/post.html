@@ -22,7 +22,11 @@ layout: main
         <a href="{{ post.url | relative_url }}" class="badge bg-secondary text-light text-decoration-none me-2 text-nowrap">{{ post.title }}</a>
       {% endfor %}
     </div>
-    <nav id="toc-nav-mobile" class="nav nav-pills flex-nowrap overflow-x-auto py-2 px-3 swipe-ribbon"></nav>
+    <nav id="toc-nav-mobile" class="nav nav-pills flex-nowrap overflow-x-auto py-2 px-3 swipe-ribbon">
+      {% for item in page.toc %}
+        <a class="nav-link text-white-50 text-nowrap py-1 px-2 transition-all" href="#{{ item.id | uri_escape }}">{{ item.title }}</a>
+      {% endfor %}
+    </nav>
   </div>
 
   <div class="row">
@@ -52,49 +56,47 @@ layout: main
       <div class="sticky-top pt-4" style="top: 80px;">
         <h6 class="text-uppercase fw-bold text-primary mb-3">Contents</h6>
         <!-- Native Bootstrap ID target -->
-        <nav id="toc-nav" class="nav nav-pills flex-column"></nav>
+        <nav id="toc-nav" class="nav nav-pills flex-column">
+          {% for item in page.toc %}
+            <a class="nav-link text-white-50 px-2 py-1 transition-all" href="#{{ item.id | uri_escape }}">{{ item.title }}</a>
+          {% endfor %}
+        </nav>
       </div>
     </div>
   </div>
 </div>
-<!--
-  REALITY CHECK: Jekyll Native TOC (Kramdown) vs. Vanilla JS TOC Architecture
-  
-  Decision: Client-Side Vanilla JS Dynamic TOC Engine
-  
-  Rationale:
-  - GitHub Pages runs Jekyll in "safe mode", which aggressively blocks most custom Ruby gems and server-side TOC generation plugins.
-  - Kramdown's native TOC generates a single rigid HTML block, making it difficult to cleanly split, duplicate, and map across dual separate responsive containers (the desktop sidebar and the mobile horizontal swipe ribbon) without writing brittle, unmaintainable Liquid string-parsing workarounds.
-  - Vanilla JS keeps your actual Markdown source files 100% clean and portable, while dynamically harvesting `<h3>` elements at runtime to build and inject fully-styled Bootstrap nav elements simultaneously across all viewports.
--->
-<!-- Dynamic TOC & Scrollspy Engine -->
+<!-- Scrollspy Engine -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const contentArea = document.querySelector('.content-payload');
-    const headings = contentArea.querySelectorAll('h3');
+    if (!contentArea) return;
+
+    const headings = contentArea.querySelectorAll('h3[id]');
     const desktopToc = document.getElementById('toc-nav');
     const mobileToc = document.getElementById('toc-nav-mobile');
-    const navLinks = []; 
+    if (!desktopToc || !mobileToc || !headings.length) return;
 
-    headings.forEach(heading => {
-      if (!heading.id) return; 
-      
-      // Inject Desktop Link
-      const dLink = document.createElement('a');
-      dLink.className = 'nav-link text-white-50 px-2 py-1 transition-all';
-      dLink.href = '#' + heading.id;
-      dLink.textContent = heading.textContent;
-      desktopToc.appendChild(dLink);
-      navLinks.push({ link: dLink, target: heading, isMobile: false });
+    [desktopToc, mobileToc].forEach((nav, index) => {
+      if (nav.querySelector('a')) return;
 
-      // Inject Mobile Link
-      const mLink = document.createElement('a');
-      mLink.className = 'nav-link text-white-50 text-nowrap py-1 px-2 transition-all';
-      mLink.href = '#' + heading.id;
-      mLink.textContent = heading.textContent;
-      mobileToc.appendChild(mLink);
-      navLinks.push({ link: mLink, target: heading, isMobile: true });
+      headings.forEach(heading => {
+        const link = document.createElement('a');
+        link.className = index === 0
+          ? 'nav-link text-white-50 px-2 py-1 transition-all'
+          : 'nav-link text-white-50 text-nowrap py-1 px-2 transition-all';
+        link.href = '#' + encodeURIComponent(heading.id);
+        link.textContent = heading.textContent;
+        nav.appendChild(link);
+      });
     });
+
+    const navLinks = [...desktopToc.querySelectorAll('a'), ...mobileToc.querySelectorAll('a')]
+      .map(link => ({
+        link,
+        target: document.getElementById(decodeURIComponent(link.getAttribute('href').slice(1))),
+        isMobile: mobileToc.contains(link)
+      }))
+      .filter(item => item.target);
 
     // IntersectionObserver to handle the active highlighting
     const observerOptions = {
