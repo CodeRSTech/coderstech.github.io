@@ -10,7 +10,7 @@ Jekyll::Hooks.register :documents, :pre_render do |document|
     id = attributes[/\bid\s*=\s*(["'])(.*?)\1/i, 2]
     next unless id
 
-    title = CGI.unescapeHTML(content.gsub(/<[^>]*>/, '')).strip
+    title = CGI.escapeHTML(CGI.unescapeHTML(content.gsub(/<[^>]*>/, '')).strip)
     next if title.empty?
 
     { 'id' => id, 'title' => title }
