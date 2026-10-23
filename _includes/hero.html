@@ -1,17 +1,18 @@
-<div class="py-3 border-bottom border-secondary">
-  <h1 class="display-5 fw-bold text-light" data-text="{{ site.data.hero.name }}">{{ site.data.hero.name }}</h1>
-  <p class="lead mt-3">
+<section class="home-hero mb-5" aria-labelledby="home-hero-title">
+  <p class="home-hero-eyebrow mb-3"><span aria-hidden="true">></span> Portfolio / Software Engineering</p>
+  <h1 id="home-hero-title" class="display-5 fw-bold text-light" data-text="{{ site.data.hero.name }}">{{ site.data.hero.name }}</h1>
+  <p class="lead home-hero-tagline mt-3 mb-4">
     {{ site.data.hero.tagline }}
   </p>
-  <div class="d-flex flex-wrap gap-3">
+  <div class="d-flex flex-wrap gap-3 home-hero-actions">
     {% for btn in site.data.hero.buttons %}
       {% assign btn_url = btn.url %}
       {% unless btn.url contains '://' or btn.url contains 'mailto:' or btn.url contains '#' %}
         {% assign btn_url = btn.url | relative_url %}
       {% endunless %}
       <a href="{{ btn_url }}" class="btn {{ btn.style }} px-4 py-2 fw-bold rounded-0">
-        <i class="{{ btn.icon }} me-2"></i>{{ btn.text }}
+        <i class="{{ btn.icon }} me-2" aria-hidden="true"></i>{{ btn.text }}
       </a>
     {% endfor %}
   </div>
-</div>
+</section>
