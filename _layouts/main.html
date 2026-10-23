@@ -38,10 +38,13 @@
   <link rel="stylesheet" href="{{ '/assets/css/top_navbar.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/images.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/rogue.css' | relative_url }}">
-  {% if page.permalink == '/resume-light/' %}
+  {% if page.resume_page and page.resume_theme == 'light' %}
   <link rel="stylesheet" href="{{ '/assets/css/resume-light.css' | relative_url }}">
   {% elsif page.resume_page %}
   <link rel="stylesheet" href="{{ '/assets/css/resume.css' | relative_url }}">
+  {% endif %}
+  {% if page.resume_page %}
+  <link rel="stylesheet" href="{{ '/assets/css/resume-shared.css' | relative_url }}">
   {% endif %}
   {% if page.url == "/" %}
   <link rel="stylesheet" href="{{ '/assets/css/neon.css' | relative_url }}">
@@ -52,7 +55,7 @@
   <link rel="stylesheet" href="{{ '/assets/css/gallery_masonry.css' | relative_url }}">
   {% endif %}
 </head>
-<body class="bg-dark text-light{% if page.resume_page %} resume-document{% endif %}{% if page.permalink == '/resume-light/' %} resume-light-document{% endif %}" data-bs-spy="scroll" data-bs-target="#toc-nav">
+<body class="bg-dark text-light{% if page.resume_page %} resume-document{% endif %}{% if page.resume_theme == 'light' %} resume-light-document{% endif %}{% if page.resume_large %} resume-large-document{% endif %}" data-bs-spy="scroll" data-bs-target="#toc-nav">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   {% include navbar.html %}
   <main id="main-content" class="container mt-5">
