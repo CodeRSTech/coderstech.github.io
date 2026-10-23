@@ -1,0 +1,54 @@
+.resume-entry-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.resume-entry-meta span {
+  white-space: nowrap;
+}
+
+.resume-entry-list,
+.resume-detail-list {
+  padding-left: 1.25rem;
+}
+
+.resume-entry-list {
+  margin-bottom: 0;
+  font-size: 0.85rem;
+}
+
+.resume-entry-list li + li,
+.resume-detail-list li + li {
+  margin-top: 0.35rem;
+}
+
+.resume-extra-page {
+  grid-template-columns: 1fr;
+}
+
+@media print {
+  body.resume-large-document main#main-content {
+    height: auto;
+  }
+
+  body.resume-large-document .resume-page {
+    height: auto;
+    min-height: 100vh;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  body.resume-large-document .resume-page.resume-extra-page {
+    grid-template-columns: 1fr;
+  }
+
+  body.resume-large-document .resume-extra-page {
+    break-before: page;
+    page-break-before: always;
+    break-after: auto;
+    page-break-after: auto;
+  }
+}
