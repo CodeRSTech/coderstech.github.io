@@ -136,18 +136,6 @@
         <p>No formal employment experience to date. Relevant self-directed work is listed under Projects.</p>
       </div>
     </section>
-    <section class="resume-section" aria-labelledby="resume-community">
-      <h2 id="resume-community"><i class="bi bi-people-fill" aria-hidden="true"></i> Community Engagement &amp; Volunteer Experience</h2>
-      <div class="resume-entry">
-        <h3>Local Environmental &amp; Animal Welfare Initiative (Self-Organized)</h3>
-        <p class="resume-entry-meta">Volunteer Organizer <span>2024 – Present</span></p>
-        <ul class="resume-entry-list">
-          <li>Spearheaded weekly neighborhood beautification drives by clearing plastic waste from community parks and cutting back overgrown roadside weeds to ensure public safety and clean spaces.</li>
-          <li>Managed local stray animal welfare by consistently sourcing, budgeting, and distributing nutritional food supplies to vulnerable street animals.</li>
-          <li>Administered basic first-aid care and coordinated with local veterinary networks to ensure timely medical attention for injured community animals.</li>
-        </ul>
-      </div>
-    </section>
     <section class="resume-section" aria-labelledby="resume-projects">
       <h2 id="resume-projects"><i class="bi bi-kanban-fill" aria-hidden="true"></i> Projects</h2>
       <div class="resume-project-grid">
@@ -175,35 +163,51 @@
     </section>
   </div>
 </article>
-{% if page.resume_large %}
 <article class="resume-page resume-extra-page">
-  <div class="resume-main">
+  <div class="resume-main resume-secondary-main">
     <header class="resume-header">
-      <p class="resume-kicker">PERSONAL INTERESTS &amp; COMMUNICATION</p>
+      <p class="resume-kicker">COMMUNITY · INTERESTS · LANGUAGES</p>
       <h1>{{ site.data.hero.name }}</h1>
-      <p class="resume-subtitle">Hobbies &amp; Language Proficiency</p>
+      <p class="resume-subtitle">Volunteer Experience{% if page.resume_large %} · Personal Interests{% endif %}</p>
     </header>
-    <section class="resume-section" aria-labelledby="resume-hobbies">
-      <h2 id="resume-hobbies"><i class="bi bi-heart-fill" aria-hidden="true"></i> Hobbies</h2>
-      <ul class="resume-detail-list">
-        <li>Photography</li>
-        <li>Gardening</li>
-        <li>Camping and Bushcraft</li>
-        <li>Learning and DIY</li>
-        <li>Gadgets and Electronics</li>
-      </ul>
-    </section>
-    <section class="resume-section" aria-labelledby="resume-languages">
-      <h2 id="resume-languages"><i class="bi bi-translate" aria-hidden="true"></i> Language Proficiency</h2>
-      <div class="resume-entry">
-        <h3>Hindi</h3>
-        <p>Read, Write, Speak (fluent)</p>
+    <div class="resume-secondary-grid{% unless page.resume_large %} resume-community-only{% endunless %}">
+      <section class="resume-section resume-community" aria-labelledby="resume-community">
+        <h2 id="resume-community"><i class="bi bi-people-fill" aria-hidden="true"></i> Community Engagement &amp; Volunteer Experience</h2>
+        <div class="resume-entry">
+          <h3>Local Environmental &amp; Animal Welfare Initiative (Self-Organized)</h3>
+          <p class="resume-entry-meta">Volunteer Organizer <span>2024 – Present</span></p>
+          <ul class="resume-entry-list">
+            <li>Spearheaded weekly neighborhood beautification drives by clearing plastic waste from community parks and cutting back overgrown roadside weeds to ensure public safety and clean spaces.</li>
+            <li>Managed local stray animal welfare by consistently sourcing, budgeting, and distributing nutritional food supplies to vulnerable street animals.</li>
+            <li>Administered basic first-aid care and coordinated with local veterinary networks to ensure timely medical attention for injured community animals.</li>
+          </ul>
+        </div>
+      </section>
+      {% if page.resume_large %}
+      <div class="resume-secondary-details">
+        <section class="resume-section" aria-labelledby="resume-hobbies">
+          <h2 id="resume-hobbies"><i class="bi bi-heart-fill" aria-hidden="true"></i> Hobbies</h2>
+          <ul class="resume-detail-list">
+            <li>Photography</li>
+            <li>Gardening</li>
+            <li>Camping and Bushcraft</li>
+            <li>Learning and DIY</li>
+            <li>Gadgets and Electronics</li>
+          </ul>
+        </section>
+        <section class="resume-section" aria-labelledby="resume-languages">
+          <h2 id="resume-languages"><i class="bi bi-translate" aria-hidden="true"></i> Language Proficiency</h2>
+          <div class="resume-entry">
+            <h3>Hindi</h3>
+            <p>Read, Write, Speak (fluent)</p>
+          </div>
+          <div class="resume-entry">
+            <h3>English</h3>
+            <p>Read, Write, Speak (conversational)</p>
+          </div>
+        </section>
       </div>
-      <div class="resume-entry">
-        <h3>English</h3>
-        <p>Read, Write, Speak (conversational)</p>
-      </div>
-    </section>
+      {% endif %}
+    </div>
   </div>
 </article>
-{% endif %}
