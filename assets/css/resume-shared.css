@@ -29,26 +29,67 @@
   grid-template-columns: 1fr;
 }
 
+.resume-secondary-main {
+  width: 100%;
+}
+
+.resume-secondary-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(13rem, 1fr);
+  gap: 2rem;
+}
+
+.resume-secondary-grid.resume-community-only {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 54rem;
+}
+
+.resume-secondary-grid h2 {
+  align-items: flex-start;
+}
+
+.resume-community .resume-entry h3 {
+  display: block;
+}
+
+.resume-secondary-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.resume-secondary-details .resume-section h2 {
+  margin-bottom: 0.6rem;
+}
+
 @media print {
-  body.resume-large-document main#main-content {
+  body.resume-document main#main-content {
     height: auto;
   }
 
-  body.resume-large-document .resume-page {
+  body.resume-document .resume-page {
     height: auto;
     min-height: 100vh;
     break-after: page;
     page-break-after: always;
   }
 
-  body.resume-large-document .resume-page.resume-extra-page {
+  body.resume-document .resume-page.resume-extra-page {
     grid-template-columns: 1fr;
-  }
-
-  body.resume-large-document .resume-extra-page {
     break-before: page;
     page-break-before: always;
     break-after: auto;
     page-break-after: auto;
+  }
+
+  .resume-secondary-grid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(13rem, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .resume-secondary-grid {
+    grid-template-columns: 1fr;
   }
 }
