@@ -67,11 +67,6 @@
 }
 
 @media print {
-  body.resume-document .resume-links-list a[href^="https://"]::after {
-    content: " (" attr(href) ")";
-    overflow-wrap: anywhere;
-  }
-
   body.resume-document .resume-print-url {
     display: block;
     font-size: 0.7em;
