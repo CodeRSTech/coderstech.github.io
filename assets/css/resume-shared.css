@@ -52,6 +52,10 @@
   display: block;
 }
 
+.resume-print-url {
+  display: none;
+}
+
 .resume-secondary-details {
   display: flex;
   flex-direction: column;
@@ -63,6 +67,18 @@
 }
 
 @media print {
+  body.resume-document .resume-links-list a[href^="https://"]::after {
+    content: " (" attr(href) ")";
+    overflow-wrap: anywhere;
+  }
+
+  body.resume-document .resume-print-url {
+    display: block;
+    font-size: 0.7em;
+    font-weight: normal;
+    overflow-wrap: anywhere;
+  }
+
   body.resume-document main#main-content {
     height: auto;
   }
