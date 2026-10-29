@@ -58,8 +58,9 @@
 }
 
 .home-hero-tagline {
-  max-width: 42rem;
+  max-width: 45rem;
   line-height: 1.8;
+  font-size: 1rem;
 }
 
 .home-hero-actions .btn {
