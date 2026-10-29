@@ -26,8 +26,13 @@ software_ai:
       - name: "NumPy"
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg"
     tags:
-      - "Custom ANNs"
+      - "ANN"
       - "Genetic Algorithms"
+      - "CI/CD"
+      - "Git"
+      - "Github"
+      - "DevOps"
+      - "DSA"
 
 hardware_systems:
   teardowns:
