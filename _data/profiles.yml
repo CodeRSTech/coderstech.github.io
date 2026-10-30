@@ -1,10 +1,10 @@
 hackerearth:
   logo:
     name: "HackerEarth"
-    url: "https://cdn.prod.website-files.com/67767d919e878fb670aab52d/67bb7eb79b970d0e42b0f32f_Light-table-logo.svg"
+    url: "/assets/logos/hackerearth.svg"
   name: "Rishbh Sharma"
   subtitle: "Developer • India"
-  avatar: "https://uc.hackerearth.com/he-s3-ap-south-1/media/avatars/codetechrs/resized/200/e6aab18mobcovrwithoutlogo.jpg"
+  avatar: "/assets/images/avatar.jpg"
   tags:
     - name: "Top 1% in Algorithms"
       color: "info" # Cyan

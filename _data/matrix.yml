@@ -1,8 +1,10 @@
 software_ai:
   core_languages:
     - name: "Python"
+      proficiency: 8
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
     - name: "C++"
+      proficiency: 7
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
   familiar:
     - name: "Lua"
@@ -21,18 +23,31 @@ software_ai:
     icons:
       - name: "OpenCV"
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg"
+        proficiency: 4
       - name: "PyTorch"
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg"
+        proficiency: 4
       - name: "NumPy"
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg"
+        proficiency: 5
+      - name: "PySide6"
+        src: "/assets/logos/qtforpython.png"
+        proficiency: 6
     tags:
-      - "ANN"
-      - "Genetic Algorithms"
-      - "CI/CD"
-      - "Git"
-      - "Github"
-      - "DevOps"
-      - "DSA"
+      - name: "ANN"
+        proficiency: 8
+      - name: "Genetic Algorithms"
+        proficiency: 9
+      - name: "CI/CD"
+        proficiency: 5
+      - name: "Git"
+        proficiency: 6
+      - name: "Github"
+        proficiency: 7
+      - name: "DevOps"
+        proficiency: 5
+      - name: "DSA"
+        proficiency: 7
 
 hardware_systems:
   teardowns:
@@ -45,28 +60,28 @@ hardware_systems:
     icons:
       - name: "Raspberry Pi"
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg"
+        proficiency: 7
       - name: "OBD-II"
         src: "/assets/logos/chdk.webp"
+        proficiency: 5
       - name: "CHDK"
         src: "/assets/icons/obd2.png"
-    #tags:
-    #  - "OBD-II"
-    #  - "CHDK"
+        proficiency: 7
 
 it_infra:
   operating_systems:
     - name: "Ubuntu"
       icon: "/assets/icons/UbuntuCoF.svg"
       is_img: true
+      proficiency: 8
     - name: "Linux"
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
       is_img: true
+      proficiency: 5
     - name: "Windows"
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg"
       is_img: true
-#    - name: "Bare-Metal"
-#      icon: "bi bi-hdd-network text-light"
-#      is_img: false
+      proficiency: 9
   operations: # EXCLUDED
     - title: "802.11 Auditing"
       description: "Wireless Network Security"
@@ -78,20 +93,25 @@ it_infra:
       description: "Disaster Recovery Protocol"
       icon_class: "bi bi-server text-warning"
   tags:
-    - "grep"
-    - "nano"
-    - "gedit"
-    - "bash"
-    - "diskpart"
-    - "diskmgmt.msc"
-    - "gparted"
-    - "msconfig"
-    - "taskman"
-    - "apt"
-    - "ssh"
-#    - "Package management"
-#    - "CLI Commands"
-#    - "Shell scripting"
-#    - "OS Installation"
-#    - "Permissions & Ownership"
-#    - "HDD Partitioning"
+    - name: "grep"
+      proficiency: 6
+    - name: "nano"
+      proficiency: 7
+    - name: "gedit"
+      proficiency: 8
+    - name: "bash"
+      proficiency: 7
+    - name: "diskpart"
+      proficiency: 8
+    - name: "diskmgmt.msc"
+      proficiency: 8
+    - name: "gparted"
+      proficiency: 7
+    - name: "msconfig"
+      proficiency: 8
+    - name: "taskman"
+      proficiency: 8
+    - name: "apt"
+      proficiency: 8
+    - name: "ssh"
+      proficiency: 7
