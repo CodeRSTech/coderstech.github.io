@@ -1,0 +1,30 @@
+    <!-- COLUMN 2: Hardware & Systems -->
+    <div class="col-lg-4 col-md-12">
+      <div class="card bg-dark border-secondary h-100 p-4 d-flex flex-column">
+        <h5 class="text-light mb-4 border-bottom border-secondary pb-2"><i class="bi bi-tools me-2"></i>Hardware & Systems</h5>
+        {% assign td = site.data.matrix.hardware_systems.teardowns %}
+        <a href="{{ td.link | relative_url }}" class="text-decoration-none flex-grow-1 d-flex flex-column mb-4">
+          <div class="position-relative overflow-hidden rounded border border-secondary hover-overlay transition-all h-100" style="min-height: 200px;">
+            <img src="{{ td.image | relative_url }}" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="{{ td.title }}" loading="lazy" decoding="async">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-black bg-opacity-50 d-flex flex-column justify-content-center align-items-center p-3 text-center transition-all">
+              <h4 class="text-light fw-bold mb-1">{{ td.title }}</h4>
+              <p class="text-white-50 small mb-0">{{ td.subtitle }}</p>
+              <span class="btn btn-sm btn-primary mt-3 rounded-pill px-3 fw-bold">{{ td.button_text }} <i class="bi bi-arrow-right ms-1"></i></span>
+            </div>
+          </div>
+        </a>
+        <div class="mt-auto">
+          <small class="text-white-50 text-uppercase fw-bold d-block mb-3">Embedded Ecosystem</small>
+          <div class="d-flex gap-2 align-items-center flex-wrap">
+            {% for icon in site.data.matrix.hardware_systems.embedded.icons %}
+            <div class="bg-black border border-secondary rounded d-flex align-items-center justify-content-center hover-overlay transition-all" style="width: 42px; height: 42px;">
+              <img src="{{ icon.src | relative_url }}" height="32" alt="{{ icon.name }}" loading="lazy" decoding="async">
+            </div>
+            {% endfor %}
+            {% for tag in site.data.matrix.hardware_systems.embedded.tags %}
+            <span class="badge bg-black border border-secondary text-light px-3 py-2 fs-6">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,42 @@
+    <!-- COLUMN 3: IT & Infra -->
+    <div class="col-lg-4 col-md-12">
+      <div class="card bg-dark border-secondary h-100 p-4 d-flex flex-column">
+        <h5 class="text-light mb-4 border-bottom border-secondary pb-2"><i class="bi bi-terminal-x me-2"></i>IT & Infra</h5>
+        <div class="mb-4">
+          <small class="text-white-50 text-uppercase fw-bold d-block mb-3">Operating Systems</small>
+          <div class="d-flex gap-3">
+            {% for os in site.data.matrix.it_infra.operating_systems %}
+            <div class="bg-black border border-secondary rounded p-2 text-center hover-overlay transition-all" style="width: 70px;">
+              {% if os.is_img %}
+                <img src="{{ os.icon | relative_url }}" width="35" height="35" alt="{{ os.name }}" loading="lazy" decoding="async">
+              {% else %}
+                <i class="{{ os.icon }}" style="font-size: 2.2rem;"></i>
+              {% endif %}
+              <div class="text-light small mt-1" style="font-size: 0.65rem;">{{ os.name }}</div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <!-- <div class="mt-auto">
+          <small class="text-white-50 text-uppercase fw-bold d-block mb-3">Operations & Security</small>
+          <ul class="list-unstyled mb-0">
+            {% for op in site.data.matrix.it_infra.operations %}
+            <li class="{% unless forloop.last %}mb-3{% endunless %} d-flex align-items-center">
+              <div class="bg-black rounded-circle border border-secondary d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                <i class="{{ op.icon_class }} fs-5"></i>
+              </div>
+              <div>
+                <strong class="text-light d-block">{{ op.title }}</strong>
+                <small class="text-white-50">{{ op.description }}</small>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div> -->
+        <div class="mt-4 d-flex gap-2 flex-wrap">
+          {% for tag in site.data.matrix.it_infra.tags %}
+            <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary border border-primary">{{ tag.name}}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,45 @@
+    <!-- COLUMN 1: Software & AI -->
+    <div class="col-lg-4 col-md-12">
+      <div class="card bg-dark border-secondary h-100 p-4 d-flex flex-column">
+        <h5 class="text-light mb-4 border-bottom border-secondary pb-2"><i class="bi bi-braces me-2"></i>Software & AI</h5>
+        <div class="mb-4">
+          <small class="text-white-50 text-uppercase fw-bold d-block mb-3">Core Languages</small>
+          <div class="d-flex gap-3">
+            {% for lang in site.data.matrix.software_ai.core_languages %}
+            <div class="bg-black border border-secondary rounded p-2 text-center hover-overlay transition-all" style="width: 70px;">
+              <img src="{{ lang.icon | relative_url }}" width="48" height="48" alt="{{ lang.name }}" loading="lazy" decoding="async">
+              <div class="text-light small mt-1" style="font-size: 0.75rem;">{{ lang.name }}</div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="mb-4">
+          <small class="text-white-50 text-uppercase fw-bold d-block mb-2">Familiar / Legacy</small>
+          <div class="d-flex gap-2 flex-wrap">
+            {% for item in site.data.matrix.software_ai.familiar %}
+            <span class="badge bg-black border border-secondary text-light px-2 py-1">
+              {% if item.is_img %}
+                <img src="{{ item.icon | relative_url }}" width="24" class="me-1" alt="{{ item.name }}" loading="lazy" decoding="async">
+              {% else %}
+                <i class="{{ item.icon }} me-1"></i>
+              {% endif %}
+              {{ item.name }}
+            </span>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="mt-auto">
+          <small class="text-white-50 text-uppercase fw-bold d-block mb-3">Algorithms & Vision</small>
+          <div class="d-flex gap-2 mb-3 flex-wrap">
+            {% for icon in site.data.matrix.software_ai.algorithms.icons %}
+            <img src="{{ icon.src | relative_url }}" width="30" alt="{{ icon.name }}" title="{{ icon.name }}" loading="lazy" decoding="async">
+            {% endfor %}
+          </div>
+          <div class="d-flex gap-2 flex-wrap">
+            {% for tag in site.data.matrix.software_ai.algorithms.tags %}
+            <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary border border-primary">{{ tag.name }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
