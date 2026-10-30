@@ -3,7 +3,8 @@
   justify-content: space-between;
   gap: 0.5rem;
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: 0.74rem;
+  margin-bottom: 0.2rem;
 }
 
 .resume-entry-meta span {
@@ -12,17 +13,18 @@
 
 .resume-entry-list,
 .resume-detail-list {
-  padding-left: 1.25rem;
+  padding-left: 1.1rem;
+  font-size: 0.75rem;
+  line-height: 1.35;
 }
 
 .resume-entry-list {
   margin-bottom: 0;
-  font-size: 0.85rem;
 }
 
 .resume-entry-list li + li,
 .resume-detail-list li + li {
-  margin-top: 0.35rem;
+  margin-top: 0.22rem;
 }
 
 .resume-extra-page {
@@ -36,7 +38,7 @@
 .resume-secondary-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(13rem, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .resume-secondary-grid.resume-community-only {
@@ -59,19 +61,21 @@
 .resume-secondary-details {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.15rem;
 }
 
 .resume-secondary-details .resume-section h2 {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.45rem;
 }
 
 @media print {
   body.resume-document .resume-print-url {
     display: block;
-    font-size: 0.7em;
+    font-size: 0.62rem;
+    line-height: 1.2;
     font-weight: normal;
-    overflow-wrap: anywhere;
+    white-space: nowrap;
+    overflow-wrap: normal;
   }
 
   body.resume-document main#main-content {
@@ -95,7 +99,7 @@
 
   .resume-secondary-grid {
     grid-template-columns: minmax(0, 1.5fr) minmax(13rem, 1fr);
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 }
 
