@@ -1,0 +1,33 @@
+    <!-- COLUMN 2: HackerRank (Expanded to col-6) -->
+    <div class="col-lg-6 col-md-12">
+      <div class="card bg-dark border-secondary p-4 h-100">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center border-bottom border-secondary pb-3 mb-3">
+          <img src="{{ site.data.profiles.hackerrank.logo.url | relative_url }}" alt="{{ site.data.profiles.hackerrank.logo.name }}" class="brand-logo" loading="lazy" decoding="async">
+          <span class="badge bg-success bg-opacity-10 text-success border border-success">{{ site.data.profiles.hackerrank.badge }}</span>
+        </div>
+
+        <!-- Skill List -->
+        <div class="d-flex flex-column gap-3 mt-2">
+          {% for skill in site.data.profiles.hackerrank.skills %}
+            <div class="border border-secondary p-3 bg-black d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                <i class="{{ skill.icon }} fs-3 me-2"></i>
+                <div>
+                  <strong class="text-light d-block fs-5">{{ skill.name }}</strong>
+                </div>
+              </div>
+              <div class="text-warning profile-star-rating">
+                {% for i in (1..5) %}
+                  {% if i <= skill.stars %}
+                    <i class="bi bi-star-fill"></i>
+                  {% else %}
+                    <i class="bi bi-star text-secondary"></i>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
