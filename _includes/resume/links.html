@@ -1,0 +1,43 @@
+<section class="resume-side-section resume-links" aria-labelledby="resume-links">
+      <h2 id="resume-links"><i class="bi bi-link-45deg" aria-hidden="true"></i> Links</h2>
+      <ul class="resume-links-list">
+        <li>
+          <a href="{{ '/' | relative_url }}">
+            <i class="bi bi-globe2" aria-hidden="true"></i>
+            <span>coderstech.github.io</span>
+          </a>
+        </li>
+        {% if github_profile and github_profile.url != "" and github_profile.url != "#" %}
+        <li>
+          <a href="{{ github_profile.url }}" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-github" aria-hidden="true"></i>
+            <span>{{ github_profile.url | remove_first: "https://" | remove_first: "http://" }}</span>
+          </a>
+        </li>
+        {% endif %}
+        <li>
+          <a href="https://www.hackerearth.com/@codetechrs" target="_blank" rel="noopener noreferrer">
+            <i class="bi" aria-hidden="true"><img src="https://cdn.hackerearth.com/community/production/static/img/favicon/favicon-16x16.png" alt="HackerEarth"></i>
+            <span>www.hackerearth.com/@codetechrs</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/rishbh-sharma-49873a24/" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-linkedin" aria-hidden="true"></i>
+            <span>www.linkedin.com/in/rishbh-sharma-49873a24/</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.hackerrank.com/profile/RishbhSharma" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-trophy-fill" aria-hidden="true"></i>
+            <span>www.hackerrank.com/profile/RishbhSharma</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://stackexchange.com/users/3381084/rishbhsharma" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-stack-overflow" aria-hidden="true"></i>
+            <span>stackexchange.com/users/3381084/rishbhsharma</span>
+          </a>
+        </li>
+      </ul>
+    </section>
