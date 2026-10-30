@@ -1,0 +1,15 @@
+    <section class="resume-side-section resume-skills" aria-labelledby="resume-skills">
+      <h2 id="resume-skills"><i class="bi bi-tools" aria-hidden="true"></i> Skills</h2>
+      <div class="resume-skill-group">
+        <h3>Languages</h3>
+        <p>{% for lang in site.data.matrix.software_ai.core_languages %}{{ lang.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}<!--{% for item in site.data.matrix.software_ai.familiar %}, {{ item.name }}{% endfor %}--></p>
+      </div>
+      <div class="resume-skill-group">
+        <h3>Libraries &amp; frameworks</h3>
+        <p>{% for icon in site.data.matrix.software_ai.algorithms.icons %}{{ icon.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+      </div>
+      <div class="resume-skill-group">
+        <h3>Areas &amp; platforms</h3>
+        <p>{% for tag in site.data.matrix.software_ai.algorithms.tags %}{{ tag.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}{% for os in site.data.matrix.it_infra.operating_systems %}, {{ os.name }}{% endfor %}</p>
+      </div>
+    </section>

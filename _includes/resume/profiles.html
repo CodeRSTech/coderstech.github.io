@@ -1,0 +1,53 @@
+<section class="resume-side-section resume-profiles" aria-labelledby="resume-profiles">
+      <h2 id="resume-profiles"><i class="bi bi-award-fill" aria-hidden="true"></i> External Profiles</h2>
+      <div class="resume-platform">
+        <h3>
+          <img src="/assets/logos/hackerearth.svg" alt="HackerEarth" class="brand-logo">
+          <p class="resume-profile-stat">
+            {% for stat in site.data.profiles.hackerearth.stats %}
+            {% if stat.label == "Points" or stat.label == "Solved" %}
+            {% if stat.label == "Solved" %}<span>·</span>{% endif %}{{ stat.value }} {{ stat.label | downcase }}
+            {% endif %}
+            {% endfor %}
+          </p>
+        </h3>
+        <div class="resume-badges">
+          {% for tag in site.data.profiles.hackerearth.tags %}
+          <span class="resume-badge">{{ tag.name }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="resume-platform">
+        <h3>
+          <img src="/assets/logos/hackerrank-light.svg" alt="HackerRank" class="brand-logo" loading="lazy" decoding="async">
+          <p class="resume-profile-stat">{{ site.data.profiles.hackerrank.badge }}</p>
+        </h3>
+        <div class="resume-stars" aria-label="HackerRank skills">
+          {% for skill in site.data.profiles.hackerrank.skills %}
+          {% if skill.stars > 3 %}
+          <span class="resume-star-row">
+            <span>{{ skill.name }}</span>
+            <span class="resume-star-rating" role="img" aria-label="{{ skill.stars }} out of 5 stars">
+              {% for i in (1..5) %}<i class="bi {% if i <= skill.stars %}bi-star-fill{% else %}bi-star{% endif %}" aria-hidden="true"></i>{% endfor %}
+            </span>
+          </span>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <ul class="resume-profile-links">
+        {% for profile in site.data.resume.profiles %}
+        {% unless profile.name == "HackerEarth" or profile.name == "HackerRank" %}
+        <li>
+          <i class="{{ profile.icon }}" aria-hidden="true"></i>
+          {% if profile.url != "" %}
+          <a href="{{ profile.url }}" target="_blank" rel="noopener noreferrer">{{ profile.name }}</a>
+          {% else %}
+          <span>{{ profile.name }}</span>
+          {% endif %}
+          {% if profile.summary != "" %}<small>{{ profile.summary }}</small>{% endif %}
+        </li>
+        {% endunless %}
+        {% endfor %}
+      </ul>
+    </section>

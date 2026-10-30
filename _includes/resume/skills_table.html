@@ -1,0 +1,67 @@
+<div class="resume-skills-table-wrapper">
+  <table class="resume-skills-table">
+    <tbody>
+      {% if site.data.skills %}
+        {% for item in site.data.skills %}
+          {% if item.items %}
+            {% for skill in item.items %}
+              <tr>
+                <td class="skill-name">{{ skill.name }}</td>
+                <td class="skill-bar-cell">
+                  <div class="skill-progress-bar">
+                    <div class="skill-progress-fill" style="width: {{ skill.proficiency | default: skill.level | default: 80 }}%;"></div>
+                  </div>
+                </td>
+              </tr>
+            {% endfor %}
+          {% elsif item.skills %}
+            {% for skill in item.skills %}
+              <tr>
+                <td class="skill-name">{{ skill.name }}</td>
+                <td class="skill-bar-cell">
+                  <div class="skill-progress-bar">
+                    <div class="skill-progress-fill" style="width: {{ skill.proficiency | default: skill.level | default: 80 }}%;"></div>
+                  </div>
+                </td>
+              </tr>
+            {% endfor %}
+          {% else %}
+            <tr>
+              <td class="skill-name">{{ item.name | default: item[0] }}</td>
+              <td class="skill-bar-cell">
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" style="width: {{ item.proficiency | default: item.level | default: item[1] | default: 80 }}%;"></div>
+                </div>
+              </td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        <tr>
+          <td class="skill-name">Python</td>
+          <td class="skill-bar-cell"><div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 90%;"></div></div></td>
+        </tr>
+        <tr>
+          <td class="skill-name">C++</td>
+          <td class="skill-bar-cell"><div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 85%;"></div></div></td>
+        </tr>
+        <tr>
+          <td class="skill-name">PyTorch &amp; OpenCV</td>
+          <td class="skill-bar-cell"><div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 80%;"></div></div></td>
+        </tr>
+        <tr>
+          <td class="skill-name">PySide6 / Qt</td>
+          <td class="skill-bar-cell"><div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 75%;"></div></div></td>
+        </tr>
+        <tr>
+          <td class="skill-name">Linux &amp; Systems</td>
+          <td class="skill-bar-cell"><div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 85%;"></div></div></td>
+        </tr>
+        <tr>
+          <td class="skill-name">Git &amp; CI/CD</td>
+          <td class="skill-bar-cell"><div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 80%;"></div></div></td>
+        </tr>
+      {% endif %}
+    </tbody>
+  </table>
+</div>
