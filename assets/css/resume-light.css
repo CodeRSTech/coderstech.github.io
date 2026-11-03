@@ -191,6 +191,12 @@ body.resume-light-document {
 .resume-platform .brand-logo[alt="HackerRank"] {
   content: url('/assets/logos/hackerrank-dark.svg') !important;
 }
+.resume-project .brand-logo[alt="Blurzy"] {
+  content: url('/Blurzy/docs/assets/blurzy-dark.svg') !important;;
+}
+/*.resume-project .brand-logo[alt="AI-Pong"] {*/
+/*  content: url('/AI-Pong/docs/images/logo.svg') !important;;*/
+/*}*/
 
 .resume-platform-logo,
 .resume-sidebar .brand-logo {
