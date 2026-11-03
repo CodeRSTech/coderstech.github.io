@@ -185,10 +185,10 @@ body.resume-light-document {
 }
 
 /* LIGHT THEME LOGO SWAPS */
-.resume-platform-logo[alt="HackerEarth"] {
+.resume-platform .brand-logo[alt="HackerEarth"] {
   content: url('/assets/logos/hackerearth-dark.svg') !important;
 }
-.resume-platform-logo[alt="HackerRank"] {
+.resume-platform .brand-logo[alt="HackerRank"] {
   content: url('/assets/logos/hackerrank-dark.svg') !important;
 }
 
