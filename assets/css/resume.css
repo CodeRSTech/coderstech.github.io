@@ -171,9 +171,9 @@
 
 .resume-platform-logo,
 .resume-sidebar .brand-logo {
-  height: 18px !important;
+  height: 40px !important;
   width: auto !important;
-  max-width: 110px !important;
+  max-width: 180px !important;
   object-fit: contain !important;
   object-position: left center !important;
   margin: 0 !important;
