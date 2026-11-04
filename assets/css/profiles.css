@@ -4,6 +4,15 @@
   max-width: 100%;
 }
 
+.resume-project .brand-logo {
+  height: 44px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+}
+
 .badge-img {
   max-width: 96px;
   width: 100%;
