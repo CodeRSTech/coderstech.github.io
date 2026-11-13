@@ -6,7 +6,7 @@
           <p class="resume-profile-stat">
             {% for stat in site.data.profiles.hackerearth.stats %}
             {% if stat.label == "Points" or stat.label == "Solved" %}
-            {% if stat.label == "Solved" %}<span>·</span>{% endif %}{{ stat.value }} {{ stat.label | downcase }}
+            {% if stat.label == "Solved" %}<span> </span>{% endif %}{{ stat.value }} {{ stat.label | downcase }}
             {% endif %}
             {% endfor %}
           </p>
