@@ -308,7 +308,6 @@ body.resume-light-document {
 
 .resume-header {
   padding-bottom: 0.6rem;
-  border-bottom: 1px solid var(--border-ghost);
 }
 
 .resume-kicker {
