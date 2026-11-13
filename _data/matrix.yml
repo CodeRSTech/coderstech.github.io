@@ -34,20 +34,20 @@ software_ai:
         src: "/assets/logos/qtforpython.png"
         proficiency: 6
     tags:
-      - name: "Artificial Neural Networks"
-        proficiency: 8
       - name: "Genetic Algorithms"
         proficiency: 9
-      - name: "CI/CD"
-        proficiency: 5
-      - name: "Git"
-        proficiency: 6
-      - name: "Github"
+      - name: "Neural Networks"
         proficiency: 7
-      - name: "DevOps"
-        proficiency: 5
       - name: "DSA"
         proficiency: 7
+      - name: "Github"
+        proficiency: 7
+      - name: "Git"
+        proficiency: 7
+      - name: "CI/CD"
+        proficiency: 5
+      - name: "DevOps"
+        proficiency: 5
 
 hardware_systems:
   teardowns:
