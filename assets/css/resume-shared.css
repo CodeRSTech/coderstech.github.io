@@ -32,7 +32,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.15rem;
-  padding: 1.5rem 1.35rem;
+  padding: 1.25rem 1.25rem;
   background-color: var(--resume-sidebar-background, rgba(0, 255, 102, 0.04));
   border-radius: 8px;
 }
@@ -279,7 +279,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
-  padding: 1.5rem 1.65rem;
+  padding: 1.25rem 1.25rem;
 }
 
 .resume-header {
