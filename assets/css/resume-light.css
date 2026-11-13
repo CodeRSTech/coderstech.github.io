@@ -337,7 +337,8 @@ body.resume-light-document {
   gap: 0.45rem;
   font-size: 1.05rem;
   color: var(--accent-cyan) !important;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.2rem;
+  padding: 0;
 }
 
 .resume-main p {
