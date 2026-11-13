@@ -135,7 +135,7 @@
 
 .skill-progress-bar {
   width: 115px !important;       /* Increased from 75px */
-  flex: 0 0 100px !important;    /* Increased from 75px */
+  flex: 0 0 80px !important;    /* Decreased from 115px */
   height: 6px;
   background-color: rgba(255, 255, 255, 0.12) !important; /* Use your light-theme rgba in resume-light.css */
   border-radius: 999px;
