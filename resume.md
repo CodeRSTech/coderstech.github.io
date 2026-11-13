@@ -1,7 +1,7 @@
 ---
 layout: main
 title: "Resume"
-description: "Resume of Rishbh Sharma, an entry-level software developer."
+description: "Resume of Rishbh Sharma, a software developer."
 permalink: /resume/
 resume_page: true
 ---
