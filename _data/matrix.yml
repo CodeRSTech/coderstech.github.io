@@ -34,7 +34,7 @@ software_ai:
         src: "/assets/logos/qtforpython.png"
         proficiency: 6
     tags:
-      - name: "ANN"
+      - name: "Artificial Neural Networks"
         proficiency: 8
       - name: "Genetic Algorithms"
         proficiency: 9
