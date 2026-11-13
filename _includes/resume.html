@@ -1,12 +1,18 @@
 <article class="resume-page">
   <aside class="resume-sidebar">
-    <div class="resume-avatar-row">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="resume-avatar-icon" title="Python">
-      <div class="resume-avatar">
-        <img src="{{ '/assets/images/profile.png' | relative_url }}" alt="Rishbh Sharma">
-      </div>
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" class="resume-avatar-icon" title="C++">
-    </div>
+  <!-- <div class="resume-avatar-row">-->
+  <!--   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="resume-avatar-icon" title="Python">-->
+  <!--   <div class="resume-avatar">-->
+  <!--     <img src="{{ '/assets/images/profile.png' | relative_url }}" alt="Rishbh Sharma">-->
+  <!--   </div>-->
+  <!--   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" class="resume-avatar-icon" title="C++">-->
+  <!-- </div>-->
+  <!-- NEW: Moved Resume Header to Sidebar -->
+  <header class="resume-header">
+    <!-- <p class="resume-kicker">SOFTWARE DEVELOPMENT · AI · SYSTEMS</p>-->
+    <h1>{{ site.data.hero.name }}</h1>
+    <p class="resume-subtitle">Software Developer</p>
+  </header>
 
   <!-- NEW: Sidebar Skill Progress Bars -->
   <section class="resume-side-section resume-skills" aria-labelledby="resume-skills">
@@ -63,11 +69,6 @@
   </aside>
 
   <div class="resume-main">
-    <header class="resume-header">
-      <!-- <p class="resume-kicker">SOFTWARE DEVELOPMENT · AI · SYSTEMS</p>-->
-      <h1>{{ site.data.hero.name }}</h1>
-      <p class="resume-subtitle">Software Developer</p>
-    </header>
     {% include resume/intro.html %}
     {% include resume/experience.html %}
     {% include resume/projects.html %}
