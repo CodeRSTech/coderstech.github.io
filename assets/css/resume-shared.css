@@ -116,17 +116,15 @@
 .sidebar-skills-container {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.35rem;
   width: 100%;
   margin-bottom: 0.25rem;
 }
 
 .sidebar-skill-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.75rem;
+  color: var(--text-main, #f4f4f5);
+  font-size: 0.95rem;
+  line-height: 1.2;
 }
 
 .sidebar-skill-label {
@@ -240,7 +238,6 @@
   flex-direction: column;
   gap: 0.45rem;
   width: 100%;
-  overflow: hidden;
 }
 
 .resume-links-list a,
@@ -252,17 +249,15 @@
   line-height: 1.25;
   color: var(--text-main, #f4f4f5);
   text-decoration: none;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
+  min-width: 0;
+  overflow-wrap: anywhere;
   width: 100%;
 }
 
 .resume-contact-item span {
   font-size: 0.78rem !important;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .resume-links-list a i,
@@ -427,6 +422,11 @@
   margin-bottom: 0;
 }
 
+.resume-section[aria-labelledby="resume-experience"] .resume-entry-list {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
 .resume-entry-list li + li,
 .resume-detail-list li + li {
   margin-top: 0.22rem;
@@ -459,7 +459,8 @@
   display: block;
 }
 
-.resume-print-url {
+.resume-print-url,
+.resume-print-label {
   display: none;
 }
 
@@ -476,144 +477,194 @@
 /* ---------------------------------------------------
    Print Styles
 ----------------------------------------------------- */
-@media print {
-  * {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    color-adjust: exact !important;
-  }
+@page {
+  margin: 9mm;
+}
 
+@media print {
   html,
   body.resume-document,
   body.resume-light-document {
-    background: var(--resume-print-background, var(--bg-surface, #121212)) !important;
-    font-size: 95%;
-    height: 100% !important;
+    background: #fff !important;
+    color: #111 !important;
+    height: auto !important;
+    font-family: Arial, sans-serif !important;
   }
 
   .navbar,
   footer,
-  .skip-link {
+  .skip-link,
+  .resume-page .bi,
+  .resume-page .brand-logo,
+  .resume-star-rating {
     display: none !important;
   }
 
   main#main-content {
     margin: 0 !important;
     padding: 0 !important;
-    max-width: 100% !important;
+    max-width: none !important;
     height: auto !important;
   }
 
   .resume-page {
-    grid-template-columns: 38% 62% !important;
-    align-items: stretch;
+    --bg-surface: #fff;
+    --text-main: #111;
+    --text-muted: #333;
+    --border-ghost: #777;
+    --resume-primary-accent: #111;
+    --accent-cyan: #111;
+    --resume-sidebar-background: #fff;
+    --resume-badge-background: #fff;
+    --resume-project-background: #fff;
+    display: grid;
+    grid-template-columns: minmax(0, 38%) minmax(0, 62%) !important;
     gap: 0;
     padding: 0;
-    border: none;
-    border-radius: 0;
-    margin-bottom: 0;
-    height: auto !important;
-    min-height: 100vh;
-    break-after: page;
-    page-break-after: always;
+    border: 0;
+    margin: 0;
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 10pt;
+    line-height: 1.2;
   }
 
   .resume-page.resume-extra-page {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 100vh !important;
-    background-color: var(--resume-print-background, var(--bg-surface, #121212)) !important;
-    break-before: page !important;
-    page-break-before: always !important;
-    break-after: auto !important;
-    page-break-after: auto !important;
+    display: block;
+    break-before: page;
+    page-break-before: always;
   }
 
   .resume-sidebar {
-    height: 100%;
-    padding: 1.45rem 1.15rem !important;
-    gap: 0.85rem !important;
+    padding: 0 3mm 0 0 !important;
+    gap: 2mm !important;
+    border-right: 1px solid #999;
     border-radius: 0;
-    border-right: 1px solid var(--border-ghost, #37373a);
   }
 
   .resume-main {
-    padding: 1.45rem 1.35rem !important;
-    gap: 0.85rem !important;
+    padding: 0 0 0 3mm !important;
+    gap: 2mm !important;
   }
 
   .resume-secondary-main {
-    width: 100% !important;
-    padding: 1.75rem 1.5rem !important;
+    padding: 0 !important;
   }
 
   .resume-header {
-    padding-bottom: 0.4rem;
+    padding-bottom: 0;
+  }
+
+  .resume-header h1 {
+    font-size: 16pt;
+    margin-bottom: 1mm;
+  }
+
+  .resume-subtitle,
+  .resume-section h2,
+  .resume-side-section h2 {
+    font-size: 11pt;
   }
 
   .resume-section h2,
   .resume-side-section h2 {
-    margin-bottom: 0.35rem !important;
-    padding-bottom: 0.2rem !important;
+    margin-bottom: 1mm !important;
+    padding-bottom: 0 !important;
   }
 
+  .sidebar-skills-container {
+    gap: 0.3mm;
+    margin: 0;
+  }
+
+  .sidebar-skill-item,
+  .resume-main p,
+  .resume-project p,
+  .resume-entry-list,
+  .resume-detail-list,
+  .resume-section[aria-labelledby="resume-experience"] .resume-entry-list,
+  .resume-page code {
+    font-size: 10pt !important;
+    line-height: 1.2 !important;
+  }
+
+  .resume-main p,
+  .resume-project p {
+    margin-bottom: 1mm;
+  }
+
+  .resume-entry h3,
+  .resume-entry h3 span,
+  .resume-project h3,
+  .resume-platform h3 {
+    font-size: 10pt;
+  }
+
+  .resume-entry h3 {
+    gap: 1mm;
+  }
+
+  .resume-entry + .resume-entry,
   .resume-profiles .resume-platform + .resume-platform {
-    margin-top: 0.5rem;
+    margin-top: 1.5mm !important;
   }
 
-  .resume-entry + .resume-entry {
-    margin-top: 0.45rem !important;
+  .resume-entry-list {
+    padding-left: 3.5mm;
+  }
+
+  .resume-entry-list li + li {
+    margin-top: 0.5mm;
+  }
+
+  .resume-badge,
+  .resume-profile-stat,
+  .resume-star-row,
+  .resume-links-list a,
+  .resume-contact-item,
+  .resume-contact-item span {
+    color: #111 !important;
+    font-size: 9pt !important;
+    line-height: 1.2;
+  }
+
+  .resume-badge {
+    border-color: #777;
+    padding: 0 1mm;
+  }
+
+  .resume-links-list,
+  .resume-contact-list {
+    gap: 0.5mm;
   }
 
   .resume-project-grid {
-    gap: 0.65rem !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5mm;
   }
 
   .resume-project {
-    padding: 0.65rem 0.75rem !important;
-  }
-
-  .resume-side-section,
-  .resume-section,
-  .resume-entry,
-  .resume-project,
-  .resume-header {
+    padding: 1.5mm;
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
+  .resume-page a,
+  .resume-page code {
+    color: #111 !important;
+  }
+
+  .resume-print-label {
+    display: inline;
+  }
+
   body.resume-document .resume-print-url {
     display: block;
-    font-size: 0.62rem;
-    line-height: 1.2;
+    font-size: 8pt;
+    line-height: 1.15;
     font-weight: normal;
-    white-space: nowrap;
-    overflow-wrap: normal;
-  }
-
-  body.resume-document main#main-content {
-    height: auto;
-  }
-
-  body.resume-document .resume-page {
-    height: auto;
-    min-height: 100vh;
-    break-after: page;
-    page-break-after: always;
-  }
-
-  body.resume-document .resume-page.resume-extra-page {
-    grid-template-columns: 1fr;
-    break-before: page;
-    page-break-before: always;
-    break-after: auto;
-    page-break-after: auto;
-  }
-
-  .resume-secondary-grid {
-    grid-template-columns: minmax(0, 1.5fr) minmax(13rem, 1fr);
-    gap: 1.25rem;
+    overflow-wrap: anywhere;
+    word-break: normal;
   }
 }
 
