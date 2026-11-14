@@ -44,7 +44,11 @@
   <link rel="stylesheet" href="{{ '/assets/css/resume.css' | relative_url }}">
   {% endif %}
   {% if page.resume_page %}
+  {% if page.resume_ats %}
+  <link rel="stylesheet" href="{{ '/assets/css/resume-ats.css' | relative_url }}">
+  {% else %}
   <link rel="stylesheet" href="{{ '/assets/css/resume-shared.css' | relative_url }}">
+  {% endif %}
   {% endif %}
   {% if page.url == "/" %}
   <link rel="stylesheet" href="{{ '/assets/css/neon.css' | relative_url }}">

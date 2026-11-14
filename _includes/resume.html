@@ -14,12 +14,51 @@
     <p class="resume-subtitle">Software Developer</p>
   </header>
 
+  <!-- NEW: Sidebar Skill Progress Bars -->
   <section class="resume-side-section resume-skills" aria-labelledby="resume-skills">
   <h2 id="resume-skills"><i class="bi bi-tools" aria-hidden="true"></i> Skills</h2>
   <div class="sidebar-skills-container">
-    {% for skill in site.data.resume_skills %}
-    <div class="sidebar-skill-item">{{ skill | escape }}</div>
+
+    <!-- Core Languages[cite: 32] -->
+    {% for skill in site.data.matrix.software_ai.core_languages %}
+    <div class="sidebar-skill-item">
+      <div class="sidebar-skill-label">{{ skill.name }}</div>
+      <div class="skill-progress-bar">
+        <div class="skill-progress-fill" style="width: {{ skill.proficiency | times: 10 }}%;"></div>
+      </div>
+    </div>
     {% endfor %}
+
+    <!-- Algorithm Icons[cite: 32] -->
+    {% for skill in site.data.matrix.software_ai.algorithms.icons %}
+    <div class="sidebar-skill-item">
+      <div class="sidebar-skill-label">{{ skill.name }}</div>
+      <div class="skill-progress-bar">
+        <div class="skill-progress-fill" style="width: {{ skill.proficiency | times: 10 }}%;"></div>
+      </div>
+    </div>
+    {% endfor %}
+
+    <!-- Algorithm Tags[cite: 32] -->
+    {% for skill in site.data.matrix.software_ai.algorithms.tags %}
+    <div class="sidebar-skill-item">
+      <div class="sidebar-skill-label">{{ skill.name }}</div>
+      <div class="skill-progress-bar">
+        <div class="skill-progress-fill" style="width: {{ skill.proficiency | times: 10 }}%;"></div>
+      </div>
+    </div>
+    {% endfor %}
+
+    <!-- IT Infra Operating Systems[cite: 32] -->
+    {% for skill in site.data.matrix.it_infra.operating_systems %}
+    <div class="sidebar-skill-item">
+      <div class="sidebar-skill-label">{{ skill.name }}</div>
+      <div class="skill-progress-bar">
+        <div class="skill-progress-fill" style="width: {{ skill.proficiency | times: 10 }}%;"></div>
+      </div>
+    </div>
+    {% endfor %}
+
   </div>
 </section>
 
