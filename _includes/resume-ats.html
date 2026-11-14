@@ -1,0 +1,91 @@
+<article class="resume-page">
+  <aside class="resume-sidebar">
+  <!-- <div class="resume-avatar-row">-->
+  <!--   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="resume-avatar-icon" title="Python">-->
+  <!--   <div class="resume-avatar">-->
+  <!--     <img src="{{ '/assets/images/profile.png' | relative_url }}" alt="Rishbh Sharma">-->
+  <!--   </div>-->
+  <!--   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" class="resume-avatar-icon" title="C++">-->
+  <!-- </div>-->
+  <!-- NEW: Moved Resume Header to Sidebar -->
+  <header class="resume-header">
+    <!-- <p class="resume-kicker">SOFTWARE DEVELOPMENT · AI · SYSTEMS</p>-->
+    <h1>{{ site.data.hero.name }}</h1>
+    <p class="resume-subtitle">Software Developer</p>
+  </header>
+
+  <section class="resume-side-section resume-skills" aria-labelledby="resume-skills">
+  <h2 id="resume-skills"><i class="bi bi-tools" aria-hidden="true"></i> Skills</h2>
+  <div class="sidebar-skills-container">
+    {% for skill in site.data.resume_skills %}
+    <div class="sidebar-skill-item">{{ skill | escape }}</div>
+    {% endfor %}
+  </div>
+</section>
+
+    {% include resume-ats/profiles.html %}
+    {% assign github_profile = site.data.hero.buttons | where: "text", "GitHub" | first %}
+    {% include resume/links.html %}
+    {% include resume/contact.html %}
+  </aside>
+
+  <div class="resume-main">
+    {% include resume-ats/intro.html %}
+    {% include resume-ats/experience.html %}
+    {% include resume-ats/projects.html %}
+    {% include resume-ats/education.html %}
+  </div>
+</article>
+
+<article class="resume-page resume-extra-page">
+  <div class="resume-main resume-secondary-main">
+    <header class="resume-header">
+      <p class="resume-kicker">COMMUNITY · INTERESTS · LANGUAGES</p>
+      <h1>{{ site.data.hero.name }}</h1>
+      <p class="resume-subtitle">Volunteer Experience{% if page.resume_large %} · Personal Interests{% endif %}</p>
+    </header>
+    <div class="resume-secondary-grid{% unless page.resume_large %} resume-community-only{% endunless %}">
+
+      <section class="resume-section resume-community" aria-labelledby="resume-community">
+        <div class="resume-entry">
+          <h2 id="resume-community"><i class="bi bi-people-fill" aria-hidden="true"></i> Community Engagement &amp; Volunteer Experience</h2>
+          <h3>Local Environmental &amp; Animal Welfare Initiative (Self-Organized)</h3>
+          <p class="resume-entry-meta">Volunteer Organizer <span>2024 – Present</span></p>
+          <ul class="resume-entry-list">
+            <li>Spearheaded frequent neighborhood cleanup drives by clearing plastic waste from community parks and cutting back overgrown roadside weeds to ensure public safety and clean spaces.</li>
+            <li>Managed local stray animal rescue and welfare by distributing food supplies to vulnerable street animals and safely relocating venomous reptiles to the forests.</li>
+            <li>Administered basic first-aid care and coordinated with local veterinary networks to ensure timely medical attention for injured community animals.</li>
+            <li>Planted trees and plants that provide flowers, fruit and shade in the neighborhood.</li>
+          </ul>
+        </div>
+      </section>
+
+      {% if page.resume_large %}
+      <div class="resume-secondary-details">
+        <section class="resume-section" aria-labelledby="resume-hobbies">
+          <h2 id="resume-hobbies"><i class="bi bi-heart-fill" aria-hidden="true"></i> Hobbies</h2>
+          <ul class="resume-detail-list">
+            <li>Photography</li>
+            <li>Gardening</li>
+            <li>Camping and Bushcraft</li>
+            <li>Learning and DIY</li>
+            <li>Gadgets and Electronics</li>
+          </ul>
+        </section>
+        <section class="resume-section" aria-labelledby="resume-languages">
+          <h2 id="resume-languages"><i class="bi bi-translate" aria-hidden="true"></i> Language Proficiency</h2>
+          <div class="resume-entry">
+            <h3>Hindi</h3>
+            <p>Read, Write, Speak (fluent)</p>
+          </div>
+          <div class="resume-entry">
+            <h3>English</h3>
+            <p>Read, Write, Speak (conversational)</p>
+          </div>
+        </section>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</article>
