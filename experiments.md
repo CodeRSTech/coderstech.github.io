@@ -2,12 +2,14 @@
 layout: main
 title: Experiments
 permalink: /experiments/
+stylesheets:
+  - /assets/css/pages/hub.css
 ---
 
-<div class="py-4 border-bottom border-secondary mb-4">
-  <h1 class="text-light"><i class="bi bi-tools me-2 text-primary"></i>Hardware & IT Experiments</h1>
+<header class="hub-page-heading">
+  <h1 class="text-light">{% include icon.html name="tools" %}Hardware &amp; IT Experiments</h1>
   <p class="text-white-50">Raw logs, teardowns, and infrastructure audits.</p>
-</div>
+</header>
 
 <!-- Experiment 1: Wardriving -->
 <details class="mb-3 bg-dark border border-secondary rounded p-3">

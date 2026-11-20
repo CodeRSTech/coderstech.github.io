@@ -1,0 +1,50 @@
+<section class="home-section" aria-labelledby="site-router-title">
+  <div class="home-section-heading">
+    <div>
+      <p class="home-eyebrow">// Site ecosystem</p>
+      <h2 id="site-router-title">Explore the portfolio</h2>
+    </div>
+  </div>
+  <div class="router-grid">
+    <article class="router-card">
+      <h3>Resume suite</h3>
+      <p>Standard, light, and ATS-ready formats.</p>
+      <div class="router-links">
+        <a href="{{ '/resume/' | relative_url }}">Standard</a>
+        <a href="{{ '/resume-light/' | relative_url }}">Light</a>
+        <a href="{{ '/resume-ats/' | relative_url }}">ATS</a>
+      </div>
+    </article>
+    <article class="router-card">
+      <h3>Logs &amp; teardowns</h3>
+      {% assign latest_post = site.posts | first %}
+      {% if latest_post %}
+      <p>{{ latest_post.title }}</p>
+      <a href="{{ latest_post.url | relative_url }}">Read latest log</a>
+      {% else %}
+      <p>Engineering notes and repair logs.</p>
+      {% endif %}
+      <a href="{{ '/logs/' | relative_url }}">All logs</a>
+    </article>
+    <article class="router-card">
+      <h3>Learning portal</h3>
+      <p>Notes, tutorials, and learning resources.</p>
+      <a href="{{ '/learn/' | relative_url }}">Open Learn</a>
+    </article>
+    <article class="router-card">
+      <h3>Hardware &amp; photography</h3>
+      <p>Embedded experiments and image galleries.</p>
+      <div class="router-links">
+        <a href="{{ '/hardware/' | relative_url }}">Hardware</a>
+        <a href="{{ '/photography/' | relative_url }}">Photography</a>
+      </div>
+    </article>
+  </div>
+  <nav class="router-links home-more-links" aria-label="More portfolio pages">
+    <a href="{{ '/projects/' | relative_url }}">Projects</a>
+    <a href="{{ '/experiments/' | relative_url }}">Experiments</a>
+    <a href="{{ '/about/' | relative_url }}">About</a>
+    <a href="https://coderstech.github.io/AI-Pong/">AI-Pong</a>
+    <a href="https://coderstech.github.io/Blurzy/">Blurzy</a>
+  </nav>
+</section>

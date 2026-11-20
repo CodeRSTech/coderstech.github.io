@@ -2,16 +2,10 @@
 layout: main
 title: Rishbh
 permalink: /
+stylesheets:
+  - /assets/css/pages/home.css
 ---
-
-<!-- Hero Section: The Executive Summary -->
 {% include hero.html %}
-
-<!-- HR-Optimized Skill Matrix -->
+{% include featured_work.html %}
 {% include skill_mat.html %}
-
-<!-- Featured Work Routing -->
-{% include featured_work.html %} 
-
-<!-- External Verification & Profiles -->
-{% include ext_profiles.html %}
+{% include site_router.html %}

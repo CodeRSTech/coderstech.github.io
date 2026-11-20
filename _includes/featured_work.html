@@ -1,16 +1,39 @@
-<div class="py-5 border-bottom border-secondary">
-  <h2 class="mb-4 text-light terminal-prompt"><span class="typewriter">ls | grep Projects</span></h2>
-  <div class="row g-4">
-    {% for sector in site.data.featured.sectors %}
-    <div class="col-md-6">
-      <a href="{{ sector.url | relative_url }}" class="text-decoration-none">
-        <div class="card bg-dark border-secondary p-4 h-100 hover-overlay">
-          <img src="{{ sector.image | relative_url }}" class="img-fluid rounded mb-3" alt="{{ sector.image_alt }}" loading="lazy" decoding="async">
-          <h4 class="text-light mb-2">{{ sector.title }} <i class="bi bi-arrow-right ms-2"></i></h4>
-          <p class="text-white-50 mb-0">{{ sector.description }}</p>
-        </div>
-      </a>
+<section class="home-section" aria-labelledby="flagship-title">
+  <div class="home-section-heading">
+    <div>
+      <p class="home-eyebrow">// Flagship systems</p>
+      <h2 id="flagship-title">Selected engineering work</h2>
     </div>
+  </div>
+  <div class="project-grid">
+    {% for sector in site.data.featured.sectors %}
+    <article class="project-card">
+      <div class="project-media">
+        {% if sector.video_mp4 and sector.video_webm %}
+        <video autoplay loop muted playsinline preload="none" poster="{{ sector.image | relative_url }}" aria-label="{{ sector.image_alt }}">
+          <source src="{{ sector.video_webm | relative_url }}" type="video/webm">
+          <source src="{{ sector.video_mp4 | relative_url }}" type="video/mp4">
+        </video>
+        <img class="motion-still" src="{{ sector.image | relative_url }}" alt="{{ sector.image_alt }}" loading="lazy" decoding="async">
+        {% else %}
+        <img src="{{ sector.image | relative_url }}" alt="{{ sector.image_alt }}" loading="lazy" decoding="async">
+        {% endif %}
+      </div>
+      <div class="project-copy">
+        <h3>{{ sector.title }}</h3>
+        <p>{{ sector.description }}</p>
+        <ul class="project-tags">
+          {% for tag in sector.tags %}
+          <li>{{ tag }}</li>
+          {% endfor %}
+        </ul>
+        <nav class="project-links" aria-label="{{ sector.title }} links">
+          <a href="{{ sector.docs_url | relative_url }}">Docs</a>
+          <a href="{{ sector.live_url | relative_url }}">Live site</a>
+          <a href="{{ sector.source_url }}" target="_blank" rel="noopener noreferrer">Source code</a>
+        </nav>
+      </div>
+    </article>
     {% endfor %}
   </div>
-</div>
+</section>

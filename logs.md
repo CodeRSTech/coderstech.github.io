@@ -2,11 +2,13 @@
 layout: main
 title: R&D Logs
 permalink: /logs/
+stylesheets:
+  - /assets/css/pages/hub.css
 ---
-<div class="py-4 border-bottom border-secondary mb-4">
-  <h1 class="text-light"><i class="bi bi-clock-history me-2 text-primary"></i>Repair & Teardown Logs</h1>
+<header class="hub-page-heading">
+  <h1 class="text-light">{% include icon.html name="clock" %}Repair &amp; Teardown Logs</h1>
   <p class="text-white-50">Chronological cascade of hardware diagnostics and rebuilds.</p>
-</div>
+</header>
 
 <!-- A Banner will be inserted here -->
 

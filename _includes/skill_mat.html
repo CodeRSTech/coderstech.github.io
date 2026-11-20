@@ -1,11 +1,35 @@
-<div class="py-5 border-bottom border-secondary">
-  <h2 class="mb-4 text-light">
-    <span class="text-primary">root@system:~$</span>
-    <span class="typewriter">./view_tech_matrix.sh</span>
-  </h2>
-  <div class="row g-4 align-items-stretch">
-    {% include skill_mat/software.html %}
-    {% include skill_mat/hardware.html %}
-    {% include skill_mat/it.html %}
+<section class="home-section" aria-labelledby="stack-title">
+  <div class="home-section-heading">
+    <div>
+      <p class="home-eyebrow">// Technical stack</p>
+      <h2 id="stack-title">Tools I build with</h2>
+    </div>
   </div>
-</div>
+  <div class="skill-grid">
+    <article class="home-card skill-card">
+      <h3>Software &amp; AI</h3>
+      <div class="skill-tags">
+        {% for skill in site.data.matrix.software_ai.core_languages %}<span>{{ skill.name }}</span>{% endfor %}
+        {% for skill in site.data.matrix.software_ai.familiar %}<span>{{ skill.name }}</span>{% endfor %}
+        {% for skill in site.data.matrix.software_ai.algorithms.icons %}<span>{{ skill.name }}</span>{% endfor %}
+        {% for skill in site.data.matrix.software_ai.algorithms.tags %}<span>{{ skill.name }}</span>{% endfor %}
+      </div>
+    </article>
+    <article class="home-card skill-card">
+      <h3>Systems &amp; Infra</h3>
+      <div class="skill-tags">
+        {% for system in site.data.matrix.it_infra.operating_systems %}
+        <span>{% if system.is_img %}<img src="{{ system.icon | relative_url }}" alt="" loading="lazy" decoding="async">{% endif %}{{ system.name }}</span>
+        {% endfor %}
+        {% for tool in site.data.matrix.it_infra.tags %}<span>{{ tool.name }}</span>{% endfor %}
+      </div>
+    </article>
+    <article class="home-card skill-card">
+      <h3>Hardware &amp; Embedded</h3>
+      <div class="skill-tags">
+        {% for device in site.data.matrix.hardware_systems.embedded.icons %}<span>{{ device.name }}</span>{% endfor %}
+        <span>{{ site.data.matrix.hardware_systems.teardowns.title }}</span>
+      </div>
+    </article>
+  </div>
+</section>
