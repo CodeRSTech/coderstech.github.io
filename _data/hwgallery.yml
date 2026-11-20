@@ -1,35 +1,53 @@
-- url: "/assets/images/photography/milky_way.jpg"
+- url: "/assets/images/photography/milky_way.webp"
   title: "Milky way - Long Exposure (Nikon D7200, 18mm, 30s)."
   alt: "Milky way - Long Exposure"
+  width: 1080
+  height: 1620
 
-- url: "/assets/images/photography/mobile_pro.jpeg"
+- url: "/assets/images/photography/mobile_pro.webp"
   title: "Mobile Photography - Long Exposure."
   alt: "Mobile Photography - Long Exposure"
+  width: 1650
+  height: 2200
 
-- url: "/assets/images/photography/temple_laxmi_narayan.jpg"
+- url: "/assets/images/photography/temple_laxmi_narayan.webp"
   title: "Laxmi Narayan Temple - Composite made by digital manipulation of multiple images merge into HDR."
   alt: "Laxmi Narayan Temple - Composite"
+  width: 2000
+  height: 1699
 
-- url: "/assets/images/photography/purple_hills.jpeg"
+- url: "/assets/images/photography/purple_hills.webp"
   title: "Somewhere in the hills - Night HDR - Made from n images with exposure times ranging from 0.5s to 30s, taking with the help of custom CHDK script."
   alt: "Purple Hills"
+  width: 2000
+  height: 1500
 
-- url: "/assets/images/photography/winter_night.jpg"
+- url: "/assets/images/photography/winter_night.webp"
   title: "Winter Nights - Long Exposure HDR - Made from n images with exposure times ranging from 0.5s to 30s, taking with the help of custom CHDK script."
   alt: "Winter"
+  width: 2000
+  height: 1500
 
-- url: "/assets/images/photography/curious_chipmunk.jpg"
+- url: "/assets/images/photography/curious_chipmunk.webp"
   title: "Curious Chipmunk"
   alt: "A chipmunk"
+  width: 2200
+  height: 1298
 
-- url: "/assets/images/photography/Urban.jpeg"
+- url: "/assets/images/photography/Urban.webp"
   title: "Night time Urban landscape - Made from n images with exposure times ranging from 0.5s to 30s, taking with the help of custom CHDK script."
   alt: "Urban landscape"
+  width: 2000
+  height: 1498
 
-- url: "/assets/images/photography/valley.jpg"
+- url: "/assets/images/photography/valley.webp"
   title: ""
   alt: "Valley"
+  width: 2000
+  height: 1494
 
-- url: "/assets/images/photography/himalaya.jpg"
+- url: "/assets/images/photography/himalaya.webp"
   title: "Himalayan Foothills - Single shot - 30s - CHDK"
   alt: "Himalayan Foothills"
+  width: 1428
+  height: 2000
