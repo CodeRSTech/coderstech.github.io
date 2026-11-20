@@ -1,0 +1,190 @@
+name: "RISHBH SHARMA"
+subtitle: "Software Developer"
+contact:
+  email: "codetechrs@gmail.com"
+  location: "India"
+links:
+  - name: "Portfolio"
+    label: "coderstech.github.io"
+    url: "/"
+  - name: "GitHub"
+    label: "github.com/coderstech"
+    url: "https://github.com/coderstech"
+  - name: "HackerEarth"
+    label: "hackerearth.com/@codetechrs"
+    url: "https://www.hackerearth.com/@codetechrs"
+  - name: "LinkedIn"
+    label: "linkedin.com/in/rishbh-sharma-49873a24/"
+    url: "https://www.linkedin.com/in/rishbh-sharma-49873a24/"
+  - name: "HackerRank"
+    label: "hackerrank.com/profile/RishbhSharma"
+    url: "https://www.hackerrank.com/profile/RishbhSharma"
+profiles:
+  hackerearth:
+    name: "HackerEarth"
+    logo: "/assets/logos/hackerearth.svg"
+    points: "2,405"
+    solved: "297"
+    tags:
+      - "Top 1% in Algorithms"
+      - "Top 2% in Basic Programming"
+      - "Top 8% in Data Structures"
+  hackerrank:
+    name: "HackerRank"
+    logo: "/assets/logos/hackerrank-light.svg"
+    badge: "660+ POINTS"
+    skills:
+      - name: "Problem Solving"
+        stars: 4
+      - name: "Python"
+        stars: 4
+      - name: "C++"
+        stars: 3
+      - name: "30 Days of Code"
+        stars: 3
+skills:
+  standard:
+    - name: "Python"
+      proficiency: 8
+    - name: "C++"
+      proficiency: 7
+    - name: "OpenCV"
+      proficiency: 4
+    - name: "PyTorch"
+      proficiency: 4
+    - name: "NumPy"
+      proficiency: 5
+    - name: "PySide6"
+      proficiency: 6
+    - name: "Genetic Algorithms"
+      proficiency: 9
+    - name: "Neural Networks"
+      proficiency: 7
+    - name: "DSA"
+      proficiency: 7
+    - name: "Github"
+      proficiency: 7
+    - name: "Git"
+      proficiency: 7
+    - name: "CI/CD"
+      proficiency: 5
+    - name: "DevOps"
+      proficiency: 5
+    - name: "Ubuntu"
+      proficiency: 8
+    - name: "Linux"
+      proficiency: 5
+    - name: "Windows"
+      proficiency: 9
+  ats:
+    - "Python"
+    - "C++"
+    - "Data Structures & Algorithms (DSA)"
+    - "System Design"
+    - "Unit Testing & Debugging"
+    - "Git"
+    - "GitHub"
+    - "CI/CD"
+    - "DevOps"
+    - "Linux/Ubuntu"
+    - "PyTorch"
+    - "NumPy"
+    - "OpenCV"
+    - "PySide6"
+    - "Neural Networks"
+    - "Genetic Algorithms"
+standard:
+  intro: "Coder + Learner w/ solo projects & freelance works across s/w + h/w systems. Interested in building practical solutions, problem-solving and exploring AI+ML, Algorithms and, Embedded systems."
+  experience:
+    - title: "1 Year"
+      level: "Exploratory"
+      description: "Solving problems on competitive coding platforms."
+    - title: "2 Years"
+      level: "Beginner"
+      description: "Tailored freelance work for global clients including, but not limited to, developing parts of chess AI using Polyglot in C++, writing pyautogui automation scripts, and setting up Linux servers over SSH."
+    - title: "4 Years"
+      level: "Intermediate"
+      description: "Solo open-source projects, listed under Projects section below:"
+  projects:
+    - name: "AI-Pong"
+      logo: "/AI-Pong/docs/logo/title-light.svg"
+      url: "/AI-Pong/"
+      public_url: "https://coderstech.github.io/AI-Pong/"
+      description: "A Neural Network based Genetic Algorithm finds the optimal solution for playing 2D game, pong."
+      tech: "Artificial Neural Networks, Genetic Algorithms, Game Development"
+      libraries: "arcade/pygame, torch/numpy, torchvision"
+      source_url: "https://github.com/CodeRSTech/AI-Pong"
+      source_label: "Source code"
+      details: "100+ individuals evolve to play the game \"Pong\" over multiple generations. At the end of each generation, top players create their unique offspring. This cycle is repeated several times. Initially built on pygame + numpy, it was rebuilt using arcade + torch for better performance."
+    - name: "Blurzy"
+      logo: "/Blurzy/docs/assets/title-logo.svg"
+      url: "/Blurzy/"
+      public_url: "https://coderstech.github.io/Blurzy/"
+      description: "A Qt Desktop app for video detection, tracking, annotation, and exporting video with blurred subjects."
+      tech: "Object detection, Multi-object tracking, Video processing"
+      libraries: "PySide6, torch, ultralytics, torchvision, numpy, scipy, pandas"
+      source_url: "https://github.com/CodeRSTech/Blurzy"
+      source_label: "Source code"
+      details: "Detect people using object-detection models, track their movements and apply blur to them. Works with all possible kinds of object categories. The development phase is still WIP and could use more feature additions."
+  education:
+    course: "B.Tech. Computer Science and Engineering"
+    institution: "Himachal Pradesh Technical University, Hamirpur"
+    result: "2022 · 60.42%"
+ats:
+  intro: "Software Developer & Competitive Programmer (Top 1% in Algorithms on HackerEarth) with 2+ years of freelance software development and 4+ years building open-source Python and C++ systems. Experienced in designing algorithmic solutions, optimizing runtime performance, and delivering production-ready code for global clients."
+  experience:
+    - title: "Freelance Software Developer | Remote (Global Clients)"
+      duration: "2 Years"
+      bullets:
+        - "Engineered and optimized custom C++ modules for a chess AI engine leveraging Polyglot opening books and search optimizations."
+        - "Developed automated testing and GUI workflow scripts in Python (PyAutoGUI), reducing manual execution overhead for client pipelines."
+        - "Provisioned, hardened, and maintained remote Linux environments over SSH with automated CI/CD workflows."
+    - title: "Independent Open-Source Developer & Competitive Programmer"
+      duration: "4 Years"
+      bullets:
+        - "Solved 300+ complex Data Structures and Algorithms challenges across HackerEarth (Top 1% in Algorithms, Top 2% in Basic Programming, Top 8% in Data Structures) and HackerRank (660+ points in Problem Solving & Python)."
+        - "Architected and maintained open-source AI and computer vision applications in Python and C++, focusing on code efficiency, modularity, and edge-case resilience."
+  projects:
+    - name: "AI-Pong"
+      logo: "/AI-Pong/docs/logo/title-light.svg"
+      url: "/AI-Pong/"
+      public_url: "https://coderstech.github.io/AI-Pong/"
+      description: "Designed a Neural Network and Genetic Algorithm simulation where 100+ autonomous agents evolve across generations to master 2D Pong. Refactored and migrated the core engine from pygame + NumPy to arcade + PyTorch, significantly improving simulation throughput and execution performance."
+      tech: "Artificial Neural Networks, Genetic Algorithms, Game Development"
+      libraries: "arcade/pygame, torch/numpy, torchvision"
+      source_url: "https://github.com/CodeRSTech/AI-Pong"
+      source_label: "Source code"
+    - name: "Blurzy"
+      logo: "/Blurzy/docs/assets/title-logo.svg"
+      url: "/Blurzy/"
+      public_url: "https://coderstech.github.io/Blurzy/"
+      description: "Built a cross-platform Qt (PySide6) desktop application for real-time multi-object detection, tracking, annotation, and automated privacy blurring in video streams using PyTorch, Ultralytics, and SciPy. Engineered modular video-processing pipelines capable of handling diverse object categories and edge cases."
+      tech: "Object detection, Multi-object tracking, Video processing"
+      libraries: "PySide6, torch, ultralytics, torchvision, numpy, scipy, pandas"
+      source_url: "https://github.com/CodeRSTech/Blurzy"
+      source_label: "Source code"
+  education:
+    course: "B.Tech. Computer Science and Engineering"
+    institution: "Himachal Pradesh Technical University, Hamirpur"
+    result: "2022"
+community:
+  heading: "Community Engagement & Volunteer Experience"
+  organization: "Local Environmental & Animal Welfare Initiative (Self-Organized)"
+  role: "Volunteer Organizer"
+  dates: "2024 – Present"
+  bullets:
+    - "Spearheaded frequent neighborhood cleanup drives by clearing plastic waste from community parks and cutting back overgrown roadside weeds to ensure public safety and clean spaces."
+    - "Managed local stray animal rescue and welfare by distributing food supplies to vulnerable street animals and safely relocating venomous reptiles to the forests."
+    - "Administered basic first-aid care and coordinated with local veterinary networks to ensure timely medical attention for injured community animals."
+    - "Planted trees and plants that provide flowers, fruit and shade in the neighborhood."
+hobbies:
+  - "Photography"
+  - "Gardening"
+  - "Camping and Bushcraft"
+  - "Learning and DIY"
+  - "Gadgets and Electronics"
+languages:
+  - name: "Hindi"
+    proficiency: "Read, Write, Speak (fluent)"
+  - name: "English"
+    proficiency: "Read, Write, Speak (conversational)"

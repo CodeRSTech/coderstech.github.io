@@ -1,19 +1,15 @@
 <section class="resume-section" aria-labelledby="resume-experience">
-      <h2 id="resume-experience"><i class="bi bi-briefcase-fill" aria-hidden="true"></i> Experience</h2>
-      <div class="resume-entry">
-          <h3>1 Year<span>Exploratory</span></h3>
-          <p>
-              Solving problems on competitive coding platforms.
-          </p>
-
-          <h3>2 Years <span>Beginner</span></h3>
-          <p>
-              Tailored freelance work for global clients including, but not limited to, developing parts of chess AI using Polyglot in C++, writing <code>pyautogui</code> automation scripts, and setting up Linux servers over SSH.
-          </p>
-
-          <h3>4 Years <span>Intermediate</span></h3>
-          <p>
-              Solo open-source projects, listed under Projects section below:
-          </p>
-      </div>
-    </section>
+  <h2 id="resume-experience">{% include icon.html name="experience" %}Experience</h2>
+  {% for item in include.data.experience %}
+  <div class="resume-entry">
+    <h3>{{ item.title }}{% if item.duration %}<span>{{ item.duration }}</span>{% elsif item.level %}<span>{{ item.level }}</span>{% endif %}</h3>
+    {% if item.bullets %}
+    <ul class="resume-entry-list">
+      {% for bullet in item.bullets %}<li>{{ bullet }}</li>{% endfor %}
+    </ul>
+    {% else %}
+    <p>{{ item.description }}</p>
+    {% endif %}
+  </div>
+  {% endfor %}
+</section>

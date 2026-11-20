@@ -1,0 +1,39 @@
+{% assign community = site.data.resume.community %}
+<article class="resume-page resume-extra-page">
+  <div class="resume-main resume-secondary-main">
+    <header class="resume-header">
+      <p class="resume-kicker">COMMUNITY · INTERESTS · LANGUAGES</p>
+      <h1>{{ site.data.resume.name }}</h1>
+      <p class="resume-subtitle">Volunteer Experience{% if page.resume_large %} · Personal Interests{% endif %}</p>
+    </header>
+    <div class="resume-secondary-grid{% unless page.resume_large %} resume-community-only{% endunless %}">
+      <section class="resume-section resume-community" aria-labelledby="resume-community">
+        <div class="resume-entry">
+          <h2 id="resume-community">{% include icon.html name="people" %}{{ community.heading }}</h2>
+          <h3>{{ community.organization }}</h3>
+          <p class="resume-entry-meta">{{ community.role }} <span>{{ community.dates }}</span></p>
+          <ul class="resume-entry-list">
+            {% for item in community.bullets %}<li>{{ item }}</li>{% endfor %}
+          </ul>
+        </div>
+      </section>
+      {% if page.resume_large %}
+      <div class="resume-secondary-details">
+        <section class="resume-section" aria-labelledby="resume-hobbies">
+          <h2 id="resume-hobbies">{% include icon.html name="heart" %}Hobbies</h2>
+          <ul class="resume-detail-list">{% for hobby in site.data.resume.hobbies %}<li>{{ hobby }}</li>{% endfor %}</ul>
+        </section>
+        <section class="resume-section" aria-labelledby="resume-languages">
+          <h2 id="resume-languages">{% include icon.html name="translate" %}Language Proficiency</h2>
+          {% for language in site.data.resume.languages %}
+          <div class="resume-entry">
+            <h3>{{ language.name }}</h3>
+            <p>{{ language.proficiency }}</p>
+          </div>
+          {% endfor %}
+        </section>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</article>

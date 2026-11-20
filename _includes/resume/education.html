@@ -1,8 +1,8 @@
 <section class="resume-section" aria-labelledby="resume-education">
-      <h2 id="resume-education"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> Education</h2>
-      <div class="resume-entry resume-education">
-        <h3>B.Tech. Computer Science and Engineering</h3>
-        <p>Himachal Pradesh Technical University, Hamirpur</p>
-        <p class="resume-education-meta">2022 <span>·</span> 60.42%</p>
-      </div>
-    </section>
+  <h2 id="resume-education">{% include icon.html name="education" %}Education</h2>
+  <div class="resume-entry resume-education">
+    <h3>{{ include.data.education.course }}</h3>
+    <p>{{ include.data.education.institution }}</p>
+    <p class="resume-education-meta">{{ include.data.education.result }}</p>
+  </div>
+</section>

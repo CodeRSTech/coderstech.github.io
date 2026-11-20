@@ -1,0 +1,30 @@
+{% if include.variant == "ats" %}
+  {% assign resume_content = site.data.resume.ats %}
+  {% assign skills_data = site.data.resume.skills.ats %}
+{% else %}
+  {% assign resume_content = site.data.resume.standard %}
+  {% assign skills_data = site.data.resume.skills.standard %}
+{% endif %}
+<article class="resume-page">
+  <aside class="resume-sidebar">
+    <header class="resume-header">
+      <h1>{{ site.data.resume.name }}</h1>
+      <p class="resume-subtitle">{{ site.data.resume.subtitle }}</p>
+    </header>
+    {% include resume/skills.html data=skills_data %}
+    {% include resume/profiles.html %}
+    {% include resume/links.html %}
+    {% include resume/contact.html %}
+  </aside>
+  <div class="resume-main">
+    {% include resume/intro.html data=resume_content %}
+    {% include resume/experience.html data=resume_content %}
+    {% if include.variant == "ats" %}
+    {% include resume/projects.html data=resume_content ats=true %}
+    {% else %}
+    {% include resume/projects.html data=resume_content %}
+    {% endif %}
+    {% include resume/education.html data=resume_content %}
+  </div>
+</article>
+{% include resume/extra.html %}
