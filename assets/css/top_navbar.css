@@ -1,105 +1,152 @@
-/* Navbar Overrides */
-.navbar {
-  /* Allow the parent navbar to expand dynamically */
-  min-height: 4.5rem;
-  height: auto !important;
-  /* Frosted Glass Base */
-  background-color: rgba(9, 9, 11, 0.65) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  position: sticky; /* Keeps it locked to the top */
+.site-nav {
+  position: sticky;
+  z-index: 10;
   top: 0;
-  z-index: 1050;
+  min-height: 54px;
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(11, 15, 23, 0.94);
+  backdrop-filter: blur(14px);
+}
 
-  /* Add a subtle glowing bottom border instead of a flat grey one */
-  border-bottom: 1px solid rgba(0, 255, 102, 0.2) !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+.nav-inner {
+  width: min(100% - 32px, var(--container-hub));
+  min-height: 54px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.navbar-brand {
+  color: var(--color-text);
+  font-weight: 750;
+  letter-spacing: 0.015em;
+  text-decoration: none;
+}
+
+.nav-menu,
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav {
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .nav-link {
   position: relative;
-  background-color: transparent;
-  color: var(--text-muted) !important; /* Uses your existing variable */
-  transition: color 0.3s ease;
-  padding-bottom: 0.25rem; /* Gives the underline room to breathe */
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 7px 10px;
+  border-radius: 7px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 140ms ease, background-color 140ms ease;
 }
 
-.nav-link:hover {
-  color: var(--accent-green) !important; /* Glows green on hover */
+.nav-link:hover,
+.nav-link[aria-current="page"] {
+  background: rgba(103, 232, 249, 0.08);
+  color: var(--color-text);
 }
 
-/* The Animated Cyber Underline */
-.nav-link::after {
-  content: '';
+.nav-link[aria-current="page"]::after {
   position: absolute;
-  width: 0;
+  right: 10px;
+  bottom: 3px;
+  left: 10px;
   height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--accent-green);
-  transition: width 0.3s ease;
-  box-shadow: 0 0 8px var(--accent-green); /* Adds the neon glow to the line */
+  border-radius: 2px;
+  background: var(--color-accent);
+  content: "";
 }
 
-.nav-link:hover::after {
-  width: 100%;
+.nav-link.nav-resume {
+  margin-left: 4px;
+  border: 1px solid rgba(103, 232, 249, 0.38);
+  color: var(--color-accent);
+  font-weight: 700;
 }
 
-/* Keep your mobile toggler exactly as is! */
-.navbar-toggler {
-  border-color: var(--accent-cyan) !important;
-  border-radius: 2px !important;
-  transition: all 0.3s ease;
+.nav-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding: 9px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  cursor: pointer;
 }
 
-.navbar-toggler:focus, .navbar-toggler:active {
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4) !important;
-  outline: 2px solid var(--accent-cyan);
-  outline-offset: 2px;
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  margin: 4px 0;
+  background: var(--color-text);
 }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
-
-/* Mobile Hamburger Menu Dropdown */
-/* Seamless Unified Menu & Right-Aligned Text*/
-@media (max-width: 991.98px) {
-  /* Strip away any separate background so it merges with the parent navbar */
-  .navbar-collapse {
-    background: transparent !important;
-    backdrop-filter: none;
-    border: none;
-    box-shadow: none;
-
-    margin-top: 1rem;
-    padding-bottom: 1rem;
+@media (max-width: 860px) {
+  .nav-inner {
+    position: relative;
+    flex-wrap: wrap;
   }
 
-  /* Force links to the right */
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    display: block;
+    flex-basis: 100%;
+    padding: 0 0 10px;
+  }
+
+  .has-js .nav-toggle {
+    display: block;
+  }
+
+  .has-js .nav-menu {
+    display: none;
+  }
+
+  .has-js .nav-menu.is-open {
+    display: block;
+  }
+
   .navbar-nav {
-    text-align: right;
-    align-items: flex-end; /* Ensures flex container pushes children right */
+    align-items: stretch;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .nav-link {
     width: 100%;
   }
 
-  /* Space out touch targets for mobile */
-  .navbar-nav .nav-item {
-    margin-bottom: 0.75rem;
+  .nav-link[aria-current="page"]::after {
+    right: auto;
+    bottom: 8px;
+    left: 0;
+    width: 2px;
+    height: calc(100% - 16px);
   }
 
-  /* Adjust the hover underline to originate from the right side */
-  .nav-link::after {
-    left: auto;
-    right: 0;
+  .nav-link.nav-resume {
+    width: fit-content;
+    margin: 4px 0 0;
   }
 }
 
-.nav-link:focus-visible,
-.navbar-brand:focus-visible,
-.navbar-toggler:focus-visible {
-  outline: 2px solid var(--accent-green);
-  outline-offset: 3px;
-  border-radius: 2px;
+@media (prefers-reduced-motion: reduce) {
+  .nav-link {
+    transition: none;
+  }
 }

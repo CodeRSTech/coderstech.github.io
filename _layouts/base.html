@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% assign page_title = page.title | default: site.title %}
+  {% assign page_description = page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace %}
+  {% assign canonical_path = page.permalink | default: page.url %}
+  {% assign canonical_url = canonical_path | relative_url | absolute_url %}
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page_description | escape }}">
+  {% if page.url contains '404' or page.permalink == '/404.html' or page.name == '404.md' %}
+  <meta name="robots" content="noindex, nofollow">
+  {% else %}
+  <meta name="robots" content="index, follow">
+  {% endif %}
+  <meta name="theme-color" content="#0b0f17">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{{ page_title | escape }}">
+  <meta property="og:description" content="{{ page_description | escape }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ page_title | escape }}">
+  <meta name="twitter:description" content="{{ page_description | escape }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/icons/favicon.svg' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/core/tokens.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/core/base.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/top_navbar.css' | relative_url }}">
+  {% for sheet in layout.stylesheets %}
+  <link rel="stylesheet" href="{{ sheet | relative_url }}">
+  {% endfor %}
+  {% for sheet in page.stylesheets %}
+  <link rel="stylesheet" href="{{ sheet | relative_url }}">
+  {% endfor %}
+  {% if page.gallery_assets %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+  {% endif %}
+</head>
+<body{% if page.resume_page %} class="resume-document{% if page.resume_theme == 'light' %} resume-light-document{% endif %}{% if page.resume_large %} resume-large-document{% endif %}"{% endif %}>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  {% unless page.hide_navbar %}{% include navbar.html %}{% endunless %}
+  <main id="main-content">
+    {{ content }}
+  </main>
+  {% unless page.hide_footer %}{% include footer.html %}{% endunless %}
+  {% unless page.hide_navbar %}
+  <script>
+    const menuButton = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('primary-navigation');
+    if (menuButton && menu) {
+      document.documentElement.classList.add('has-js');
+      menuButton.addEventListener('click', () => {
+        const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('is-open', !expanded);
+      });
+    }
+  </script>
+  {% endunless %}
+  {% if page.gallery_assets %}
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
+  {% endif %}
+</body>
+</html>

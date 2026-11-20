@@ -1,138 +1,46 @@
 ---
-layout: main
+layout: base
+stylesheets:
+  - /assets/css/pages/post.css
+  - /assets/css/syntax/highlight.css
 ---
-<!--<article class="container py-5">-->
-<!--  <h1 class="text-light terminal-prompt">{{ page.title }}</h1>-->
-<!--  <div class="post-content mt-4 text-white-50">-->
-<!--    {{ content }}-->
-<!--  </div>-->
-<!--</article>-->
-<style>
-  .swipe-ribbon { scrollbar-width: none; -ms-overflow-style: none; }
-  .swipe-ribbon::-webkit-scrollbar { display: none; }
-</style>
-
-<div class="container-fluid position-relative mt-3">
-  
-  <!-- MOBILE ONLY: Stacked Sticky Navbars -->
-  <div class="scrollspy-navbar d-lg-none sticky-top bg-black border-bottom border-secondary" style="top: 4.5rem; z-index: 1020;">
-    <div class="d-flex flex-nowrap overflow-x-auto py-2 px-3 border-bottom border-dark swipe-ribbon">
-      <span class="text-white-50 small fw-bold me-3 align-self-center">EXPERIMENTS:</span>
+<div class="layout-post">
+  <aside class="post-archive" aria-label="Other R&amp;D logs">
+    <p class="post-eyebrow">R&amp;D LOGS</p>
+    <nav>
       {% for post in site.posts %}
-        <a href="{{ post.url | relative_url }}" class="badge bg-secondary text-light text-decoration-none me-2 text-nowrap">{{ post.title }}</a>
-      {% endfor %}
-    </div>
-    <nav id="toc-nav-mobile" class="nav nav-pills flex-nowrap overflow-x-auto py-2 px-3 swipe-ribbon">
-      {% for item in page.toc %}
-        <a class="nav-link text-white-50 text-nowrap py-1 px-2 transition-all" href="#{{ item.id | uri_escape }}">{{ item.title }}</a>
+      <a href="{{ post.url | relative_url }}"{% if post.url == page.url %} aria-current="page"{% endif %}>{{ post.title }}</a>
       {% endfor %}
     </nav>
-  </div>
+  </aside>
 
-  <div class="row">
-    <!-- DESKTOP LEFT: Other Posts -->
-    <div class="col-lg-2 d-none d-lg-block border-end border-secondary">
-      <div class="sticky-top pt-4" style="top: 80px;">
-        <h6 class="text-uppercase fw-bold text-primary mb-3">R&D Logs</h6>
-        <nav class="nav flex-column">
-          {% for post in site.posts %}
-            <a class="nav-link text-white-50 px-0 py-1" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          {% endfor %}
-        </nav>
-      </div>
+  <article class="post-article">
+    <header class="post-header">
+      <p class="post-eyebrow">{{ page.category | default: "Engineering" | capitalize }}</p>
+      <h1>{{ page.title }}</h1>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+    </header>
+    <div class="post-content">
+      {{ content }}
     </div>
+  </article>
 
-    <!-- CENTER: Main Content Payload -->
-    <div class="col-lg-8 col-12 px-lg-5 pb-5 pt-4">
-      <h1 class="text-light fw-bold mb-2">{{ page.title }}</h1>
-      <span class="badge bg-primary mb-4">{{ page.category | capitalize }}</span>
-      <div class="text-white-50 content-payload">
-        {{ content }}
-      </div>
+  <aside class="post-toc" aria-label="Table of contents">
+    <details class="post-toc-mobile">
+      <summary>On this page</summary>
+      <nav>
+        {% for item in page.toc %}
+        <a href="#{{ item.id | uri_escape }}">{{ item.title }}</a>
+        {% endfor %}
+      </nav>
+    </details>
+    <div class="post-toc-desktop">
+      <p class="post-eyebrow">ON THIS PAGE</p>
+      <nav id="toc-nav">
+        {% for item in page.toc %}
+        <a href="#{{ item.id | uri_escape }}">{{ item.title }}</a>
+        {% endfor %}
+      </nav>
     </div>
-
-    <!-- DESKTOP RIGHT: TOC Scrollspy -->
-    <div class="col-lg-2 d-none d-lg-block border-start border-secondary">
-      <div class="sticky-top pt-4" style="top: 80px;">
-        <h6 class="text-uppercase fw-bold text-primary mb-3">Contents</h6>
-        <!-- Native Bootstrap ID target -->
-        <nav id="toc-nav" class="nav nav-pills flex-column">
-          {% for item in page.toc %}
-            <a class="nav-link text-white-50 px-2 py-1 transition-all" href="#{{ item.id | uri_escape }}">{{ item.title }}</a>
-          {% endfor %}
-        </nav>
-      </div>
-    </div>
-  </div>
+  </aside>
 </div>
-<!-- Scrollspy Engine -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const contentArea = document.querySelector('.content-payload');
-    if (!contentArea) return;
-
-    const headings = contentArea.querySelectorAll('h3[id]');
-    const desktopToc = document.getElementById('toc-nav');
-    const mobileToc = document.getElementById('toc-nav-mobile');
-    if (!desktopToc || !mobileToc || !headings.length) return;
-
-    [desktopToc, mobileToc].forEach((nav, index) => {
-      if (nav.querySelector('a')) return;
-
-      headings.forEach(heading => {
-        const link = document.createElement('a');
-        link.className = index === 0
-          ? 'nav-link text-white-50 px-2 py-1 transition-all'
-          : 'nav-link text-white-50 text-nowrap py-1 px-2 transition-all';
-        link.href = '#' + encodeURIComponent(heading.id);
-        link.textContent = heading.textContent;
-        nav.appendChild(link);
-      });
-    });
-
-    const navLinks = [...desktopToc.querySelectorAll('a'), ...mobileToc.querySelectorAll('a')]
-      .map(link => ({
-        link,
-        target: document.getElementById(decodeURIComponent(link.getAttribute('href').slice(1))),
-        isMobile: mobileToc.contains(link)
-      }))
-      .filter(item => item.target);
-
-    // IntersectionObserver to handle the active highlighting
-    const observerOptions = {
-      root: null,
-      rootMargin: '-100px 0px -70% 0px', // Triggers as the heading nears the top third of the screen
-      threshold: 0
-    };
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // 1. Reset all links to muted text
-          navLinks.forEach(item => {
-            item.link.classList.remove('text-white', 'fw-bold', 'bg-secondary', 'bg-opacity-25');
-            item.link.classList.add('text-white-50');
-          });
-
-          // 2. Highlight the active links (both desktop and mobile)
-          const activeItems = navLinks.filter(item => item.target === entry.target);
-          activeItems.forEach(item => {
-            item.link.classList.remove('text-white-50');
-            item.link.classList.add('text-white', 'fw-bold', 'bg-secondary', 'bg-opacity-25', 'rounded');
-            
-            // 3. Auto-scroll the mobile ribbon to keep the active link in view
-            if (item.isMobile) {
-              mobileToc.scrollTo({
-                left: item.link.offsetLeft - 20,
-                behavior: 'smooth'
-              });
-            }
-          });
-        }
-      });
-    }, observerOptions);
-
-    // Attach the observer to every heading
-    headings.forEach(heading => observer.observe(heading));
-  });
-</script>

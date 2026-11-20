@@ -1,5 +1,5 @@
-theme: jekyll-theme-hacker
 title: CodeRSTech's homepage
 description: Portfolio of Rishbh Sharma, a software engineer focused on embedded systems, software, and open source.
+url: "https://coderstech.github.io"
 baseurl: ""
 lang: "en"
