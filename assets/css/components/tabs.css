@@ -5,7 +5,7 @@ ul.tab {
     list-style: none !important;
     padding: 0 !important;
     display: flex;
-    border-bottom: 1px solid #495057; /* Matches Bootstrap border-secondary */
+    border-bottom: 1px solid var(--color-border);
     margin-bottom: 0;
 }
 
@@ -16,19 +16,19 @@ ul.tab li {
 ul.tab li a {
     display: block;
     padding: 0.5rem 1.25rem;
-    color: #6c757d; /* Inactive text color */
-    text-decoration: none; /* Removes the blue underline */
+    color: var(--color-text-muted);
+    text-decoration: none;
     border-bottom: 2px solid transparent;
-    transition: all 0.2s ease;
+    transition: color 140ms ease, border-color 140ms ease;
 }
 
 ul.tab li.active a,
 ul.tab li a:hover {
-    color: #f8f9fa; /* Active text color */
+    color: var(--color-text);
 }
 
 ul.tab li.active a {
-    border-bottom: 2px solid #0d6efd; /* Bootstrap primary blue highlight */
+    border-bottom: 2px solid var(--color-accent);
 }
 
 /* Container for the code blocks */
@@ -47,4 +47,10 @@ ul.tab-content > li {
 /* Show only the active code block */
 ul.tab-content > li.active {
     display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ul.tab li a {
+        transition: none;
+    }
 }

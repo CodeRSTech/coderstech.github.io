@@ -15,16 +15,12 @@ hackerearth:
   stats:
     - label: "Points"
       value: "2,405"
-      icon: "bi bi-award text-light"
     - label: "Ratings"
       value: "1,108"
-      icon: "bi bi-bar-chart-fill text-light"
     - label: "Solved"
       value: "297"
-      icon: "bi bi-check-circle-fill text-light"
     - label: "Submitted"
       value: "1,690"
-      icon: "bi bi-code-slash text-light"
   badges:
     - name: "Global: Elite (Lvl 4)"
       url: "/assets/images/hackerearth_badges/global_4.png"
@@ -45,31 +41,17 @@ hackerrank:
   skills:
     - name: "Problem Solving"
       stars: 4
-      icon: "bi bi-puzzle-fill text-primary"
     - name: "Python"
       stars: 4
-      icon: "bi bi-filetype-py text-success"
     - name: "C++"
       stars: 3
-      icon: "bi bi-filetype-cpp text-info"
     - name: "30 Days of Code"
       stars: 3
-      icon: "bi bi-calendar3 text-info"
-
-platforms:
-  - name: "Stack Exchange"
-    description: "750+ Rep (Linux, Math, SO)"
-    icon: "bi bi-stack-overflow text-warning"
-    url: "#"
-  - name: "GitHub"
-    description: "R&D Repositories"
-    icon: "bi bi-github text-light"
-    url: "#"
 
 socials:
-  - icon: "bi bi-linkedin"
-    url: "#"
-  - icon: "bi bi-twitter-x"
-    url: "#"
-  - icon: "bi bi-envelope"
-    url: "mailto:test@example.com"
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com/in/rishbh-sharma-49873a24/"
+  - name: "GitHub"
+    url: "https://github.com/coderstech"
+  - name: "Email"
+    url: "mailto:codetechrs@gmail.com"
