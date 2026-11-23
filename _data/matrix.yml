@@ -32,8 +32,10 @@ software_ai:
         proficiency: 7
       - name: "CI/CD"
         proficiency: 5
-      - name: "DevOps"
+      - name: "SQL"
         proficiency: 5
+      - name: "Problem Solving"
+        proficiency: 8
 
 hardware_systems:
   teardowns:

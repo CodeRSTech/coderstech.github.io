@@ -48,13 +48,13 @@ skills:
       proficiency: 8
     - name: "C++"
       proficiency: 7
-    - name: "OpenCV"
+    - name: "Object Detection"
       proficiency: 4
     - name: "PyTorch"
       proficiency: 4
     - name: "NumPy"
       proficiency: 5
-    - name: "PySide6"
+    - name: "Qt"
       proficiency: 6
     - name: "Genetic Algorithms"
       proficiency: 9
@@ -68,8 +68,8 @@ skills:
       proficiency: 7
     - name: "CI/CD"
       proficiency: 5
-    - name: "DevOps"
-      proficiency: 5
+    - name: "Problem Solving"
+      proficiency: 8
     - name: "Ubuntu"
       proficiency: 8
     - name: "Linux"
@@ -80,18 +80,18 @@ skills:
     - "Python"
     - "C++"
     - "Data Structures & Algorithms (DSA)"
-    - "System Design"
+    - "AI/ML"
     - "Unit Testing & Debugging"
     - "Git"
     - "GitHub"
     - "CI/CD"
-    - "DevOps"
+    - "Problem-Solving"
     - "Linux/Ubuntu"
     - "PyTorch"
     - "NumPy"
-    - "OpenCV"
-    - "PySide6"
-    - "Neural Networks"
+    - "Object Detection"
+    - "Qt"
+    - "Artificial Neural Networks"
     - "Genetic Algorithms"
 standard:
   intro: "Coder + Learner w/ solo projects & freelance works across s/w + h/w systems. Interested in building practical solutions, problem-solving and exploring AI+ML, Algorithms and, Embedded systems."
