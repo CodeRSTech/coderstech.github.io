@@ -1,6 +1,6 @@
 <aside class="home-card home-proof" aria-labelledby="competitive-proof">
   <p class="home-eyebrow">Competitive programming</p>
-  <h2 id="competitive-proof">HackerEarth</h2>
+  <h2 id="competitive-proof" class="home-proof-logo"><img src="{{ site.data.profiles.hackerearth.logo.url | relative_url }}" height="22" alt="HackerEarth"></h2>
   {% assign top_algorithm = site.data.profiles.hackerearth.tags | first %}
   <p class="home-proof-lead">{{ top_algorithm.name }}</p>
   <div class="home-proof-stats">
@@ -13,8 +13,8 @@
     {% endfor %}
   </div>
   <nav class="home-verified" aria-label="Verified profiles">
-    <a href="https://www.hackerearth.com/@codetechrs" target="_blank" rel="noopener noreferrer">HackerEarth</a>
-    <a href="https://www.hackerrank.com/profile/RishbhSharma" target="_blank" rel="noopener noreferrer">HackerRank</a>
+    <a href="https://www.hackerearth.com/@codetechrs" target="_blank" rel="noopener noreferrer" aria-label="HackerEarth profile"><img src="{{ site.data.profiles.hackerearth.logo.url | relative_url }}" height="14" alt="HackerEarth"></a>
+    <a href="https://www.hackerrank.com/profile/RishbhSharma" target="_blank" rel="noopener noreferrer" aria-label="HackerRank profile"><img src="{{ '/assets/logos/hackerrank-dark.svg' | relative_url }}" height="14" alt="HackerRank"></a>
     <a href="https://github.com/coderstech" target="_blank" rel="noopener noreferrer">GitHub</a>
     <a href="https://www.linkedin.com/in/rishbh-sharma-49873a24/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   </nav>
